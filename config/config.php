@@ -5,7 +5,7 @@ function connectDB(){
     $user = "root";
     $pass = "";
     try {
-        $conn = new PDO($host, $user, $pass);
+        $conn = new PDO(dsn: $host, username: $user, password: $pass);
     } catch (PDOException $e) {
         echo "lỗi".$e->getMessage();
     }
