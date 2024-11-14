@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 11, 2024 at 06:19 PM
+-- Generation Time: Nov 14, 2024 at 03:39 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -82,7 +82,8 @@ CREATE TABLE `product` (
   `product_image` varchar(256) NOT NULL,
   `product_status` enum('available','unavailable','delete') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `product_quantity` int NOT NULL,
-  `category_id` int NOT NULL
+  `category_id` int NOT NULL,
+  `discount_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -97,6 +98,18 @@ CREATE TABLE `product_variation` (
   `variation_name` varchar(256) NOT NULL,
   `price` int NOT NULL,
   `status` enum('available','unavailable') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reset_account`
+--
+
+CREATE TABLE `reset_account` (
+  `user_id` int NOT NULL,
+  `reset_token` int NOT NULL,
+  `reset_expriry` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -160,7 +173,10 @@ CREATE TABLE `userorder` (
   `shipping_fee` int NOT NULL,
   `shipping_address` text NOT NULL,
   `shipping_status` enum('not_shipped','shipped','delivered','returned') NOT NULL,
-  `user_id` int NOT NULL
+  `user_id` int NOT NULL,
+  `order_name` varchar(256) NOT NULL COMMENT 'người nhận hàng',
+  `order_phoneNumber` int NOT NULL COMMENT 'số điện thoại người nhận',
+  `order_address` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'địa chỉ người nhận'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -175,7 +191,9 @@ CREATE TABLE `userorder_details` (
   `product_id` int NOT NULL,
   `variation_id` int NOT NULL,
   `quantity` int NOT NULL,
-  `note` text NOT NULL
+  `note` text NOT NULL,
+  `order_product_name` varchar(256) NOT NULL,
+  `order_price` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -205,7 +223,8 @@ ALTER TABLE `discount`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
-  ADD KEY `fk_category` (`category_id`);
+  ADD KEY `fk_category` (`category_id`),
+  ADD KEY `fk_discount_product` (`discount_id`);
 
 --
 -- Indexes for table `product_variation`
@@ -213,6 +232,12 @@ ALTER TABLE `product`
 ALTER TABLE `product_variation`
   ADD PRIMARY KEY (`variation_id`),
   ADD KEY `fk_product_variation` (`product_id`);
+
+--
+-- Indexes for table `reset_account`
+--
+ALTER TABLE `reset_account`
+  ADD KEY `user_id_reset_pass` (`user_id`);
 
 --
 -- Indexes for table `review`
@@ -325,6 +350,7 @@ ALTER TABLE `account`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
+  ADD CONSTRAINT `fk_discount_product` FOREIGN KEY (`discount_id`) REFERENCES `discount` (`discount_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `fk_product_userorder_details` FOREIGN KEY (`product_id`) REFERENCES `userorder_details` (`product_id`);
 
 --
@@ -332,6 +358,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_variation`
   ADD CONSTRAINT `fk_product_variation` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+
+--
+-- Constraints for table `reset_account`
+--
+ALTER TABLE `reset_account`
+  ADD CONSTRAINT `user_id_reset_pass` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `review`
