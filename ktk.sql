@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 15, 2024 at 05:39 PM
+-- Generation Time: Nov 16, 2024 at 02:38 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -32,6 +32,7 @@ CREATE TABLE `account` (
   `Name` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `image` varchar(256) DEFAULT NULL,
   `adress` text NOT NULL,
   `phone` varchar(11) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -44,9 +45,9 @@ CREATE TABLE `account` (
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`user_id`, `Name`, `username`, `password`, `adress`, `phone`, `email`, `created_at`, `status`, `role`) VALUES
-(1, 'kuro', 'admin', '123', 'Sơn Tây', '0867836619', 'mativi2005@gmail.co,', '2024-11-15 14:57:20', 'Mở', 'admin'),
-(3, 'user', 'shipper001', '123', 'Hồ tùng mậu', '0123456788', '', '2024-11-15 17:09:07', 'Mở', 'shipper');
+INSERT INTO `account` (`user_id`, `Name`, `username`, `password`, `image`, `adress`, `phone`, `email`, `created_at`, `status`, `role`) VALUES
+(1, 'kuro', 'admin', '123', NULL, 'Sơn Tây', '0867836619', 'mativi2005@gmail.co,', '2024-11-15 14:57:20', 'Mở', 'admin'),
+(3, 'user', 'shipper001', '123', NULL, 'Hồ tùng mậu', '0123456788', '', '2024-11-15 17:09:07', 'Mở', 'shipper');
 
 -- --------------------------------------------------------
 
@@ -147,7 +148,7 @@ INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`,
 CREATE TABLE `reset_account` (
   `user_id` int NOT NULL,
   `reset_token` int DEFAULT NULL COMMENT 'mã để reset mk',
-  `reset_expriry` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
+  `reset_ expired` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
   `email_send_count` int NOT NULL DEFAULT '0' COMMENT 'số lần gửi mã OTP'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
