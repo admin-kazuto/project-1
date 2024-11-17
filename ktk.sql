@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 16, 2024 at 02:38 PM
+-- Generation Time: Nov 17, 2024 at 04:56 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -48,6 +48,22 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`user_id`, `Name`, `username`, `password`, `image`, `adress`, `phone`, `email`, `created_at`, `status`, `role`) VALUES
 (1, 'kuro', 'admin', '123', NULL, 'Sơn Tây', '0867836619', 'mativi2005@gmail.co,', '2024-11-15 14:57:20', 'Mở', 'admin'),
 (3, 'user', 'shipper001', '123', NULL, 'Hồ tùng mậu', '0123456788', '', '2024-11-15 17:09:07', 'Mở', 'shipper');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `cart_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `variation_id` int NOT NULL,
+  `unit_price` int NOT NULL COMMENT 'giá tại thời điểm cho vàp giỏ hàng',
+  `quantity` int NOT NULL,
+  `added at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -148,7 +164,7 @@ INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`,
 CREATE TABLE `reset_account` (
   `user_id` int NOT NULL,
   `reset_token` int DEFAULT NULL COMMENT 'mã để reset mk',
-  `reset_ expiry` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
+  `reset_ expired` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
   `email_send_count` int NOT NULL DEFAULT '0' COMMENT 'số lần gửi mã OTP'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -275,6 +291,15 @@ ALTER TABLE `account`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`),
+  ADD KEY `fk_cart_account` (`user_id`),
+  ADD KEY `fk_cart_product` (`product_id`),
+  ADD KEY `fk_cart_product_variation` (`variation_id`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
@@ -358,6 +383,12 @@ ALTER TABLE `account`
   MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
@@ -414,6 +445,14 @@ ALTER TABLE `userorder_details`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `fk_cart_account` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `fk_cart_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `fk_cart_product_variation` FOREIGN KEY (`variation_id`) REFERENCES `product_variation` (`variation_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `product`
