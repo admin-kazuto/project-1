@@ -7,4 +7,6 @@ class modelADM
     {
         $this->model =  connectDB();
     }
+
+    
 }
