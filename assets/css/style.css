@@ -1,0 +1,716 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0
+}
+
+* {
+	box-sizing: border-box
+}
+
+img {
+	border: 0
+}
+
+a {
+	text-decoration: none;
+	transition: .3s
+}
+
+ul,
+ol {
+	list-style: none
+}
+footer {
+	width: 100%;
+	  background: #101010;
+	  position: relative;
+	  display: inline-block;
+  }
+  .menu li span {
+	display: block;
+	overflow: hidden;
+	color: #fff;
+	font-size: 14px;
+	line-height: 21px;
+  }
+  .menu ul {
+	display: flex; 
+	justify-content: center;
+  }
+  .menu li {
+	width: 12%;
+  }
+
+  .menu li:hover a {
+	background: #2d2d2d;
+  }
+
+  .menu li.active a {
+	background: #2d2d2d;
+  }
+
+  .menu li a {
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	padding: 20px 0 19px;
+	display: flex;
+	justify-content: center;
+  }
+
+  body {
+	min-width: 1024px;
+	background: #3e3e3f;
+  }
+  .footer ul {
+	margin-top: 20px;
+	display: flex;
+	margin-inline: 5%;
+  }
+  .footer li {
+	margin-top: 30px;
+  }
+  .list-foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	border-bottom: 1px solid #333;
+	padding: 0 0 30px;
+  }
+  .list-foot li {
+	float: left;
+	width: 23%;
+  }
+  .list-foot li span {
+	display: block;
+	overflow: hidden;
+	color: #fff;
+	font-size: 15px;
+	line-height: 20px;
+	padding: 0 0 8px;
+	font-weight: 500;
+  }
+  .list-foot li a {
+	display: block;
+	overflow: hidden;
+	font-size: 13px;
+	line-height: 18px;
+	padding: 0 0 10px;
+	color: #e5e5e5;
+  }
+  .list-foot li a span {
+	display: inline-block;
+	width: 68px;
+	padding: 0;
+	font-size: 13px;
+	line-height: 18px;
+	overflow: unset;
+  }
+  .list-foot li a b {
+	font-weight: 400;
+	color: #2997ff;
+  }
+
+  .list-foot li:first-child {
+	width: 30%;
+  }
+  .title {
+	color: #fff;
+	font-size: 36px;
+	font-family: SF Pro Display, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-block: 40px;
+  }
+  .item {
+	border:1px solid rgb(35, 34, 34) ;
+	background-color: rgb(35, 34, 34);
+	text-align: center;
+	width: 350px;
+	height: 450px;
+	border-radius: 25px;
+	margin-block:40px;
+  }
+  .item img {
+	margin-top: 30px;
+	width: 100%;
+	height: 250px;
+	margin-block: 20px;
+  }
+  .item h3 {
+	margin-block: 15px;
+	color: #fff;
+  }
+  .item h2 {
+	font-size: 20px;
+	color: red;
+   }
+   .item .btn {
+	width: 100px;
+	background-color: #0071e3;
+	border-radius: 7px;
+   }
+   .item a {
+	color: white;
+   }
+   .btn a {
+	color: white;
+	line-height: 30px;
+   }
+   .item-dienthoai {
+	border:1px solid rgb(35, 34, 34) ;
+	background-color: rgb(35, 34, 34);
+	text-align: center;
+	width: 350px;
+	height: 450px;
+	border-radius: 25px;
+	margin-block:40px;
+  }
+  .item-dienthoai img {
+	width: 250px;
+	height: 250px;
+	margin-block: 20px;
+  }
+  .item-dienthoai h3 {
+	margin-block: 15px;
+	color: #fff;
+  }
+  .item-dienthoai h2 {
+	font-size: 20px;
+	color: red;
+   }
+   .item-dienthoai .btn {
+	width: 100px;
+	background-color: #0071e3;
+	border-radius: 7px;
+	transition: all 0.3s ease;
+   }
+   .item-dienthoai a {
+	color: white;
+   }
+   .form .item, .item-dienthoai {
+	width: 20%;
+	margin-inline: 20px;
+   }
+   .form {
+	display: flex;
+	justify-content: space-around;
+
+   }
+   .box-promo a {
+	display: block;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 21px;
+	color: #fff
+}
+.box-promo .content-promo p b a {
+	display: inline;
+	color: #2997ff
+}
+   .box-promo span {
+	display: block;
+	overflow: hidden;
+	font-size: 15px;
+	line-height: 20px;
+	color: #fff;
+	padding: 0 5px 6px;
+	font-weight: bold
+}
+
+   .box-promo {
+	display: block;
+	overflow: hidden;
+	padding: 20px 15px 10px 15px;
+	background: #2f3033;
+	border-radius: 12px;
+	margin: 0 0 20px;
+	margin-top: 20px;
+}
+
+.box-promo .content-promo {
+	display: block;
+	overflow: hidden;
+	margin-bottom: 10px
+}
+
+.box-promo .content-promo p {
+	display: block;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 21px;
+	color: #fff;
+	padding: 0 0 6px
+}
+.box-promo .content-promo p i {
+	display: inline-block;
+	vertical-align: top;
+	width: 4px;
+	height: 4px;
+	border-radius: 10px;
+	background: #fff;
+	margin: 8px 5px 0
+}
+.box-promo .content-promo p b {
+	font-size: 14px;
+	line-height: 21px;
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 20px);
+	font-weight: 400
+}
+.box-promo small {
+	display: block;
+	overflow: hidden;
+	font-size: 13px;
+	line-height: 18px;
+	color: #fff;
+	border-bottom: 1px solid #414141;
+	padding: 0 5px 13px;
+	margin: 0 0 16px
+}
+
+.buy-sp input {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-right: 20px;
+	font-size: 20px;
+	line-height: 25px;
+	color: #fff;
+	border-radius: 12px;
+	text-align: center;
+	padding: 18px 0;
+	background: #0071e3;
+	font-weight: 700;
+	margin-bottom: 20px;
+	align-items: end;
+	margin-top: 20px;
+}
+.policy li span {
+	display: block;
+	font-size: 15px;
+	line-height: 20px;
+	color: #fff
+}
+
+.policy li {
+	display: block;
+	margin: 0 0 12px
+}
+
+
+.policy li span i {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 8px 0 0;
+	width: 22px
+}
+
+.policy li span a {
+	color: #2997ff
+}
+
+.middleCart {
+	display: block;
+	background: #fff;
+	box-shadow: 0 0 18px rgba(0, 0, 0, .12);
+	border-radius: 2px;
+	position: relative
+}
+.listing-cart {
+	display: flex;
+	flex-flow: column wrap
+}
+.listing-cart .imgsp button {
+	display: block;
+	overflow: hidden;
+	margin: 15px auto 0;
+	border: 0;
+	background: #fff;
+	color: #999;
+	font-size: 12px;
+	cursor: pointer
+}
+.listing-cart .imgsp a img {
+	width: 75px;
+	margin: auto
+}
+.listing-cart .product-item {
+	display: block;
+	padding: 10px 30px;
+	width: 100%;
+	box-sizing: border-box
+}
+
+.listing-cart .product-item .imgsp {
+	float: left;
+	width: 16%
+}
+.listing-cart .product-item .infosp {
+	display: block;
+	margin-left: 95px
+}
+
+.listing-cart .infosp .name-price {
+	display: block
+}
+
+.listing-cart .name-price a {
+	float: left;
+	width: 70%;
+	font-size: 14px;
+	color: #333;
+	font-weight: 700;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.listing-cart .name-price span {
+	color: #050001;
+	font-size: 16px;
+	text-align: right
+}
+
+.listing-cart .name-price .price-area {
+	float: right;
+	display: flex;
+	width: 30%;
+	flex-direction: column;
+	align-items: flex-end
+}
+
+.erablue .listing-cart .name-price .price-area {
+	margin-bottom: 1%
+}
+.choosenumber {
+	float: right;
+	overflow: hidden;
+	position: relative;
+	width: 100px;
+	border: 1px solid #dfdfdf;
+	background: #fff;
+	border-radius: 3px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #333
+}
+
+.choosenumber input {
+	border: none;
+	margin: 1px 0 1px 1px
+}
+.choosenumber .minus {
+	float: left;
+	border-right: 1px solid #dfdfdf;
+	background: #fff;
+	width: 32%;
+	height: 30px;
+	position: relative;
+	cursor: pointer
+}
+
+
+.choosenumber .number {
+	font-size: 14px;
+	color: #333;
+	float: left;
+	width: 33%;
+	height: 30px;
+	text-align: center
+}
+
+.choosenumber .plus {
+	float: right;
+	border-left: 1px solid #dfdfdf;
+	background: #fff;
+	width: 32%;
+	height: 30px;
+	position: relative;
+	cursor: pointer
+}
+.total-provisional {
+	display: block;
+	overflow: hidden;
+	padding: 10px 30px
+}
+
+
+.topzone .total-provisional {
+	line-height: 21px;
+	padding: 0 30px 17px
+}
+
+.form-customer .fillinform {
+	display: block;
+	overflow: hidden;
+	padding: 12px 0 10px
+}
+
+.form-customer .fillinform .fillname {
+	float: left;
+	width: 49%;
+	margin: 0 1% 0 0
+}
+
+.form-customer .fillinform .fillname input {
+	display: block;
+	overflow: hidden;
+	border: 1px solid #d1d1d1;
+	border-radius: 4px;
+	padding: 10px;
+	color: #333;
+	box-sizing: border-box;
+	width: 100%
+}
+.infor-customer {
+	display: block;
+	overflow: hidden;
+	border-top: 1px solid #d1d1d1;
+	padding: 10px 30px
+}
+.infor-customer h4 {
+	display: block;
+	overflow: hidden;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #333
+}
+
+* {box-sizing:border-box}
+/* thiết lập style cho slideshow container */
+ .slideshow-container {
+   max-width: 1000px;
+   position: relative;
+   margin: auto;
+ }
+/* ẩn hình ảnh cho phần tử slideshow */
+ .mySlides {
+   display: none;
+ }
+/* thiết kế nút mũi tên*/
+ .prev, .next {
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   width: auto;
+   margin-top: -22px;
+   padding: 16px;
+   color: white;
+   font-weight: bold;
+   font-size: 18px;
+   transition: 0.6s ease;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+ }
+/* thiết kế nút mũi tên next nằm phía bên phải */
+ .next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+ }
+/* hiệu ứng thay đổi background khi hover vào nút mũi tên*/
+ .prev:hover, .next:hover {
+   background-color: rgba(0,0,0,0.8);
+ }
+/* Thiết lập style cho nội dung của mỗi phần tử slideshow */
+ .text {
+   color: #f2f2f2;
+   font-size: 15px;
+   padding: 8px 12px;
+   position: absolute;
+   bottom: 8px;
+   width: 100%;
+   text-align: center;
+ }
+/* Thiết lập style cho số hiển thị của phần tử */
+ .numbertext {
+   color: #f2f2f2;
+   font-size: 12px;
+   padding: 8px 12px;
+   position: absolute;
+   top: 0;
+ }
+/* thiết lập style  nút tròn điều khiển*/
+ .dot {
+   cursor: pointer;
+   height: 15px;
+   width: 15px;
+   margin: 0 2px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   transition: background-color 0.6s ease;
+ }
+.active, .dot:hover {
+   background-color: #717171;
+ }
+/* tạo hiệu ứng chuyển động fade */
+ .fade {
+   -webkit-animation-name: fade;
+   -webkit-animation-duration: 1.5s;
+   animation-name: fade;
+   animation-duration: 1.5s;
+ }
+@-webkit-keyframes fade {
+   from {opacity: .4}
+   to {opacity: 1}
+ }
+@keyframes fade {
+   from {opacity: .4}
+   to {opacity: 1}
+ }
+ 
+.Sslider{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.Sslider .list{
+    position: absolute;
+    width: max-content;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+.Sslider .list img{
+    width: 80%;
+    object-fit: cover;
+}
+.Sslider .buttonss{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.Sslider .buttonss button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.Sslider .dotss{
+    position: absolute;
+    bottom: 10px;
+    top: 90%;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.Sslider .dotss li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.SSlider .dotss li.active{
+    width: 30px;
+}
+@media screen and (max-width: 768px){
+    .Sslider{
+        height: 400px;
+    }
+}
+
+
+.Sslider-item{
+    width: 500px;
+    height: 700px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+	margin-right: 20px;
+}
+.Sslider-item .list{
+    position: absolute;
+    width: max-content;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+	justify-content: center;
+}
+.Sslider-item .list img{
+    width: 80%;
+    object-fit: cover;
+	text-align: center;
+}
+.Sslider-item .buttonss{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.Sslider-item .buttonss button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.Sslider-item .dotss{
+    position: absolute;
+    bottom: 10px;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.Sslider-item .dotss li img{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    transition: 0.5s;
+}
+.Sslider-item .dotss li img:hover{
+	border: 1px solid blue;
+}
+/* .SSlider-item .dotss li.actives:active{
+	display: hidden;
+} */
+@media screen and (max-width: 768px){
+    .Sslider-item{
+        height: 400px;
+    }
+}
+.form-h {
+display: flex; 
+justify-content: center; 
+gap: 20px
+}
+.form-h input {
+	width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
