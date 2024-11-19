@@ -9,7 +9,7 @@
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
-      //header
+
       <?php require_once "../../component/admin/header.php" ?>
 
       <?php require_once "../../component/admin/sidebar.php" ?>;
@@ -233,6 +233,7 @@
       <?php require_once "../../component/admin/footer.php" ?>
       <!--end::Footer-->
     </div>
+    <?php require_once "../../component/admin/scripts.php" ?>
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
