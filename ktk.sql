@@ -164,7 +164,7 @@ INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`,
 CREATE TABLE `reset_account` (
   `user_id` int NOT NULL,
   `reset_token` int DEFAULT NULL COMMENT 'mã để reset mk',
-  `reset_ expired` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
+  `reset_ expiry` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
   `email_send_count` int NOT NULL DEFAULT '0' COMMENT 'số lần gửi mã OTP'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
