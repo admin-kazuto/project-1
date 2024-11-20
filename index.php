@@ -1,11 +1,9 @@
 <?php
-require_once 'commons/function.php';
-require_once 'controllers/homeController.php';
-require_once 'models/homeModel.php';
+
+session_start();
+ob_start();
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+
+require_once("config/conn.php");
 
 $act = $_GET['act'] ?? '/';
-
-match ($act) {
-    '/' => (new homeController())->home(),
-    'detailpro' => (new homeController())->detailPro($_GET['id']),
-};
