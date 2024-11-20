@@ -48,7 +48,7 @@
             <div class="swiper-wrapper">
               <div
                 class="swiper-slide"
-                data-slide-bg="images/home-slide-1-1920x800.jpg">
+                data-slide-bg="assets/images/home-slide-1-1920x800.jpg">
                 <div class="swiper-slide-caption text-center">
                   <div class="container">
                     <div class="row align-items-sm-center">
@@ -87,7 +87,7 @@
                             data-caption-delay="1500">
                             <img
                               class="img-caption-5 img-responsive veil reveal-lg-inline-block"
-                              src="images/slide-caption-image-6-100x118.png"
+                              src="assets/images/slide-caption-image-6-100x118.png"
                               alt=""
                               width="100"
                               height="118" />
@@ -97,7 +97,7 @@
                             data-caption-delay="100">
                             <img
                               class="img-responsive reveal-inline-block"
-                              src="images/slide-caption-image-1-599x596.png"
+                              src="assets/images/slide-caption-image-1-599x596.png"
                               alt=""
                               width="599"
                               height="596" />
@@ -109,7 +109,7 @@
                           data-caption-delay="600">
                           <img
                             class="img-responsive veil reveal-lg-inline-block"
-                            src="images/slide-caption-image-2-346x336.png"
+                            src="assets/images/slide-caption-image-2-346x336.png"
                             alt=""
                             width="346"
                             height="336" />
@@ -120,7 +120,7 @@
                           data-caption-delay="900">
                           <img
                             class="img-responsive veil reveal-lg-inline-block"
-                            src="images/slide-caption-image-3-228x310.png"
+                            src="assets/images/slide-caption-image-3-228x310.png"
                             alt=""
                             width="228"
                             height="310" />
@@ -131,7 +131,7 @@
                           data-caption-delay="800">
                           <img
                             class="img-responsive veil reveal-lg-inline-block"
-                            src="images/slide-caption-image-4-179x213.png"
+                            src="assets/images/slide-caption-image-4-179x213.png"
                             alt=""
                             width="179"
                             height="213" />
@@ -142,7 +142,7 @@
                           data-caption-delay="1000">
                           <img
                             class="img-responsive veil reveal-lg-inline-block"
-                            src="images/slide-caption-image-5-522x343.png"
+                            src="assets/images/slide-caption-image-5-522x343.png"
                             alt=""
                             width="522"
                             height="343" />
@@ -154,7 +154,7 @@
               </div>
               <div
                 class="swiper-slide"
-                data-slide-bg="images/home-slide-2-1920x800.jpg">
+                data-slide-bg="assets/images/home-slide-2-1920x800.jpg">
                 <div class="swiper-slide-caption slide-caption-2 text-center">
                   <div class="container">
                     <div class="row align-items-sm-center">
@@ -190,7 +190,7 @@
               </div>
               <div
                 class="swiper-slide"
-                data-slide-bg="images/home-slide-3-1920x800.jpg">
+                data-slide-bg="assets/images/home-slide-3-1920x800.jpg">
                 <div class="swiper-slide-caption text-uppercase text-center">
                   <div class="container">
                     <div class="row align-items-sm-center">
@@ -239,7 +239,7 @@
             <div class="col-sm-6 col-md-4 view-animate zoomInSmall delay-04">
               <a class="thumbnail-variant-3" href="menu.php"><img
                   class="img-responsive"
-                  src="images/index-01-566x401.jpg"
+                  src="assets/images/index-01-566x401.jpg"
                   alt=""
                   width="566"
                   height="401" />
@@ -252,7 +252,7 @@
             <div class="col-sm-6 col-md-4 view-animate zoomInSmall delay-06">
               <a class="thumbnail-variant-3" href="menu.php"><img
                   class="img-responsive"
-                  src="images/index-02-566x401.jpg"
+                  src="assets/images/index-02-566x401.jpg"
                   alt=""
                   width="566"
                   height="401" />
@@ -266,7 +266,7 @@
               class="col-sm-6 col-md-4 offset-sm-top-30 offset-md-top-0 view-animate zoomInSmall delay-02">
               <a class="thumbnail-variant-3" href="menu.php"><img
                   class="img-responsive"
-                  src="images/index-03-566x401.jpg"
+                  src="assets/images/index-03-566x401.jpg"
                   alt=""
                   width="566"
                   height="401" />
@@ -315,7 +315,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/menu-modern-1-310x260.png"
+                        src="assets/images/menu-modern-1-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -341,7 +341,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/menu-modern-3-310x260.png"
+                        src="assets/images/menu-modern-3-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -367,7 +367,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/menu-modern-2-310x260.png"
+                        src="assets/images/menu-modern-2-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -393,7 +393,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/menu-modern-6-310x260.png"
+                        src="assets/images/menu-modern-6-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -419,7 +419,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/menu-modern-5-310x260.png"
+                        src="assets/images/menu-modern-5-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -445,7 +445,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/menu-modern-4-310x260.png"
+                        src="assets/images/menu-modern-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -490,7 +490,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/toast-1-310x260.png"
+                        src="assets/images/toast-1-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -516,7 +516,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/toast-2-310x260.png"
+                        src="assets/images/toast-2-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -542,7 +542,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/toast-3-310x260.png"
+                        src="assets/images/toast-3-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -568,7 +568,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/toast-4-310x260.png"
+                        src="assets/images/toast-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -594,7 +594,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/toast-5-310x260.png"
+                        src="assets/images/toast-5-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -620,7 +620,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/toast-4-310x260.png"
+                        src="assets/images/toast-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -665,7 +665,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/pizzas-1-310x260.png"
+                        src="assets/images/pizzas-1-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -691,7 +691,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/pizzas-2-310x260.png"
+                        src="assets/images/pizzas-2-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -717,7 +717,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/pizzas-3-310x260.png"
+                        src="assets/images/pizzas-3-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -743,7 +743,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/pizzas-4-310x260.png"
+                        src="assets/images/pizzas-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -769,7 +769,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/pizzas-5-310x260.png"
+                        src="assets/images/pizzas-5-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -795,7 +795,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/pizzas-4-310x260.png"
+                        src="assets/images/pizzas-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -840,7 +840,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/salads-1-310x260.png"
+                        src="assets/images/salads-1-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -866,7 +866,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/salads-2-310x260.png"
+                        src="assets/images/salads-2-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -892,7 +892,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/salads-3-310x260.png"
+                        src="assets/images/salads-3-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -918,7 +918,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/salads-4-310x260.png"
+                        src="assets/images/salads-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -944,7 +944,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/salads-5-310x260.png"
+                        src="assets/images/salads-5-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -970,7 +970,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/salads-4-310x260.png"
+                        src="assets/images/salads-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1015,7 +1015,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/drinks-1-310x260.png"
+                        src="assets/images/drinks-1-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1041,7 +1041,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/drinks-2-310x260.png"
+                        src="assets/images/drinks-2-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1067,7 +1067,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/drinks-3-310x260.png"
+                        src="assets/images/drinks-3-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1092,7 +1092,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/drinks-4-310x260.png"
+                        src="assets/images/drinks-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1118,7 +1118,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/drinks-5-310x260.png"
+                        src="assets/images/drinks-5-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1144,7 +1144,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/drinks-4-310x260.png"
+                        src="assets/images/drinks-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1189,7 +1189,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/deserts-1-310x260.png"
+                        src="assets/images/deserts-1-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1215,7 +1215,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/deserts-2-310x260.png"
+                        src="assets/images/deserts-2-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1241,7 +1241,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/deserts-3-310x260.png"
+                        src="assets/images/deserts-3-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1267,7 +1267,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/deserts-4-310x260.png"
+                        src="assets/images/deserts-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1293,7 +1293,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/deserts-5-310x260.png"
+                        src="assets/images/deserts-5-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1319,7 +1319,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="images/deserts-4-310x260.png"
+                        src="assets/images/deserts-4-310x260.png"
                         alt=""
                         width="310"
                         height="260" />
@@ -1349,7 +1349,7 @@
       <section class="bg-image-5">
         <section
           class="parallax-container parallax-light"
-          data-parallax-img="images/parallax-03.png">
+          data-parallax-img="assets/images/parallax-03.png">
           <div class="parallax-content">
             <div
               class="container section-80 section-sm-top-140 section-sm-bottom-150 text-center">
@@ -1474,8 +1474,8 @@
             <a
               class="thumbnail-gallery"
               data-lightgallery="item"
-              href="images/index-gallery-1-1200x800_original.jpg"><img
-                src="images/index-gallery-1-480x394.jpg"
+              href="assets/images/index-gallery-1-1200x800_original.jpg"><img
+                src="assets/images/index-gallery-1-480x394.jpg"
                 alt=""
                 width="480"
                 height="394" /></a>
@@ -1484,8 +1484,8 @@
             <a
               class="thumbnail-gallery"
               data-lightgallery="item"
-              href="images/index-gallery-2-1200x800_original.jpg"><img
-                src="images/index-gallery-2-480x394.jpg"
+              href="assets/images/index-gallery-2-1200x800_original.jpg"><img
+                src="assets/images/index-gallery-2-480x394.jpg"
                 alt=""
                 width="480"
                 height="394" /></a>
@@ -1494,8 +1494,8 @@
             <a
               class="thumbnail-gallery"
               data-lightgallery="item"
-              href="images/index-gallery-3-1200x800_original.jpg"><img
-                src="images/index-gallery-3-480x394.jpg"
+              href="assets/images/index-gallery-3-1200x800_original.jpg"><img
+                src="assets/images/index-gallery-3-480x394.jpg"
                 alt=""
                 width="480"
                 height="394" /></a>
@@ -1504,8 +1504,8 @@
             <a
               class="thumbnail-gallery"
               data-lightgallery="item"
-              href="images/index-gallery-4-1200x800_original.jpg"><img
-                src="images/index-gallery-4-480x394.jpg"
+              href="assets/images/index-gallery-4-1200x800_original.jpg"><img
+                src="assets/images/index-gallery-4-480x394.jpg"
                 alt=""
                 width="480"
                 height="394" /></a>
@@ -1518,18 +1518,9 @@
         <!--Please note that YOUR_API_KEY should replaced with your key.-->
         <!--Example: <div class="google-map-container" data-key="YOUR_API_KEY">-->
         <div
-          class="google-map-container"
-          data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45."
-          data-zoom="5"
-          data-icon="images/gmap_marker.png"
-          data-icon-active="images/gmap_marker_active.png"
-          data-styles='[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":60}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"lightness":30}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ef8c25"},{"lightness":40}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#b6c54c"},{"lightness":40},{"saturation":-40}]},{}]'>
-          <div class="google-map"></div>
-          <ul class="google-map-markers">
-            <li
-              data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45."
-              data-description="9870 St Vincent Place, Glasgow"></li>
-          </ul>
+          class="google-map-container">
+          <!-- <div class="google-map"></div> -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14895.472351647697!2d105.7469268!3d21.0379635!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313455305afd834b%3A0x17268e09af37081e!2sT%C3%B2a%20nh%C3%A0%20FPT%20Polytechnic.!5e0!3m2!1svi!2s!4v1732119777305!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </section>
     </main>
@@ -1539,8 +1530,8 @@
   <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
   <!-- Java script-->
-  <script src="js/core.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="assets/js/core.min.js"></script>
+  <script src="assets/js/script.js"></script>
   <!-- Google Tag Manager --><noscript><iframe
       src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"
       height="0"
