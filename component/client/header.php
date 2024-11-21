@@ -58,42 +58,42 @@
                                 <ul class="rd-navbar-dropdown menu-img-wrap">
                                     <li class="menu-img">
                                         <a href="menu.php"><img
-                                                src="images/menu-food-01.png"
+                                                src="assets/images/menu-food-01.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Pizzas</span></a>
                                     </li>
                                     <li class="menu-img">
                                         <a href="menu.php"><img
-                                                src="images/menu-food-02.png"
+                                                src="assets/images/menu-food-02.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Burgers</span></a>
                                     </li>
                                     <li class="menu-img">
                                         <a href="menu.php"><img
-                                                src="images/menu-food-03.png"
+                                                src="assets/images/menu-food-03.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Drinks</span></a>
                                     </li>
                                     <li class="menu-img">
                                         <a href="menu.php"><img
-                                                src="images/menu-food-04.png"
+                                                src="assets/images/menu-food-04.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Tosts</span></a>
                                     </li>
                                     <li class="menu-img">
                                         <a href="menu.php"><img
-                                                src="images/menu-food-05.png"
+                                                src="assets/images/menu-food-05.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Salads</span></a>
                                     </li>
                                     <li class="menu-img">
                                         <a href="menu.php"><img
-                                                src="images/menu-food-06.png"
+                                                src="assets/images/menu-food-06.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>desserts</span></a>
@@ -109,11 +109,25 @@
                             <li>
                                 <a class="navbar-icon thin-icon-user" href="#features">User</a>
                                 <!-- RD Navbar Megamenu-->
-                                <ul class="rd-navbar-megamenu" style="width:auto">
+                                <ul class="rd-navbar-megamenu">
                                     <li>
                                         <ul class="list-marked">
-                                            <li><a href="index.html">Đăng nhập</a></li>
-                                            <li><a href="index.html">Đăng nhập</a></li>
+                                            <?php
+                                            if ($_SESSION['role'] === 'admin') { ?>
+                                                <li><a href="?act=administration" style="font-size: 13px;">Quản trị</a></li>
+                                                <li><a href="?act=logout" style="font-size: 13px;">Đăng xuất</a></li>
+                                            <?php
+                                            } else if ($_SESSION['role'] === 'user') {
+                                            ?>
+                                                <li><a href="?act=logout" style="font-size: 13px;">Đăng xuất</a></li>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <li><a href="?act=login" style="font-size: 13px;">Đăng nhập</a></li>
+                                                <li><a href="?act=register" style="font-size: 13px;">Đăng ký</a></li>
+                                            <?php
+                                            }
+                                            ?>
                                         </ul>
                                     </li>
                                 </ul>

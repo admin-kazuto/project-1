@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lí tài khoản</title>
-    <?php require_once "../../component/admin/link.php" ?>
+    <?php require_once "component/admin/link.php" ?>
     <style>
         button {
             padding: 8px 16px;
@@ -53,8 +53,8 @@
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <div class="app-wrapper">
-        <?php require_once "../../component/admin/header.php" ?>
-        <?php require_once "../../component/admin/sidebar.php" ?>
+        <?php require_once "component/admin/header.php" ?>
+        <?php require_once "component/admin/sidebar.php" ?>
         <main class="app-main">
             <div class="container mt-4">
                 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -119,7 +119,7 @@
         </main>
 
     </div>
-    <?php require_once "../../component/admin/scripts.php" ?>
+    <?php require_once "component/admin/scripts.php" ?>
 </body>
 
 </html>

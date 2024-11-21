@@ -8,10 +8,16 @@ require_once 'model/admin/accModel.php';
 
 $act = $_GET['act'] ?? '/';
 match ($act) {
+    'administration' => (new dashboardController())->dashboard(),
     'home' => (new dashboardController())->home(),
     'login' => (new accController())->login(),
     'logout' => (new accController())->logout(),
     '/' => (new dashboardController())->home(),
     'forgotPass' => (new accController())->forgotPass(),
     'register' => (new accController())->register(),
+    'listaccount' => (new accController())->listAccount(),
+    'insertaccount' => (new accController())->insertAccount(),
+    'deleteaccount' => (new accController())->deleteAccount($_GET['id']),
+    'banAccount' => (new accController())->banAccount($_GET['id']),
+    'unbanAccount' => (new accController())->unbanAccount($_GET['id']),
 };

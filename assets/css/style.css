@@ -25529,15 +25529,15 @@ html:not(.lt-ie10) .not-animated {
 .rd-navbar-static .rd-navbar-megamenu,
 .rd-navbar-fullwidth .rd-navbar-megamenu {
 	position: absolute;
-	left: 0;
+	left: 55%;
 	z-index: 100;
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-	text-align: left;
+	display: flex;
+	border-radius: 0 0 20px 20px;
+	width: 12%;
+	text-align: center;
 	background: #fff;
 	top: 100%;
-	margin-top: -10px;
+	/* margin-top: -10px; */
 }
 
 .rd-navbar-static .rd-navbar-megamenu .rd-megamenu-header,
@@ -25559,20 +25559,20 @@ html:not(.lt-ie10) .not-animated {
 .rd-navbar-fullwidth .rd-navbar-megamenu > li {
 	position: relative;
 	display: table-cell;
-	padding: 23px 27px 20px 27px;
+	padding: 5px 10px 5px 25px;
 }
 
 @media (min-width: 1200px) {
 	.rd-navbar-static .rd-navbar-megamenu > li,
 	.rd-navbar-fullwidth .rd-navbar-megamenu > li {
-		padding: 31px 27px 25px 47px;
+		/* padding: 31px 27px 25px 47px; */
 	}
 }
 
 .rd-navbar-static .rd-navbar-megamenu > li .list-marked,
 .rd-navbar-fullwidth .rd-navbar-megamenu > li .list-marked {
 	display: inline-block;
-	margin-top: 12px;
+	/* margin-top: 12px; */
 }
 
 .rd-navbar-static .rd-navbar-megamenu > li .list-marked li + li,
@@ -25584,7 +25584,7 @@ html:not(.lt-ie10) .not-animated {
 .rd-navbar-static .rd-navbar-megamenu > li * + .h6,
 .rd-navbar-fullwidth .rd-navbar-megamenu > li * + h6,
 .rd-navbar-fullwidth .rd-navbar-megamenu > li * + .h6 {
-	margin-top: 47px;
+	/* margin-top: 47px; */
 }
 
 .rd-navbar-static .rd-navbar-megamenu > li + li,

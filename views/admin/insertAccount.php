@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh mục sản phẩm</title>
-    <?php require_once "../../component/admin/link.php" ?>
+    <?php require_once "component/admin/link.php" ?>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -91,8 +91,8 @@
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <div class="app-wrapper">
-        <?php require_once "../../component/admin/header.php" ?>
-        <?php require_once "../../component/admin/sidebar.php" ?>
+        <?php require_once "component/admin/header.php" ?>
+        <?php require_once "component/admin/sidebar.php" ?>
         <main class="app-main">
             <div>
                 <h1>Thêm tài khoản</h1>
@@ -198,9 +198,9 @@
                 }
             </script>
         </main>
-        <?php require_once "../../component/admin/footer.php" ?>
+        <?php require_once "component/admin/footer.php" ?>
     </div>
-    <?php require_once "../../component/admin/scripts.php" ?>
+    <?php require_once "component/admin/scripts.php" ?>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ require_once '../../model/admin/accModel.php';
 
 $act = $_GET['act'] ?? '/';
 match ($act) {
-    'home' => (new dashboardController())->dashboard(),
+    'administration' => (new dashboardController())->dashboard(),
     'login' => (new accController())->login(),
     'logout' => (new accController())->logout(),
     '/' => (new dashboardController())->dashboard(),

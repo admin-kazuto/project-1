@@ -2,7 +2,7 @@
 <html lang="en">
 <!--begin::Head-->
 
-<?php require_once "../../component/admin/link.php" ?>
+<?php require_once "component/admin/link.php" ?>
 <!--end::Head-->
 <!--begin::Body-->
 
@@ -10,9 +10,9 @@
   <!--begin::App Wrapper-->
   <div class="app-wrapper">
 
-    <?php require_once "../../component/admin/header.php" ?>
+    <?php require_once "component/admin/header.php" ?>
 
-    <?php require_once "../../component/admin/sidebar.php" ?>;
+    <?php require_once "component/admin/sidebar.php" ?>;
     <!--begin::App Main-->
     <main class="app-main">
       <!--begin::App Content Header-->
@@ -216,10 +216,10 @@
     </main>
     <!--end::App Main-->
     <!--begin::Footer-->
-    <?php require_once "../../component/admin/footer.php" ?>
+    <?php require_once "component/admin/footer.php" ?>
     <!--end::Footer-->
   </div>
-  <?php require_once "../../component/admin/scripts.php" ?>
+  <?php require_once "component/admin/scripts.php" ?>
 </body>
 
 </html>

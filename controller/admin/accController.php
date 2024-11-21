@@ -8,7 +8,7 @@ class accController
     }
     function login()
     {
-        require_once '../../views/admin/login.php';
+        require_once 'views/admin/login.php';
         if (isset($_POST['btn_login'])) {
             if ($this->accModel->checkLogin($_POST['username'], $_POST['password']) > 0) {
                 $_SESSION['username'] = $_POST['username'];
@@ -28,11 +28,11 @@ class accController
     function listAccount()
     {
         $allAccount = $this->accModel->getAllAccount();
-        require_once '../../views/admin/listAccount.php';
+        require_once 'views/admin/listAccount.php';
     }
     function insertAccount()
     {
-        require_once '../../views/admin/insertAccount.php';
+        require_once 'views/admin/insertAccount.php';
         if (isset($_POST['btn_insert'])) {
             $email = $_POST['email'];
             $username = $_POST['username'];
@@ -61,7 +61,7 @@ class accController
     }
     function register()
     {
-        require_once '../../views/register.php';
+        require_once 'views/register.php';
         if (isset($_POST['btn_register'])) {
             $email = $_POST['email'];
             $username = $_POST['username'];
@@ -92,7 +92,7 @@ class accController
     function forgotPass()
     {
         require_once 'send_email.php';
-        require_once '../../views/admin/forgotPass.php';
+        require_once 'views/admin/forgotPass.php';
         if (isset($_POST['btn_getotp'])) {
             $email = $_POST['email'];
             $user_id = $this->accModel->getuserID($email)['user_id'];

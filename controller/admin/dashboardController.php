@@ -4,7 +4,7 @@ class dashboardController
     function __construct() {}
     function dashboard()
     {
-        require_once '../../views/admin/dashboard.php';
+        require_once 'views/admin/dashboard.php';
     }
     function home()
     {
