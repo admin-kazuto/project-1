@@ -89,15 +89,15 @@ class accModel
     {
         $sql = "SELECT reset_token, email_send_count FROM reset_account WHERE user_id = $user_id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->execute();
     }
     function getCount($user_id)
     {
         $sql = "SELECT `email_send_count` FROM `reset_account` WHERE user_id=$user_id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $stmt->fetchColumn();
     }
     function createOrUpdateResetToken($user_id, $otp, $expiry, $existingToken)
     {
@@ -114,7 +114,7 @@ class accModel
         $sql = "SELECT user_id FROM account WHERE email = '$email'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetchColumn();
     }
     function checkRole($username)
     {

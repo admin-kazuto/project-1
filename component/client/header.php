@@ -23,7 +23,7 @@
                         </button>
                         <!-- RD Navbar Brand--><a
                             class="rd-navbar-brand brand"
-                            href="index.html">
+                            href="?act=home">
                             <div class="brand-logo">
                                 <svg
                                     x="0px"

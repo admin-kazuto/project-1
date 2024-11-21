@@ -74,22 +74,16 @@
                     <h4 class="text-uppercase">newsletter</h4>
                     <div class="offset-top-20">
                         <form
-                            class="rd-mailform form-subscribe form-inline-flex-xs"
-                            data-form-output="form-output-global"
-                            data-form-type="subscribe"
-                            method="post"
-                            action="bat/rd-mailform.php">
+                            class="rd-mailform form-subscribe form-inline-flex-xs">
                             <div class="form-group">
                                 <input
                                     class="form-control"
                                     placeholder="Your Email"
-                                    type="email"
-                                    name="email"
-                                    data-constraints="@Required @Email" />
+                                    name="fdgfdgfdgfd"
+                                    type="email" />
                             </div>
                             <button
-                                class="btn btn-burnt-sienna btn-shape-circle"
-                                type="submit">
+                                class="btn btn-burnt-sienna btn-shape-circle">
                                 Subscribe
                             </button>
                         </form>
