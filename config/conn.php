@@ -14,4 +14,9 @@ function connectDB()
 }
 
 
+function view($view, $data = []){
+    extract($data);
+    include_once "views/$view.php";
+}
+
 ?>
