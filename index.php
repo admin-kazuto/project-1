@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 session_start();
@@ -48,3 +49,29 @@ if($act=== "update-product"){
 if ($act === "") {
     echo "Khong co san pham";
 }
+=======
+<?php
+session_start();
+ob_start();
+require_once 'config/conn.php';
+require_once 'controller/admin/accController.php';
+require_once 'controller/admin/dashboardController.php';
+require_once 'model/admin/accModel.php';
+
+$act = $_GET['act'] ?? '/';
+match ($act) {
+    'administration' => (new dashboardController())->dashboard(),
+    'home' => (new dashboardController())->home(),
+    'login' => (new accController())->login(),
+    'logout' => (new accController())->logout(),
+    '/' => (new dashboardController())->home(),
+    'forgotpass' => (new accController())->forgotPass(),
+    'register' => (new accController())->login(),
+    'listaccount' => (new accController())->listAccount(),
+    'insertaccount' => (new accController())->insertAccount(),
+    'deleteaccount' => (new accController())->deleteAccount($_GET['id']),
+    'banAccount' => (new accController())->banAccount($_GET['id']),
+    'unbanAccount' => (new accController())->unbanAccount($_GET['id']),
+    'test' => (new accController())->Test(),
+};
+>>>>>>> Khoa

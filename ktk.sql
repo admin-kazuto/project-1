@@ -172,8 +172,12 @@ CREATE EVENT delete_expired_tokens
 ON SCHEDULE EVERY 10 MINUTE
 DO
   DELETE FROM reset_account
+<<<<<<< HEAD
   WHERE reset_expiry < NOW() - INTERVAL 10 MINUTE;
 
+=======
+  WHERE reset_expiry < NOW() - INTERVAL 10 MINUTE
+>>>>>>> Khoa
 
 -- --------------------------------------------------------
 
