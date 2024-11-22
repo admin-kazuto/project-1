@@ -38,7 +38,7 @@ class productController
         // Gọi hàm insertProduct
         try {
             (new product)->insertProduct($data);
-            header("location: index.php?act=list-product");
+            header("location: index.php?act=listproduct");
             die;
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
@@ -53,7 +53,7 @@ class productController
 
             try {
                 $productModel->deleteProduct($product_id); // Gọi hàm xóa trong model
-                header("location: index.php?act=list-product");
+                header("location:?act=listproduct");
                 exit(); // Dừng script sau chuyển hướng
             } catch (PDOException $e) {
                 // Nếu có lỗi, hiển thị thông báo (hoặc ghi log lỗi)
@@ -93,7 +93,7 @@ class productController
         $result = $productModel->updateProduct($data);
 
         if ($result) {
-            header("location: index.php?act=list-product");
+            header("location:?act=listproduct");
         } else {
             echo "Error updating product.";
         }
