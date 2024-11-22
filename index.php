@@ -1,70 +1,40 @@
-<<<<<<< HEAD
 <?php
 
 session_start();
 ob_start();
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 
+// Các file cần thiết
 require_once("config/conn.php");
-
 require_once("model/admin/model.php");
 require_once("model/admin/product.php");
 require_once("model/admin/category.php");
+require_once("model/admin/accModel.php");
 
 require_once("controller/admin/controller.php");
 require_once("controller/admin/categoryController.php");
 require_once("controller/admin/productController.php");
+require_once("controller/admin/accController.php");
+require_once("controller/admin/dashboardController.php");
 
-$controller = new controller();
-
-
+// Lấy hành động từ URL
 $act = $_GET['act'] ?? '/';
-if ($act === "/") {
-    $controller->home();
-}
-if ($act === "list-product") {
-    (new productController)->list();
-}
-if ($act === "list-category") {
-    (new categoryController)->list();
-}
-if ($act === "add-product") {
-    (new productController)->add();
-}
-if ($act === "store-product") {
-    (new productController)->store();
-}
-if ($act === "delete-category") {
-    (new categoryController)->delete();
-}
-if($act === "delete-product"){
-    (new productController)->deleteproduct();
-}
-if($act=== "edit-product"){
-    (new productController)->editProduct();
-}
-if($act=== "update-product"){
-    (new productController)->updateProduct();
-}
-if ($act === "") {
-    echo "Khong co san pham";
-}
-=======
-<?php
-session_start();
-ob_start();
-require_once 'config/conn.php';
-require_once 'controller/admin/accController.php';
-require_once 'controller/admin/dashboardController.php';
-require_once 'model/admin/accModel.php';
 
-$act = $_GET['act'] ?? '/';
+// Xử lý các hành động bằng match
 match ($act) {
+    '/' => (new dashboardController())->home(),
+    'listproduct' => (new productController())->list(),
+    'listcategory' => (new categoryController())->list(),
+    'addproduct' => (new productController())->add(),
+    'store-product' => (new productController())->store(),
+    'deletecategory' => (new categoryController())->delete(),
+    'deleteproduct' => (new productController())->deleteProduct(),
+    'editproduct' => (new productController())->editProduct(),
+    'updateproduct' => (new productController())->updateProduct(),
     'administration' => (new dashboardController())->dashboard(),
     'home' => (new dashboardController())->home(),
     'login' => (new accController())->login(),
     'logout' => (new accController())->logout(),
-    '/' => (new dashboardController())->home(),
     'forgotpass' => (new accController())->forgotPass(),
     'register' => (new accController())->login(),
     'listaccount' => (new accController())->listAccount(),
@@ -72,6 +42,5 @@ match ($act) {
     'deleteaccount' => (new accController())->deleteAccount($_GET['id']),
     'banAccount' => (new accController())->banAccount($_GET['id']),
     'unbanAccount' => (new accController())->unbanAccount($_GET['id']),
-    'test' => (new accController())->Test(),
+    default => print "Không có hành động nào được xử lý.",
 };
->>>>>>> Khoa

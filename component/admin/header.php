@@ -16,7 +16,7 @@
         </a>
       </li>
       <li class="nav-item d-none d-md-block">
-        <a href="#" class="nav-link">Home</a>
+        <a href="?act=/" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-md-block">
         <a href="#" class="nav-link">Contact</a>
@@ -62,71 +62,6 @@
                   <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
                 </p>
               </div>
-<<<<<<< HEAD
-            </li>
-            <!--end::Notifications Dropdown Menu-->
-            <!--begin::Fullscreen Toggle-->
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
-                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
-                <i
-                  data-lte-icon="minimize"
-                  class="bi bi-fullscreen-exit"
-                  style="display: none"
-                ></i>
-              </a>
-            </li>
-            <!--end::Fullscreen Toggle-->
-            <!--begin::User Menu Dropdown-->
-            <li class="nav-item dropdown user-menu">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                <span class="d-none d-md-inline">Admin Kuro</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                <!--begin::User Image-->
-                <li class="user-header text-bg-primary">
-                  <img
-                    src="../../dist/assets/img/user2-160x160.jpg"
-                    class="rounded-circle shadow"
-                    alt="User Image"
-                  />
-                  <p>
-                    Kuro - Web Developer
-                    <small>Member since Nov. 2023</small>
-                  </p>
-                </li>
-                <!--end::User Image-->
-                <!--begin::Menu Body-->
-                <li class="user-body">
-                  <!--begin::Row-->
-                  <div class="row">
-                    <div class="col-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-4 text-center"><a href="#">Sales</a></div>
-                    <div class="col-4 text-center"><a href="#">Friends</a></div>
-                  </div>
-                  <!--end::Row-->
-                </li>
-                <!--end::Menu Body-->
-                <!--begin::Menu Footer-->
-                <li class="user-footer">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  <a href="#" class="btn btn-default btn-flat float-end"
-                    >Sign out</a
-                  >
-                </li>
-                <!--end::Menu Footer-->
-              </ul>
-            </li>
-            <!--end::User Menu Dropdown-->
-          </ul>
-          <!--end::End Navbar Links-->
-=======
             </div>
             <!--end::Message-->
           </a>
@@ -182,7 +117,7 @@
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
->>>>>>> Khoa
+          >>>>>>> Khoa
         </div>
       </li>
       <!--end::Messages Dropdown Menu-->

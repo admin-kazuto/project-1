@@ -6,10 +6,6 @@ class accController
     {
         $this->accModel = new accModel();
     }
-    function Test()
-    {
-        // require_once 'views/client/forgotPass.php';
-    }
     function login()
     {
         require_once 'views/client/login.php';

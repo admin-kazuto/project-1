@@ -17,7 +17,7 @@ if ($_SESSION['role'] != 'admin') {
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->
-    <a href="./index.php" class="brand-link">
+    <a href="?act=administration" class="brand-link">
       <!--begin::Brand Image-->
       <!-- <img
               src="../../dist/assets/img/AdminLTELogo.png"
@@ -42,7 +42,7 @@ if ($_SESSION['role'] != 'admin') {
         role="menu"
         data-accordion="false">
         <li class="active nav-item menu-open">
-          <a href="#" class="nav-link">
+          <a href="?act=administration" class="nav-link">
             <i class="nav-icon bi bi-speedometer"></i>
             <p>
               Dashboard
@@ -59,7 +59,7 @@ if ($_SESSION['role'] != 'admin') {
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./widgets/cards.html" class="nav-link">
+              <a href="?act=listcategory" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Product category</p>
               </a>
@@ -79,13 +79,13 @@ if ($_SESSION['role'] != 'admin') {
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./layout/logo-switch.html" class="nav-link">
+              <a href="?act=listproduct" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Product list</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./layout/layout-rtl.html" class="nav-link">
+              <a href="?act=addproduct" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Add new product</p>
               </a>
