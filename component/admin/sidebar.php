@@ -1,4 +1,15 @@
 <!--begin::Sidebar-->
+<?php
+if ($_SESSION['role'] != 'admin') {
+  // Lưu thông báo vào session
+  $_SESSION['message'] = 'Bạn không có quyền truy cập vào trang này. Vui lòng đăng nhập với tài khoản quản trị.';
+
+  // Chuyển hướng đến trang đăng nhập
+  header('location:?act=login');
+  exit(); // Đảm bảo không có mã nào khác được thực thi sau khi chuyển hướng
+}
+?>
+
 <aside
   style="background-color: #fccb56"
   class="app-sidebar shadow"
@@ -6,7 +17,7 @@
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->
-    <a href="./index.html" class="brand-link">
+    <a href="?act=administration" class="brand-link">
       <!--begin::Brand Image-->
       <!-- <img
               src="../../dist/assets/img/AdminLTELogo.png"
@@ -31,7 +42,7 @@
         role="menu"
         data-accordion="false">
         <li class="active nav-item menu-open">
-          <a href="#" class="nav-link">
+          <a href="?act=administration" class="nav-link">
             <i class="nav-icon bi bi-speedometer"></i>
             <p>
               Dashboard
@@ -48,7 +59,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./widgets/cards.html" class="nav-link">
+              <a href="?act=listcategory" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Product category</p>
               </a>
@@ -68,13 +79,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./layout/logo-switch.html" class="nav-link">
+              <a href="?act=listproduct" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Product list</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./layout/layout-rtl.html" class="nav-link">
+              <a href="?act=addproduct" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Add new product</p>
               </a>
@@ -91,21 +102,21 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./UI/general.html" class="nav-link">
+              <a href="?act=listaccount" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
-                <p>Admin</p>
+                <p>Danh sách tài khoản</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="./UI/icons.html" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Users</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
-              <a href="./UI/timeline.html" class="nav-link">
+              <a href="?act=insertaccount" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
-                <p>Shipper</p>
+                <p>Thêm tài khoản</p>
               </a>
             </li>
           </ul>
