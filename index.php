@@ -24,17 +24,27 @@ $act = $_GET['act'] ?? '/';
 
 // Xử lý các hành động bằng match
 match ($act) {
+    //Home
     '/' => (new dashboardController())->home(),
+    // Quản lý product
     'listproduct' => (new productController())->list(),
     'listcategory' => (new categoryController())->list(),
     'addproduct' => (new productController())->add(),
-    'store-product' => (new productController())->store(),
-    'deletecategory' => (new categoryController())->delete(),
+    'store-product' => (new productController())->storeProduct(),
     'deleteproduct' => (new productController())->deleteProduct(),
     'editproduct' => (new productController())->editProduct(),
     'updateproduct' => (new productController())->updateProduct(),
+    // Quản lý category
+    'listcategory' => (new categoryController())->list(),
+    'deletecategory' => (new categoryController())->deleteCategory(),
+    'addcategory' => (new categoryController())->add(),
+    'store-category'=>(new categoryController())->storeCategory(),
+    'editcategory'=>(new categoryController())->editCategory(),
+    'update-category'=>(new categoryController())->updateCategory(),
+    //
     'administration' => (new dashboardController())->dashboard(),
     'home' => (new dashboardController())->home(),
+    // Đăng nhập
     'login' => (new accController())->login(),
     'logout' => (new accController())->logout(),
     'forgotpass' => (new accController())->forgotPass(),
