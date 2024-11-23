@@ -15,7 +15,7 @@ class productController
         view('admin/form-add-product', ['category' => $category]);
     }
 
-    public function store()
+    public function storeProduct()
     {
         // Lọc dữ liệu từ $_POST
         $data = [
