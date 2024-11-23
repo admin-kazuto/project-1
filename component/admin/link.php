@@ -35,7 +35,7 @@
     crossorigin="anonymous" />
   <!--end::Third Party Plugin(Bootstrap Icons)-->
   <!--begin::Required Plugin(AdminLTE)-->
-  <link rel="stylesheet" href="../../assets/css/adminlite.css" />
+  <link rel="stylesheet" href="assets/css/adminlite.css" />
   <!--end::Required Plugin(AdminLTE)-->
   <!-- apexcharts -->
   <link

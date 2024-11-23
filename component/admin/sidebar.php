@@ -50,7 +50,7 @@ if ($_SESSION['role'] != 'admin') {
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="?act=listcategory" class="nav-link">
             <i class="nav-icon bi bi-box-seam-fill"></i>
             <p>
               Category
