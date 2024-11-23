@@ -1,12 +1,8 @@
 <!--begin::Sidebar-->
 <?php
 if ($_SESSION['role'] != 'admin') {
-  // Lưu thông báo vào session
   $_SESSION['message'] = 'Bạn không có quyền truy cập vào trang này. Vui lòng đăng nhập với tài khoản quản trị.';
-
-  // Chuyển hướng đến trang đăng nhập
   header('location:?act=login');
-  exit(); // Đảm bảo không có mã nào khác được thực thi sau khi chuyển hướng
 }
 ?>
 
@@ -132,7 +128,7 @@ if ($_SESSION['role'] != 'admin') {
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./forms/general.html" class="nav-link">
+              <a href="?act=listdiscount" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Discount list</p>
               </a>
@@ -141,7 +137,7 @@ if ($_SESSION['role'] != 'admin') {
           </ul>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./forms/general.html" class="nav-link">
+              <a href="?act=insertdiscount" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Add new discount code</p>
               </a>

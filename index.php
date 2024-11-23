@@ -10,7 +10,9 @@ require_once("model/admin/model.php");
 require_once("model/admin/product.php");
 require_once("model/admin/category.php");
 require_once("model/admin/accModel.php");
+require_once("model/admin/discountModel.php");
 
+require_once("controller/admin/discountController.php");
 require_once("controller/admin/controller.php");
 require_once("controller/admin/categoryController.php");
 require_once("controller/admin/productController.php");
@@ -42,5 +44,10 @@ match ($act) {
     'deleteaccount' => (new accController())->deleteAccount($_GET['id']),
     'banAccount' => (new accController())->banAccount($_GET['id']),
     'unbanAccount' => (new accController())->unbanAccount($_GET['id']),
+    'listdiscount' => (new DiscountController())->listDiscount(),
+    'insertdiscount' => (new DiscountController())->insertdiscount(),
+    'updatediscount' => (new DiscountController())->updatediscount($_GET['id']),
+    'deletediscount' => (new DiscountController())->deletediscount($_GET['id']),
+
     default => print "Không có hành động nào được xử lý.",
 };
