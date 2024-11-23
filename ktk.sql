@@ -164,11 +164,7 @@ INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`,
 CREATE TABLE `reset_account` (
   `user_id` int NOT NULL,
   `reset_token` int DEFAULT NULL COMMENT 'mã để reset mk',
-<<<<<<< HEAD
-  `reset_expired` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
-=======
   `reset_expiry` datetime DEFAULT NULL COMMENT 'thời gian hết hạn của mã ',
->>>>>>> 9515e8645d11d25fb642412b4e125c243376d52a
   `email_send_count` int NOT NULL DEFAULT '0' COMMENT 'số lần gửi mã OTP'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -176,12 +172,8 @@ CREATE EVENT delete_expired_tokens
 ON SCHEDULE EVERY 10 MINUTE
 DO
   DELETE FROM reset_account
-<<<<<<< HEAD
   WHERE reset_expiry < NOW() - INTERVAL 10 MINUTE;
 
-=======
-  WHERE reset_expiry < NOW() - INTERVAL 10 MINUTE
->>>>>>> Khoa
 
 -- --------------------------------------------------------
 

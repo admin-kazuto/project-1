@@ -52,8 +52,8 @@
                                         <td class="text-center"><?= $product['category_id'] ?></td>
                                         <td><?= $product['discount_id'] ?></td>
                                         <td>
-                                            <a href="index.php?act=delete-product&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-success">Xóa</button></a>
-                                            <a href="index.php?act=edit-product&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-danger">Sửa</button></a>
+                                            <a href="index.php?act=deleteproduct&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-success">Xóa</button></a>
+                                            <a href="index.php?act=editproduct&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-danger">Sửa</button></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
