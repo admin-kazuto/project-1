@@ -82,7 +82,7 @@
                                                 src="assets/images/menu-food-04.png"
                                                 alt=""
                                                 width="88"
-                                                height="60" /><span>Tosts</span></a>
+                                                height="60" /><span>Toasts</span></a>
                                     </li>
                                     <li class="menu-img">
                                         <a href="menu.php"><img

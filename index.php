@@ -58,6 +58,6 @@ match ($act) {
     'insertdiscount' => (new DiscountController())->insertdiscount(),
     'updatediscount' => (new DiscountController())->updatediscount($_GET['id']),
     'deletediscount' => (new DiscountController())->deletediscount($_GET['id']),
-
+    
     default => print "Không có hành động nào được xử lý.",
 };
