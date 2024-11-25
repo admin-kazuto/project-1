@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 24, 2024 at 07:43 AM
+-- Generation Time: Nov 25, 2024 at 11:06 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -122,42 +122,41 @@ CREATE TABLE `product` (
   `product_image` varchar(256) NOT NULL,
   `product_status` enum('available','unavailable','delete') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `product_totalQuantity` int NOT NULL,
-  `category_id` int NOT NULL,
-  `discount_id` int DEFAULT NULL
+  `category_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `product_name`, `description`, `product_image`, `product_status`, `product_totalQuantity`, `category_id`, `discount_id`) VALUES
-(2, 'Pizza Phô Mai', 'Lớp phô mai Mozzarella tan chảy, đế giòn, thêm chút mùi thơm của thảo mộc Ý.', '', 'available', 300, 1, NULL),
-(3, 'Pizza Hải Sản', 'Tôm, mực, và thanh cua tươi ngon, kết hợp với sốt cà chua đặc trưng.', '', 'available', 300, 1, NULL),
-(4, 'Pizza Thịt Xông Khói', 'Thịt xông khói thơm lừng, kết hợp phô mai và hành tây caramel ngọt dịu.', '', 'available', 300, 1, NULL),
-(5, 'Pizza Rau Củ', 'Sự kết hợp hoàn hảo của ớt chuông, bắp ngọt, và nấm tươi trên nền sốt cà đặc biệt.', '', 'available', 300, 1, NULL),
-(6, 'Pizza BBQ', 'Thịt bò BBQ đậm vị, kết hợp phô mai tan chảy và sốt BBQ đặc biệt từ đầu bếp.', '', 'available', 300, 1, NULL),
-(7, 'Bánh mì nướng phô Mai Trứng Muối', 'Bánh mì nướng giòn rụm, phô mai béo ngậy, phủ lớp trứng muối mằn mặn đầy kích thích.', '', 'available', 100, 3, NULL),
-(8, 'bánh mì nướng bơ Đường', 'Món ăn tuổi thơ với bơ thơm lừng, hòa quyện với đường hạt giòn ngọt.', '', 'available', 100, 3, NULL),
-(9, 'Bánh mì thịt nướng', 'Bánh mì kèm thịt nướng, dưa leo và nước sốt Mayonnaise.', '', 'available', 100, 3, NULL),
-(10, 'Bánh mì xúc xích', 'Đậm đà với xúc xích nướng, phô mai và tương ớt đặc trưng', '', 'available', 100, 3, NULL),
-(11, 'Bánh mì Tiramisu', 'Sự kết hợp giữa bánh mì nướng và lớp kem Tiramisu mềm mịn, phủ bột cacao thơm lừng.', '', 'available', 100, 3, NULL),
-(12, 'Hamburger Phô Mai', 'Bánh mềm thơm, kẹp thịt bò nướng chín tới và phô mai tan chảy.', '', 'available', 300, 2, NULL),
-(13, 'Hamburger Gà Giòn', 'Lớp gà chiên giòn rụm, thêm rau xanh tươi và sốt Mayonnaise.', '', 'available', 300, 2, NULL),
-(14, 'Hamburger Thịt Bò BBQ', 'Thịt bò xay nướng thơm lừng, rưới sốt BBQ đậm vị, ăn kèm rau tươi.', '', 'available', 300, 2, NULL),
-(15, 'Hamburger Tôm Chiên', 'Tôm chiên giòn kèm sốt chanh dây, tạo cảm giác vừa giòn, vừa tươi mới.', '', 'available', 300, 2, NULL),
-(16, 'Hamburger Chay', 'Đậu phụ chiên giòn và rau củ tươi xanh, phù hợp với người ăn chay.', '', 'available', 300, 2, NULL),
-(17, 'Salad Rau Củ', 'Bắp cải tím, cà chua bi, dưa leo và sốt mè rang thanh mát.', '', 'available', 300, 4, NULL),
-(18, 'Salad Caesar Gà', 'Ức gà áp chảo thơm lừng, trộn sốt Caesar cổ điển và bánh mì nướng giòn.', '', 'available', 300, 4, NULL),
-(19, 'Salad Trái Cây', 'Táo, lê, kiwi, và nho trộn sốt sữa chua ngọt dịu, mát lành.', '', 'available', 300, 4, NULL),
-(20, 'Salad Cá Ngừ', 'Cá ngừ đóng hộp chất lượng cao, trộn cùng rau xanh tươi ngon và sốt Italian.', '', 'available', 300, 4, NULL),
-(21, 'Salad Tôm Chanh Dây', 'Tôm áp chảo mọng nước, phủ sốt chanh dây thơm ngọt.', '', 'available', 300, 4, NULL),
-(22, 'Salad Cá Ngừ', 'Cá ngừ đóng hộp chất lượng cao, trộn cùng rau xanh tươi ngon và sốt Italian.', '', 'available', 300, 4, NULL),
-(23, 'Coca-Cola', 'Thức uống giải khát có ga, hương vị cổ điển được yêu thích.', '', 'available', 10000, 5, NULL),
-(24, 'Pepsi', 'Nước ngọt có ga với vị ngọt nhẹ và hương vị độc đáo.', '', 'available', 10000, 5, NULL),
-(25, '7UP', 'Nước ngọt có ga với hương vị chanh tươi mát.', '', 'available', 10000, 5, NULL),
-(26, 'Trà Chanh', 'Thức uống trà tươi mát với vị chanh thanh khiết.', '', 'available', 10000, 5, NULL),
-(27, 'Nước Suối', 'Nước uống tinh khiết giúp bổ sung độ ẩm tự nhiên cho cơ thể.', '', 'available', 10000, 5, NULL),
-(28, 'nước suối', 'Nước uống tinh khiết giúp bổ sung độ ẩm tự nhiên cho cơ thể.', '', 'available', 10000, 5, NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `description`, `product_image`, `product_status`, `product_totalQuantity`, `category_id`) VALUES
+(2, 'Pizza Phô Mai', 'Lớp phô mai Mozzarella tan chảy, đế giòn, thêm chút mùi thơm của thảo mộc Ý.', '', 'available', 300, 1),
+(3, 'Pizza Hải Sản', 'Tôm, mực, và thanh cua tươi ngon, kết hợp với sốt cà chua đặc trưng.', '', 'available', 300, 1),
+(4, 'Pizza Thịt Xông Khói', 'Thịt xông khói thơm lừng, kết hợp phô mai và hành tây caramel ngọt dịu.', '', 'available', 300, 1),
+(5, 'Pizza Rau Củ', 'Sự kết hợp hoàn hảo của ớt chuông, bắp ngọt, và nấm tươi trên nền sốt cà đặc biệt.', '', 'available', 300, 1),
+(6, 'Pizza BBQ', 'Thịt bò BBQ đậm vị, kết hợp phô mai tan chảy và sốt BBQ đặc biệt từ đầu bếp.', '', 'available', 300, 1),
+(7, 'Bánh mì nướng phô Mai Trứng Muối', 'Bánh mì nướng giòn rụm, phô mai béo ngậy, phủ lớp trứng muối mằn mặn đầy kích thích.', '', 'available', 100, 3),
+(8, 'bánh mì nướng bơ Đường', 'Món ăn tuổi thơ với bơ thơm lừng, hòa quyện với đường hạt giòn ngọt.', '', 'available', 100, 3),
+(9, 'Bánh mì thịt nướng', 'Bánh mì kèm thịt nướng, dưa leo và nước sốt Mayonnaise.', '', 'available', 100, 3),
+(10, 'Bánh mì xúc xích', 'Đậm đà với xúc xích nướng, phô mai và tương ớt đặc trưng', '', 'available', 100, 3),
+(11, 'Bánh mì Tiramisu', 'Sự kết hợp giữa bánh mì nướng và lớp kem Tiramisu mềm mịn, phủ bột cacao thơm lừng.', '', 'available', 100, 3),
+(12, 'Hamburger Phô Mai', 'Bánh mềm thơm, kẹp thịt bò nướng chín tới và phô mai tan chảy.', '', 'available', 300, 2),
+(13, 'Hamburger Gà Giòn', 'Lớp gà chiên giòn rụm, thêm rau xanh tươi và sốt Mayonnaise.', '', 'available', 300, 2),
+(14, 'Hamburger Thịt Bò BBQ', 'Thịt bò xay nướng thơm lừng, rưới sốt BBQ đậm vị, ăn kèm rau tươi.', '', 'available', 300, 2),
+(15, 'Hamburger Tôm Chiên', 'Tôm chiên giòn kèm sốt chanh dây, tạo cảm giác vừa giòn, vừa tươi mới.', '', 'available', 300, 2),
+(16, 'Hamburger Chay', 'Đậu phụ chiên giòn và rau củ tươi xanh, phù hợp với người ăn chay.', '', 'available', 300, 2),
+(17, 'Salad Rau Củ', 'Bắp cải tím, cà chua bi, dưa leo và sốt mè rang thanh mát.', '', 'available', 300, 4),
+(18, 'Salad Caesar Gà', 'Ức gà áp chảo thơm lừng, trộn sốt Caesar cổ điển và bánh mì nướng giòn.', '', 'available', 300, 4),
+(19, 'Salad Trái Cây', 'Táo, lê, kiwi, và nho trộn sốt sữa chua ngọt dịu, mát lành.', '', 'available', 300, 4),
+(20, 'Salad Cá Ngừ', 'Cá ngừ đóng hộp chất lượng cao, trộn cùng rau xanh tươi ngon và sốt Italian.', '', 'available', 300, 4),
+(21, 'Salad Tôm Chanh Dây', 'Tôm áp chảo mọng nước, phủ sốt chanh dây thơm ngọt.', '', 'available', 300, 4),
+(22, 'Salad Cá Ngừ', 'Cá ngừ đóng hộp chất lượng cao, trộn cùng rau xanh tươi ngon và sốt Italian.', '', 'available', 300, 4),
+(23, 'Coca-Cola', 'Thức uống giải khát có ga, hương vị cổ điển được yêu thích.', '', 'available', 10000, 5),
+(24, 'Pepsi', 'Nước ngọt có ga với vị ngọt nhẹ và hương vị độc đáo.', '', 'available', 10000, 5),
+(25, '7UP', 'Nước ngọt có ga với hương vị chanh tươi mát.', '', 'available', 10000, 5),
+(26, 'Trà Chanh', 'Thức uống trà tươi mát với vị chanh thanh khiết.', '', 'available', 10000, 5),
+(27, 'Nước Suối', 'Nước uống tinh khiết giúp bổ sung độ ẩm tự nhiên cho cơ thể.', '', 'available', 10000, 5),
+(28, 'nước suối', 'Nước uống tinh khiết giúp bổ sung độ ẩm tự nhiên cho cơ thể.', '', 'available', 10000, 5);
 
 -- --------------------------------------------------------
 
@@ -171,69 +170,70 @@ CREATE TABLE `product_variation` (
   `variation_name` varchar(256) NOT NULL,
   `price` int NOT NULL,
   `status` enum('available','unavailable') NOT NULL,
-  `variation_quantity` int NOT NULL COMMENT 'số lượng của biến thể ấy'
+  `variation_quantity` int NOT NULL COMMENT 'số lượng của biến thể ấy',
+  `discount_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `product_variation`
 --
 
-INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`, `price`, `status`, `variation_quantity`) VALUES
-(2, 2, 'Size Nhỏ (S)', 50000, 'available', 100),
-(3, 2, 'Size Vừa (M)', 80000, 'available', 100),
-(4, 2, 'Size Lớn (L)', 120000, 'available', 100),
-(5, 3, 'Size Nhỏ (S)', 60000, 'available', 100),
-(6, 3, 'Size Vừa (M)', 90000, 'available', 100),
-(7, 3, 'Size Lớn (L)', 140000, 'available', 100),
-(8, 4, 'Size Nhỏ (S)', 55000, 'available', 100),
-(9, 4, 'Size Vừa (M)', 85000, 'available', 100),
-(10, 4, 'Size Lớn (L)', 130000, 'available', 100),
-(11, 5, 'Size Nhỏ (S)', 50000, 'available', 100),
-(12, 5, 'Size Vừa (M)', 75000, 'available', 100),
-(13, 5, 'Size Lớn (L)', 115000, 'available', 100),
-(14, 6, 'Size Nhỏ (S)', 65000, 'available', 100),
-(15, 6, 'Size Vừa (M)', 95000, 'available', 100),
-(16, 6, 'Size Lớn (L)', 150000, 'available', 100),
-(17, 7, '18 cm x 9 cm', 30000, 'available', 100),
-(18, 8, '18 cm x 9 cm', 20000, 'available', 100),
-(19, 9, '18 cm x 9 cm', 35000, 'available', 100),
-(20, 10, '18 cm x 9 cm', 35000, 'available', 100),
-(21, 11, '18 cm x 9 cm', 40000, 'available', 100),
-(22, 12, 'Size Nhỏ (S)', 35000, 'available', 100),
-(23, 12, 'Size Vừa (M)', 50000, 'available', 100),
-(24, 12, 'Size Lớn (L)', 65000, 'available', 100),
-(25, 13, 'Size Nhỏ (S)', 40000, 'available', 100),
-(26, 13, 'Size Vừa (M)', 55000, 'available', 100),
-(27, 13, 'Size Lớn (L)', 70000, 'available', 100),
-(28, 14, 'Size Nhỏ (S)', 45000, 'available', 100),
-(29, 14, 'Size Vừa (M)', 60000, 'available', 100),
-(30, 14, 'Size Lớn (L)', 80000, 'available', 100),
-(31, 15, 'Size Nhỏ (S)', 40000, 'available', 100),
-(32, 15, 'Size Vừa (M)', 55000, 'available', 100),
-(33, 15, 'Size Lớn (L)', 70000, 'available', 100),
-(34, 16, 'Size Nhỏ (S)', 35000, 'available', 100),
-(35, 16, 'Size Vừa (M)', 45000, 'available', 100),
-(36, 16, 'Size Lớn (L)', 60000, 'available', 100),
-(37, 17, 'Size Nhỏ (S)', 30000, 'available', 100),
-(38, 17, 'Size Vừa (M)', 45000, 'available', 100),
-(39, 17, 'Size Lớn (L)', 60000, 'available', 100),
-(40, 18, 'Size Nhỏ (S)', 40000, 'available', 100),
-(41, 18, 'Size Vừa (M)', 60000, 'available', 100),
-(42, 18, 'Size Lớn (L)', 80000, 'available', 100),
-(43, 19, 'Size Nhỏ (S)', 35000, 'available', 100),
-(44, 19, 'Size Vừa (M)', 50000, 'available', 100),
-(45, 19, 'Size Lớn (L)', 70000, 'available', 100),
-(46, 20, 'Size Nhỏ (S)', 40000, 'available', 100),
-(47, 20, 'Size Vừa (M)', 60000, 'available', 100),
-(48, 20, 'Size Lớn (L)', 80000, 'available', 100),
-(49, 21, 'Size Nhỏ (S)', 45000, 'available', 100),
-(50, 21, 'Size Vừa (M)', 65000, 'available', 100),
-(51, 21, 'Size Lớn (L)', 85000, 'available', 100),
-(52, 23, 'Size Thường (S)', 20000, 'available', 10000),
-(53, 24, 'Size Thường (S)', 20000, 'available', 10000),
-(54, 25, 'Size Thường (S)', 20000, 'available', 10000),
-(55, 26, 'Size Thường (S)', 15000, 'available', 10000),
-(56, 27, 'Size Thường (S)', 10000, 'available', 10000);
+INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`, `price`, `status`, `variation_quantity`, `discount_id`) VALUES
+(2, 2, 'Size Nhỏ (S)', 50000, 'available', 100, NULL),
+(3, 2, 'Size Vừa (M)', 80000, 'available', 100, NULL),
+(4, 2, 'Size Lớn (L)', 120000, 'available', 100, NULL),
+(5, 3, 'Size Nhỏ (S)', 60000, 'available', 100, NULL),
+(6, 3, 'Size Vừa (M)', 90000, 'available', 100, NULL),
+(7, 3, 'Size Lớn (L)', 140000, 'available', 100, NULL),
+(8, 4, 'Size Nhỏ (S)', 55000, 'available', 100, NULL),
+(9, 4, 'Size Vừa (M)', 85000, 'available', 100, NULL),
+(10, 4, 'Size Lớn (L)', 130000, 'available', 100, NULL),
+(11, 5, 'Size Nhỏ (S)', 50000, 'available', 100, NULL),
+(12, 5, 'Size Vừa (M)', 75000, 'available', 100, NULL),
+(13, 5, 'Size Lớn (L)', 115000, 'available', 100, NULL),
+(14, 6, 'Size Nhỏ (S)', 65000, 'available', 100, NULL),
+(15, 6, 'Size Vừa (M)', 95000, 'available', 100, NULL),
+(16, 6, 'Size Lớn (L)', 150000, 'available', 100, NULL),
+(17, 7, '18 cm x 9 cm', 30000, 'available', 100, NULL),
+(18, 8, '18 cm x 9 cm', 20000, 'available', 100, NULL),
+(19, 9, '18 cm x 9 cm', 35000, 'available', 100, NULL),
+(20, 10, '18 cm x 9 cm', 35000, 'available', 100, NULL),
+(21, 11, '18 cm x 9 cm', 40000, 'available', 100, NULL),
+(22, 12, 'Size Nhỏ (S)', 35000, 'available', 100, NULL),
+(23, 12, 'Size Vừa (M)', 50000, 'available', 100, NULL),
+(24, 12, 'Size Lớn (L)', 65000, 'available', 100, NULL),
+(25, 13, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
+(26, 13, 'Size Vừa (M)', 55000, 'available', 100, NULL),
+(27, 13, 'Size Lớn (L)', 70000, 'available', 100, NULL),
+(28, 14, 'Size Nhỏ (S)', 45000, 'available', 100, NULL),
+(29, 14, 'Size Vừa (M)', 60000, 'available', 100, NULL),
+(30, 14, 'Size Lớn (L)', 80000, 'available', 100, NULL),
+(31, 15, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
+(32, 15, 'Size Vừa (M)', 55000, 'available', 100, NULL),
+(33, 15, 'Size Lớn (L)', 70000, 'available', 100, NULL),
+(34, 16, 'Size Nhỏ (S)', 35000, 'available', 100, NULL),
+(35, 16, 'Size Vừa (M)', 45000, 'available', 100, NULL),
+(36, 16, 'Size Lớn (L)', 60000, 'available', 100, NULL),
+(37, 17, 'Size Nhỏ (S)', 30000, 'available', 100, NULL),
+(38, 17, 'Size Vừa (M)', 45000, 'available', 100, NULL),
+(39, 17, 'Size Lớn (L)', 60000, 'available', 100, NULL),
+(40, 18, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
+(41, 18, 'Size Vừa (M)', 60000, 'available', 100, NULL),
+(42, 18, 'Size Lớn (L)', 80000, 'available', 100, NULL),
+(43, 19, 'Size Nhỏ (S)', 35000, 'available', 100, NULL),
+(44, 19, 'Size Vừa (M)', 50000, 'available', 100, NULL),
+(45, 19, 'Size Lớn (L)', 70000, 'available', 100, NULL),
+(46, 20, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
+(47, 20, 'Size Vừa (M)', 60000, 'available', 100, NULL),
+(48, 20, 'Size Lớn (L)', 80000, 'available', 100, NULL),
+(49, 21, 'Size Nhỏ (S)', 45000, 'available', 100, NULL),
+(50, 21, 'Size Vừa (M)', 65000, 'available', 100, NULL),
+(51, 21, 'Size Lớn (L)', 85000, 'available', 100, NULL),
+(52, 23, 'Size Thường (S)', 20000, 'available', 10000, NULL),
+(53, 24, 'Size Thường (S)', 20000, 'available', 10000, NULL),
+(54, 25, 'Size Thường (S)', 20000, 'available', 10000, NULL),
+(55, 26, 'Size Thường (S)', 15000, 'available', 10000, NULL),
+(56, 27, 'Size Thường (S)', 10000, 'available', 10000, NULL);
 
 -- --------------------------------------------------------
 
@@ -368,15 +368,15 @@ ALTER TABLE `discount`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
-  ADD KEY `fk_category` (`category_id`),
-  ADD KEY `fk_discount_product` (`discount_id`);
+  ADD KEY `fk_category` (`category_id`);
 
 --
 -- Indexes for table `product_variation`
 --
 ALTER TABLE `product_variation`
   ADD PRIMARY KEY (`variation_id`),
-  ADD KEY `fk_product_variation` (`product_id`);
+  ADD KEY `fk_product_variation` (`product_id`),
+  ADD KEY `fk_productVariation_discount` (`discount_id`);
 
 --
 -- Indexes for table `reset_account`
@@ -510,14 +510,14 @@ ALTER TABLE `cart`
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `fk_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
-  ADD CONSTRAINT `fk_discount_product` FOREIGN KEY (`discount_id`) REFERENCES `discount` (`discount_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `fk_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
 
 --
 -- Constraints for table `product_variation`
 --
 ALTER TABLE `product_variation`
-  ADD CONSTRAINT `fk_product_variation` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+  ADD CONSTRAINT `fk_product_variation` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  ADD CONSTRAINT `fk_productVariation_discount` FOREIGN KEY (`discount_id`) REFERENCES `discount` (`discount_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `reset_account`
