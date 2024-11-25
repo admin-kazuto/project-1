@@ -10,22 +10,32 @@ class accController
     {
         require_once 'views/client/login.php';
         if (isset($_POST['btn_login'])) {
-            if ($this->accModel->checkLogin($_POST['username_login'], $_POST['password_login']) > 0) {
-                $_SESSION['username'] = $_POST['username_login'];
-                $_SESSION['role'] = $this->accModel->checkRole($_POST['username_login']);
-                header('location:?act=home');
+            $username = $_POST['username_login'];
+            $password = $_POST['password_login'];
+
+            $isLoginValid = $this->accModel->checkLogin($username, $password);
+            $accountStatus = $this->accModel->checkStatus($username);
+
+            if ($isLoginValid > 0) {
+                if ($accountStatus === 'Mở') {
+                    $_SESSION['username'] = $username;
+                    $_SESSION['role'] = $this->accModel->checkRole($username);
+                    header('location:?act=home');
+                } elseif ($accountStatus === 'Khóa') {
+                    header('location:?act=login');
+                    $_SESSION['message'] = 'Tài khoản của bạn đã bị khóa';
+                }
             } else {
-                $_SESSION['message'] = 'Vui lòng nhập đúng tài khoản và mật khẩu';
                 header('location:?act=login');
+                $_SESSION['message'] = 'Vui lòng nhập đúng tài khoản và mật khẩu';
             }
         }
+
 
         if (isset($_POST['btn_register'])) {
             $email = $_POST['email_register'];
             $username = $_POST['username_register'];
             $phone = $_POST['phone_register'];
-
-
             if ($this->accModel->checkEmail($email) > 1) {
                 header('location:?act=login');
                 $_SESSION['message_register'] = 'Email đã đã tồn tại';
@@ -70,15 +80,17 @@ class accController
             $username = $_POST['username'];
             $phone = $_POST['phone'];
             if ($this->accModel->checkEmail($email) > 1) {
-                echo "<script>alert('Email đã tồn tại!') </script>";
+                header('location:?act=insertaccount');
+                $_SESSION['message_insertaccount'] = 'Email đã đã tồn tại';
             } else
             if ($this->accModel->checkUsername($username) > 1) {
-                echo "<script>alert('Username đã tồn tại!') </script>";
+                header('location:?act=insertaccount');
+                $_SESSION['message_insertaccount'] = 'Tên tài khoản đã tồn tại';
             } else
             if ($this->accModel->checkPhone($phone) > 1) {
-                echo "<script>alert('Số điện thoại đã tồn tại!') </script>";
+                header('location:?act=insertaccount');
+                $_SESSION['message_insertaccount'] = 'Số điện thoại đã tồn tại';
             } else {
-
                 $name = $_POST['name'];
                 $password = sha1($_POST['password']);
                 $adress = $_POST['adress'];
@@ -96,7 +108,6 @@ class accController
     function forgotPass()
     {
         require_once 'send_email.php';
-        // require_once 'views/admin/forgotPass.php';
         require_once 'views/client/forgotPass.php';
         if (isset($_POST['btn_getotp'])) {
             $email = $_POST['email_getotp'];

@@ -17,11 +17,11 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .ban button {
+        .delete button {
             background-color: #e74c3c;
         }
 
-        .ban button:hover {
+        .delete button:hover {
             background-color: #c0392b;
             transform: scale(1.05);
         }
@@ -35,11 +35,11 @@
             transform: scale(1.05);
         }
 
-        .delete button {
+        .ban button {
             background-color: #f39c12;
         }
 
-        .delete button:hover {
+        .ban button:hover {
             background-color: #d35400;
             transform: scale(1.05);
         }

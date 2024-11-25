@@ -61,11 +61,12 @@ class accModel
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute();
     }
-    function checkStatus($id)
+    function checkStatus($username)
     {
-        $sql = "select status from account where user_id=$id";
-        $stmt = $this->conn->prepare($sql);
+        $sql = "select status from account where username='$username'";
+        $stmt = $this->conn->query($sql);
         $stmt->execute();
+        return $stmt->fetchColumn();
     }
     function changePass($email, $password)
     {

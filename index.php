@@ -30,7 +30,7 @@ match ($act) {
     'listproduct' => (new productController())->list(),
     'listcategory' => (new categoryController())->list(),
     'addproduct' => (new productController())->add(),
-    'store-product' => (new productController())->storeProduct(),
+    'storeproduct' => (new productController())->storeProduct(),
     'deleteproduct' => (new productController())->deleteProduct(),
     'editproduct' => (new productController())->editProduct(),
     'updateproduct' => (new productController())->updateProduct(),
@@ -38,9 +38,9 @@ match ($act) {
     'listcategory' => (new categoryController())->list(),
     'deletecategory' => (new categoryController())->deleteCategory(),
     'addcategory' => (new categoryController())->add(),
-    'store-category'=>(new categoryController())->storeCategory(),
-    'editcategory'=>(new categoryController())->editCategory(),
-    'update-category'=>(new categoryController())->updateCategory(),
+    'store-category' => (new categoryController())->storeCategory(),
+    'editcategory' => (new categoryController())->editCategory(),
+    'update-category' => (new categoryController())->updateCategory(),
     //
     'administration' => (new dashboardController())->dashboard(),
     'home' => (new dashboardController())->home(),
@@ -58,6 +58,6 @@ match ($act) {
     'insertdiscount' => (new DiscountController())->insertdiscount(),
     'updatediscount' => (new DiscountController())->updatediscount($_GET['id']),
     'deletediscount' => (new DiscountController())->deletediscount($_GET['id']),
-    
+
     default => print "Không có hành động nào được xử lý.",
 };

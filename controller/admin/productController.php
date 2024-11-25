@@ -18,19 +18,20 @@ class productController
     public function storeProduct()
     {
         // Lọc dữ liệu từ $_POST
+        $product_image = $_FILES['product_image']['name'];
+        $tmp = $_FILES['product_image']['tmp_name'];
+        move_uploaded_file($tmp, 'assets/images/' . $product_image);
         $data = [
             ':product_name' => $_POST['product_name'] ?? null,
             ':description' => $_POST['description'] ?? null,
-            ':product_price' => $_POST['product_price'] ?? null,
-            ':product_image' => $_POST['product_image'] ?? null,
+            ':product_image' => $product_image ?? null,
             ':product_status' => $_POST['product_status'] ?? null,
-            ':product_quantity' => $_POST['product_quantity'] ?? null,
+            ':product_totalQuantity' => $_POST['product_totalQuantity'] ?? null,
             ':category_id' => $_POST['category_id'] ?? null,
-            ':discount_id' => $_POST['discount_id'] ?? null,
         ];
 
         // Kiểm tra giá trị bắt buộc
-        if (empty($data[':product_name']) || empty($data[':product_price'])) {
+        if (empty($data[':product_name'])) {
             echo "Product name and price are required!";
             return;
         }
@@ -78,16 +79,30 @@ class productController
 
     public function updateProduct()
     {
-        $data = [
-            'product_id' => $_POST['product_id'],
-            'product_name' => $_POST['product_name'],
-            'description' => $_POST['description'],
-            'product_price' => $_POST['product_price'],
-            'product_image' => $_POST['product_image'],
-            'product_status' => $_POST['product_status'],
-            'product_quantity' => $_POST['product_quantity'],
-            'category_id' => $_POST['category_id']
-        ];
+        if (empty($_FILES['product_image']['name'])) {
+            $data = [
+                ':product_id' => $_POST['product_id'],
+                ':product_name' => $_POST['product_name'],
+                ':description' => $_POST['description'],
+                ':product_status' => $_POST['product_status'],
+                ':product_totalQuantity' => $_POST['product_totalQuantity'],
+                ':category_id' => $_POST['category_id']
+            ];
+        } else {
+            $product_image = $_FILES['product_image']['name'];
+            $tmp = $_FILES['product_image']['tmp_name'];
+            move_uploaded_file($tmp, 'assets/images/' . $product_image);
+            $data = [
+                ':product_id' => $_POST['product_id'],
+                ':product_name' => $_POST['product_name'],
+                ':description' => $_POST['description'],
+                ':product_image' => $product_image,
+                ':product_status' => $_POST['product_status'],
+                ':product_totalQuantity' => $_POST['product_totalQuantity'],
+                ':category_id' => $_POST['category_id']
+            ];
+        }
+
 
         $productModel = new Product();
         $result = $productModel->updateProduct($data);

@@ -46,7 +46,7 @@ if ($_SESSION['role'] != 'admin') {
           </a>
         </li>
         <li class="nav-item">
-          <a href="?act=listcategory" class="nav-link">
+          <a href="#" class="nav-link">
             <i class="nav-icon bi bi-box-seam-fill"></i>
             <p>
               Category
@@ -57,7 +57,13 @@ if ($_SESSION['role'] != 'admin') {
             <li class="nav-item">
               <a href="?act=listcategory" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
-                <p>Product category</p>
+                <p>Danh sách danh mục</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="?act=addcategory" class="nav-link">
+                <i class="nav-icon bi bi-circle"></i>
+                <p>Thêm danh mục</p>
               </a>
             </li>
           </ul>
