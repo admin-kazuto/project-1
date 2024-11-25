@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh mục sản phẩm</title>
+    <title>Thêm tài khoản</title>
     <?php require_once "component/admin/link.php" ?>
     <style>
         body {
@@ -96,7 +96,7 @@
         <main class="app-main">
             <div>
                 <h1>Thêm tài khoản</h1>
-                <form action="?act=insertaccount" method="post" onsubmit="return validateForm()">
+                <form action="" method="post" onsubmit="return validateForm()">
                     <div class="form-row">
                         <div class="form-column">
                             <label for="name">Họ và tên:</label>
@@ -133,8 +133,17 @@
                         <option value="user">User </option>
                     </select>
                     <br><br>
-
+                    <?php
+                    if (isset($_SESSION['message_insertaccount'])) {
+                        echo '<div style="color:red">' . $_SESSION['message_insertaccount'] . '</div>';
+                        unset($_SESSION['message_insertaccount']);
+                    }
+                    ?>
                     <button type="submit" name="btn_insert">Thêm tài khoản</button>
+                    <div style="margin-top: 20px">
+                        <a href="?act=listaccount" style="color: #007bff; text-decoration: none;">&lt; Quay lại danh sách</a>
+                    </div>
+
                 </form>
             </div>
             <script>

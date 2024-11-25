@@ -107,7 +107,7 @@
                                 <a class="navbar-icon thin-icon-camera" href="blog.php">Gallery</a>
                             </li>
                             <li>
-                                <a class="navbar-icon thin-icon-user" href="#features">User</a>
+                                <a class="navbar-icon thin-icon-user" href="?act=login">User</a>
                                 <!-- RD Navbar Megamenu-->
                                 <ul class="rd-navbar-megamenu">
                                     <li>
@@ -122,12 +122,11 @@
                                                 <li><a href="?act=logout" style="font-size: 13px;">Đăng xuất</a></li>
                                             <?php
                                             } else {
-                                            ?>
-                                                <li><a href="?act=login" style="font-size: 13px;">Đăng nhập</a></li>
-                                                <li><a href="?act=register" style="font-size: 13px;">Đăng ký</a></li>
-                                            <?php
+                                                echo '<li><a href="?act=login" style="font-size: 13px;">Đăng nhập</a></li>';
+                                                echo '<li><a href="?act=register" style="font-size: 13px;">Đăng ký</a></li>';
                                             }
                                             ?>
+
                                         </ul>
                                     </li>
                                 </ul>

@@ -33,8 +33,9 @@
                                     <th scope="col" style="width: 10%">Ảnh</th>
                                     <th scope="col" style="width: 10%">Trạng thái</th>
                                     <th scope="col" style="width: 10%">Số lượng</th>
-                                    <th scope="col" style="width: 10%">ID danh muc</th>
+                                    <th scope="col" style="width: 10%">Danh mục</th>
                                     <th scope="col" style="width: 10%">Chức Năng</th>
+
                                 </tr>
                             </thead>
                             <tbody>
