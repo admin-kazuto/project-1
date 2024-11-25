@@ -113,11 +113,11 @@
                                     <li>
                                         <ul class="list-marked">
                                             <?php
-                                            if ($_SESSION['role'] === 'admin') { ?>
+                                            if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') { ?>
                                                 <li><a href="?act=administration" style="font-size: 13px;">Quản trị</a></li>
                                                 <li><a href="?act=logout" style="font-size: 13px;">Đăng xuất</a></li>
                                             <?php
-                                            } else if ($_SESSION['role'] === 'user') {
+                                            } else if (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
                                             ?>
                                                 <li><a href="?act=logout" style="font-size: 13px;">Đăng xuất</a></li>
                                             <?php
