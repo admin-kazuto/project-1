@@ -17,7 +17,7 @@
             <main class="app-main">
                 <div class="container mt-4">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h2>Quản lý tài khoản</h2>
+                        <h2>Quản lý sản phẩm</h2>
                         <a href="?act=addproduct"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                                 <i class="fas fa-plus"></i> Thêm sản phẩm
                             </button></a>
@@ -28,15 +28,13 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th scope="col" style="width: 10%">Mã</th>
-                                    <th>Tên</th>
-                                    <th>Mô tả</th>
-                                    <th>giá</th>
-                                    <th>Ảnh</th>
-                                    <th>Trạng thái</th>
-                                    <th>Số lượng</th>
-                                    <th>ID danh muc</th>
-                                    <th>ID mã giảm giá</th>
-                                    <th>Chức Năng</th>
+                                    <th scope="col" style="width: 10%">Tên</th>
+                                    <th scope="col" style="width: 10%">Mô tả</th>
+                                    <th scope="col" style="width: 10%">Ảnh</th>
+                                    <th scope="col" style="width: 10%">Trạng thái</th>
+                                    <th scope="col" style="width: 10%">Số lượng</th>
+                                    <th scope="col" style="width: 10%">ID danh muc</th>
+                                    <th scope="col" style="width: 10%">Chức Năng</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,15 +43,13 @@
                                         <td><?= $product['product_id'] ?></td>
                                         <td><?= $product['product_name'] ?></td>
                                         <td><?= $product['description'] ?></td>
-                                        <td><?= $product['product_price'] ?></td>
-                                        <td><img src="<?= $product['product_image'] ?>" height="100" width="100"></td>
+                                        <td><img src="assets/images/<?= $product['product_image'] ?>" height="100" width="100"></td>
                                         <td><?= $product['product_status'] ?></td>
-                                        <td><?= $product['product_quantity'] ?></td>
-                                        <td class="text-center"><?= $product['category_id'] ?></td>
-                                        <td><?= $product['discount_id'] ?></td>
+                                        <td><?= $product['product_totalQuantity'] ?></td>
+                                        <td class="text-center"><?= $product['category_name'] ?></td>
                                         <td>
-                                            <a href="index.php?act=deleteproduct&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-success">Xóa</button></a>
-                                            <a href="index.php?act=editproduct&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-danger">Sửa</button></a>
+                                            <a href="index.php?act=deleteproduct&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-danger" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?')">Xóa</button></a>
+                                            <a href="index.php?act=editproduct&product_id=<?= $product['product_id']  ?>"><button type="button" class="btn btn-success">Sửa</button></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
