@@ -7,6 +7,7 @@ class DetailProductController
     }
 
     public function ProductDetailsInMenu($id) {
-        
+        $product = $this -> detailProductController -> getProductById($id);
+        require_once('views/client/ProductDetailsInMenu.php');
     }
 }

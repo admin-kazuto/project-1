@@ -412,7 +412,8 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <?php if(!empty($AllPizzas)){
+                <?php
+                if(!empty($AllPizzas)){
                   foreach ($AllPizzas as $Pizza) { ?>
                   <div class="item">
                   <div class="thumbnail-menu-modern">
@@ -426,7 +427,7 @@
                     </figure>
                     <div class="caption">
                       <h5>
-                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>">Hawaiian</a>
+                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>"><?= $Pizza['product_name'] ?></a>
                       </h5>
                       <p class="text-italic">
                         <?= $Pizza['description'] ?>
