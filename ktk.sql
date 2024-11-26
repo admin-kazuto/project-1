@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 25, 2024 at 11:06 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th10 26, 2024 lúc 01:48 AM
+-- Phiên bản máy phục vụ: 8.0.30
+-- Phiên bản PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ktk`
+-- Cơ sở dữ liệu: `ktk`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `account`
+-- Cấu trúc bảng cho bảng `account`
 --
 
 CREATE TABLE `account` (
@@ -41,16 +41,19 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `account`
+-- Đang đổ dữ liệu cho bảng `account`
 --
 
 INSERT INTO `account` (`user_id`, `Name`, `username`, `password`, `adress`, `phone`, `email`, `created_at`, `status`, `role`) VALUES
-(5, 'nguyễn tuấn', 'kuro tatsuya', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'trịnh văn bô', '0559295064', 'mativi1243@gmaill.com', '2024-11-23 03:43:54', 'Mở', 'admin');
+(5, 'nguyễn tuấn', 'kuro tatsuya', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'trịnh văn bô', '0559295064', 'mativi1243@gmaill.com', '2024-11-23 03:43:54', 'Mở', 'admin'),
+(6, 'Hoàng Vinh Khoa', 'khoa', '601f1889667efaebb33b8c12572835da3f027f78', 'Mê Linh, Hà Nội', '0976890935', 'kenhoangkhoaghost@gmail.com', '2024-11-25 13:17:49', 'Mở', 'admin'),
+(7, 'Nam Kiệm', 'kiem', '601f1889667efaebb33b8c12572835da3f027f78', 'Mê Linh, Hà Nội', '0976890931', 'namkiem0000@gmail.com', '2024-11-25 13:56:05', 'Mở', 'admin'),
+(8, 'Nguyễn Minh Tuấn', 'tuan', '601f1889667efaebb33b8c12572835da3f027f78', 'ABC', '0559295064', 'mativi1243@gmaill.com', '2024-11-25 13:57:07', 'Mở', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -66,7 +69,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Cấu trúc bảng cho bảng `category`
 --
 
 CREATE TABLE `category` (
@@ -75,20 +78,20 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `category`
+-- Đang đổ dữ liệu cho bảng `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
-(1, 'pizza'),
-(2, 'hamburger'),
-(3, 'toasts'),
-(4, 'salad'),
-(5, 'drink');
+(1, 'Pizza'),
+(2, 'Hamburger'),
+(3, 'Toasts'),
+(4, 'Salad'),
+(5, 'Drink');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `discount`
+-- Cấu trúc bảng cho bảng `discount`
 --
 
 CREATE TABLE `discount` (
@@ -103,7 +106,7 @@ CREATE TABLE `discount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `discount`
+-- Đang đổ dữ liệu cho bảng `discount`
 --
 
 INSERT INTO `discount` (`discount_id`, `discount_code`, `discount_value`, `minimum_order`, `valid_from`, `valid_to`, `status`, `created_at`) VALUES
@@ -112,7 +115,7 @@ INSERT INTO `discount` (`discount_id`, `discount_code`, `discount_value`, `minim
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
@@ -126,42 +129,40 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `description`, `product_image`, `product_status`, `product_totalQuantity`, `category_id`) VALUES
-(2, 'Pizza Phô Mai', 'Lớp phô mai Mozzarella tan chảy, đế giòn, thêm chút mùi thơm của thảo mộc Ý.', '', 'available', 300, 1),
-(3, 'Pizza Hải Sản', 'Tôm, mực, và thanh cua tươi ngon, kết hợp với sốt cà chua đặc trưng.', '', 'available', 300, 1),
-(4, 'Pizza Thịt Xông Khói', 'Thịt xông khói thơm lừng, kết hợp phô mai và hành tây caramel ngọt dịu.', '', 'available', 300, 1),
-(5, 'Pizza Rau Củ', 'Sự kết hợp hoàn hảo của ớt chuông, bắp ngọt, và nấm tươi trên nền sốt cà đặc biệt.', '', 'available', 300, 1),
-(6, 'Pizza BBQ', 'Thịt bò BBQ đậm vị, kết hợp phô mai tan chảy và sốt BBQ đặc biệt từ đầu bếp.', '', 'available', 300, 1),
-(7, 'Bánh mì nướng phô Mai Trứng Muối', 'Bánh mì nướng giòn rụm, phô mai béo ngậy, phủ lớp trứng muối mằn mặn đầy kích thích.', '', 'available', 100, 3),
-(8, 'bánh mì nướng bơ Đường', 'Món ăn tuổi thơ với bơ thơm lừng, hòa quyện với đường hạt giòn ngọt.', '', 'available', 100, 3),
-(9, 'Bánh mì thịt nướng', 'Bánh mì kèm thịt nướng, dưa leo và nước sốt Mayonnaise.', '', 'available', 100, 3),
-(10, 'Bánh mì xúc xích', 'Đậm đà với xúc xích nướng, phô mai và tương ớt đặc trưng', '', 'available', 100, 3),
-(11, 'Bánh mì Tiramisu', 'Sự kết hợp giữa bánh mì nướng và lớp kem Tiramisu mềm mịn, phủ bột cacao thơm lừng.', '', 'available', 100, 3),
-(12, 'Hamburger Phô Mai', 'Bánh mềm thơm, kẹp thịt bò nướng chín tới và phô mai tan chảy.', '', 'available', 300, 2),
-(13, 'Hamburger Gà Giòn', 'Lớp gà chiên giòn rụm, thêm rau xanh tươi và sốt Mayonnaise.', '', 'available', 300, 2),
-(14, 'Hamburger Thịt Bò BBQ', 'Thịt bò xay nướng thơm lừng, rưới sốt BBQ đậm vị, ăn kèm rau tươi.', '', 'available', 300, 2),
-(15, 'Hamburger Tôm Chiên', 'Tôm chiên giòn kèm sốt chanh dây, tạo cảm giác vừa giòn, vừa tươi mới.', '', 'available', 300, 2),
-(16, 'Hamburger Chay', 'Đậu phụ chiên giòn và rau củ tươi xanh, phù hợp với người ăn chay.', '', 'available', 300, 2),
-(17, 'Salad Rau Củ', 'Bắp cải tím, cà chua bi, dưa leo và sốt mè rang thanh mát.', '', 'available', 300, 4),
-(18, 'Salad Caesar Gà', 'Ức gà áp chảo thơm lừng, trộn sốt Caesar cổ điển và bánh mì nướng giòn.', '', 'available', 300, 4),
-(19, 'Salad Trái Cây', 'Táo, lê, kiwi, và nho trộn sốt sữa chua ngọt dịu, mát lành.', '', 'available', 300, 4),
-(20, 'Salad Cá Ngừ', 'Cá ngừ đóng hộp chất lượng cao, trộn cùng rau xanh tươi ngon và sốt Italian.', '', 'available', 300, 4),
-(21, 'Salad Tôm Chanh Dây', 'Tôm áp chảo mọng nước, phủ sốt chanh dây thơm ngọt.', '', 'available', 300, 4),
-(22, 'Salad Cá Ngừ', 'Cá ngừ đóng hộp chất lượng cao, trộn cùng rau xanh tươi ngon và sốt Italian.', '', 'available', 300, 4),
-(23, 'Coca-Cola', 'Thức uống giải khát có ga, hương vị cổ điển được yêu thích.', '', 'available', 10000, 5),
-(24, 'Pepsi', 'Nước ngọt có ga với vị ngọt nhẹ và hương vị độc đáo.', '', 'available', 10000, 5),
-(25, '7UP', 'Nước ngọt có ga với hương vị chanh tươi mát.', '', 'available', 10000, 5),
-(26, 'Trà Chanh', 'Thức uống trà tươi mát với vị chanh thanh khiết.', '', 'available', 10000, 5),
-(27, 'Nước Suối', 'Nước uống tinh khiết giúp bổ sung độ ẩm tự nhiên cho cơ thể.', '', 'available', 10000, 5),
-(28, 'nước suối', 'Nước uống tinh khiết giúp bổ sung độ ẩm tự nhiên cho cơ thể.', '', 'available', 10000, 5);
+(2, 'Pizza Phô Mai', 'Lớp phô mai Mozzarella tan chảy, đế giòn, thêm chút mùi thơm của thảo mộc Ý.', 'pngtree-delicious-brushed-cheese-pizza-png-image_12982049.png', 'available', 300, 1),
+(3, 'Pizza Hải Sản', 'Tôm, mực, và thanh cua tươi ngon, kết hợp với sốt cà chua đặc trưng.', '—Pngtree—seafood pizza with shrimp squid_14541980.png', 'available', 300, 1),
+(4, 'Pizza Thịt Xông Khói', 'Thịt xông khói thơm lừng, kết hợp phô mai và hành tây caramel ngọt dịu.', 'pngtree-cheese-and-bacon-pizza-with-fresh-toppings-flat-png-image_12195153.png', 'available', 300, 1),
+(5, 'Pizza Rau Củ', 'Sự kết hợp hoàn hảo của ớt chuông, bắp ngọt, và nấm tươi trên nền sốt cà đặc biệt.', '0002218_sup-deluxe_500.png', 'available', 300, 1),
+(6, 'Pizza BBQ', 'Thịt bò BBQ đậm vị, kết hợp phô mai tan chảy và sốt BBQ đặc biệt từ đầu bếp.', '2024-MME-OLO-Pizza-BBQ_500x500.png', 'available', 300, 1),
+(7, 'Bánh mì nướng phô Mai Trứng Muối', 'Bánh mì nướng giòn rụm, phô mai béo ngậy, phủ lớp trứng muối mằn mặn đầy kích thích.', 'B_012-3.png', 'available', 100, 3),
+(8, 'bánh mì nướng bơ Đường', 'Món ăn tuổi thơ với bơ thơm lừng, hòa quyện với đường hạt giòn ngọt.', 'pngtree-bread-with-butter-appetizer-png-image_13236078.png', 'available', 100, 3),
+(9, 'Bánh mì thịt nướng', 'Bánh mì kèm thịt nướng, dưa leo và nước sốt Mayonnaise.', '221-800x800.png', 'available', 100, 3),
+(10, 'Bánh mì xúc xích', 'Đậm đà với xúc xích nướng, phô mai và tương ớt đặc trưng', 'B_021-2.png', 'available', 100, 3),
+(11, 'Bánh mì Tiramisu', 'Sự kết hợp giữa bánh mì nướng và lớp kem Tiramisu mềm mịn, phủ bột cacao thơm lừng.', '7to5LFaajnvs4enGQlqmPOpXmU3mjV7oFTGpEf5e.png', 'available', 100, 3),
+(12, 'Hamburger Bò Phô Mai', 'Bánh mềm thơm, kẹp thịt bò nướng chín tới và phô mai tan chảy.', 'xbigmac_bb.png.pagespeed.ic.z9ftemCCs7.png', 'available', 300, 2),
+(13, 'Hamburger Gà Giòn', 'Lớp gà chiên giòn rụm, thêm rau xanh tươi và sốt Mayonnaise.', 'xmcchickendlx_bb.png.pagespeed.ic.RkyD3il4lc.png', 'available', 300, 2),
+(14, 'Hamburger Thịt Bò BBQ', 'Thịt bò xay nướng thơm lừng, rưới sốt BBQ đậm vị, ăn kèm rau tươi.', 'pngtree-beef-barbecue-burger-png-image_13361009.png', 'available', 300, 2),
+(15, 'Hamburger Tôm Chiên', 'Tôm chiên giòn kèm sốt chanh dây, tạo cảm giác vừa giòn, vừa tươi mới.', 'burger_-_7.png', 'available', 300, 2),
+(16, 'Hamburger Chay', 'Đậu phụ chiên giòn và rau củ tươi xanh, phù hợp với người ăn chay.', 'pngtree-vegan-meat-free-plant-based-burger-png-image_12638781.png', 'available', 300, 2),
+(17, 'Salad Rau Củ', 'Bắp cải tím, cà chua bi, dưa leo và sốt mè rang thanh mát.', '13.png', 'available', 300, 4),
+(18, 'Salad Caesar Gà', 'Ức gà áp chảo thơm lừng, trộn sốt Caesar cổ điển và bánh mì nướng giòn.', 'pngtree-chicken-and-bacon-caesar-salad-png-image_13232869.png', 'available', 300, 4),
+(19, 'Salad Trái Cây', 'Táo, lê, kiwi, và nho trộn sốt sữa chua ngọt dịu, mát lành.', 'salad_trai_cay_25303349b3fc4c88a0bcd58624598ecf_master.png', 'available', 300, 4),
+(20, 'Salad Cá Ngừ', 'Cá ngừ đóng hộp chất lượng cao, trộn cùng rau xanh tươi ngon và sốt Italian.', 'remove-bgaisalad-tuna-mayo-3898.png', 'available', 300, 4),
+(21, 'Salad Tôm Chanh Dây', 'Tôm áp chảo mọng nước, phủ sốt chanh dây thơm ngọt.', 'Salad-mang-cut-Binh-Duong-voi-tom-nuong-2-928x1024.png', 'available', 300, 4),
+(23, 'Coca-Cola', 'Thức uống giải khát có ga, hương vị cổ điển được yêu thích.', '7-1.png', 'available', 10000, 5),
+(24, 'Pepsi', 'Nước ngọt có ga với vị ngọt nhẹ và hương vị độc đáo.', 'th_c_u_ng_-_5_6_1.png', 'available', 10000, 5),
+(25, '7UP', 'Nước ngọt có ga với hương vị chanh tươi mát.', 'th_c_u_ng_-_9_10_1.png', 'available', 10000, 5),
+(26, 'Trà Chanh', 'Thức uống trà tươi mát với vị chanh thanh khiết.', '83f8dd10aa0c09f9d13dad3fe3ee5dc0.png', 'available', 10000, 5),
+(27, 'Nước Suối', 'Nước uống tinh khiết giúp bổ sung độ ẩm tự nhiên cho cơ thể.', 'chai_nuoc_lavie-500ml.png', 'available', 10000, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_variation`
+-- Cấu trúc bảng cho bảng `product_variation`
 --
 
 CREATE TABLE `product_variation` (
@@ -175,7 +176,7 @@ CREATE TABLE `product_variation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `product_variation`
+-- Đang đổ dữ liệu cho bảng `product_variation`
 --
 
 INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`, `price`, `status`, `variation_quantity`, `discount_id`) VALUES
@@ -238,7 +239,7 @@ INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reset_account`
+-- Cấu trúc bảng cho bảng `reset_account`
 --
 
 CREATE TABLE `reset_account` (
@@ -251,7 +252,7 @@ CREATE TABLE `reset_account` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `review`
+-- Cấu trúc bảng cho bảng `review`
 --
 
 CREATE TABLE `review` (
@@ -266,7 +267,7 @@ CREATE TABLE `review` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shipper`
+-- Cấu trúc bảng cho bảng `shipper`
 --
 
 CREATE TABLE `shipper` (
@@ -279,7 +280,7 @@ CREATE TABLE `shipper` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shipper_reviews`
+-- Cấu trúc bảng cho bảng `shipper_reviews`
 --
 
 CREATE TABLE `shipper_reviews` (
@@ -295,7 +296,7 @@ CREATE TABLE `shipper_reviews` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userorder`
+-- Cấu trúc bảng cho bảng `userorder`
 --
 
 CREATE TABLE `userorder` (
@@ -317,7 +318,7 @@ CREATE TABLE `userorder` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userorder_details`
+-- Cấu trúc bảng cho bảng `userorder_details`
 --
 
 CREATE TABLE `userorder_details` (
@@ -333,17 +334,17 @@ CREATE TABLE `userorder_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `account`
+-- Chỉ mục cho bảng `account`
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`),
@@ -352,26 +353,26 @@ ALTER TABLE `cart`
   ADD KEY `fk_cart_product_variation` (`variation_id`);
 
 --
--- Indexes for table `category`
+-- Chỉ mục cho bảng `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `discount`
+-- Chỉ mục cho bảng `discount`
 --
 ALTER TABLE `discount`
   ADD PRIMARY KEY (`discount_id`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `fk_category` (`category_id`);
 
 --
--- Indexes for table `product_variation`
+-- Chỉ mục cho bảng `product_variation`
 --
 ALTER TABLE `product_variation`
   ADD PRIMARY KEY (`variation_id`),
@@ -379,13 +380,13 @@ ALTER TABLE `product_variation`
   ADD KEY `fk_productVariation_discount` (`discount_id`);
 
 --
--- Indexes for table `reset_account`
+-- Chỉ mục cho bảng `reset_account`
 --
 ALTER TABLE `reset_account`
   ADD KEY `user_id_reset_pass` (`user_id`);
 
 --
--- Indexes for table `review`
+-- Chỉ mục cho bảng `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`review_id`),
@@ -393,14 +394,14 @@ ALTER TABLE `review`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `shipper`
+-- Chỉ mục cho bảng `shipper`
 --
 ALTER TABLE `shipper`
   ADD PRIMARY KEY (`shipper_id`),
   ADD KEY `idx_user_id` (`user_id`);
 
 --
--- Indexes for table `shipper_reviews`
+-- Chỉ mục cho bảng `shipper_reviews`
 --
 ALTER TABLE `shipper_reviews`
   ADD PRIMARY KEY (`review_id`),
@@ -408,7 +409,7 @@ ALTER TABLE `shipper_reviews`
   ADD KEY `user` (`user_id`);
 
 --
--- Indexes for table `userorder`
+-- Chỉ mục cho bảng `userorder`
 --
 ALTER TABLE `userorder`
   ADD PRIMARY KEY (`order_id`),
@@ -416,7 +417,7 @@ ALTER TABLE `userorder`
   ADD KEY `discount` (`discount_id`);
 
 --
--- Indexes for table `userorder_details`
+-- Chỉ mục cho bảng `userorder_details`
 --
 ALTER TABLE `userorder_details`
   ADD PRIMARY KEY (`order_details_id`),
@@ -425,81 +426,81 @@ ALTER TABLE `userorder_details`
   ADD KEY `fk_userorder_details_variation` (`variation_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `account`
+-- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cart_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
   MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `discount`
+-- AUTO_INCREMENT cho bảng `discount`
 --
 ALTER TABLE `discount`
   MODIFY `discount_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `product_variation`
+-- AUTO_INCREMENT cho bảng `product_variation`
 --
 ALTER TABLE `product_variation`
   MODIFY `variation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT for table `review`
+-- AUTO_INCREMENT cho bảng `review`
 --
 ALTER TABLE `review`
   MODIFY `review_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `shipper`
+-- AUTO_INCREMENT cho bảng `shipper`
 --
 ALTER TABLE `shipper`
   MODIFY `shipper_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `shipper_reviews`
+-- AUTO_INCREMENT cho bảng `shipper_reviews`
 --
 ALTER TABLE `shipper_reviews`
   MODIFY `review_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `userorder`
+-- AUTO_INCREMENT cho bảng `userorder`
 --
 ALTER TABLE `userorder`
   MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `userorder_details`
+-- AUTO_INCREMENT cho bảng `userorder_details`
 --
 ALTER TABLE `userorder_details`
   MODIFY `order_details_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `cart`
+-- Các ràng buộc cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `fk_cart_account` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
@@ -507,53 +508,53 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `fk_cart_product_variation` FOREIGN KEY (`variation_id`) REFERENCES `product_variation` (`variation_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `product`
+-- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
 
 --
--- Constraints for table `product_variation`
+-- Các ràng buộc cho bảng `product_variation`
 --
 ALTER TABLE `product_variation`
   ADD CONSTRAINT `fk_product_variation` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `fk_productVariation_discount` FOREIGN KEY (`discount_id`) REFERENCES `discount` (`discount_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `reset_account`
+-- Các ràng buộc cho bảng `reset_account`
 --
 ALTER TABLE `reset_account`
   ADD CONSTRAINT `user_id_reset_pass` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `review`
+-- Các ràng buộc cho bảng `review`
 --
 ALTER TABLE `review`
   ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `shipper`
+-- Các ràng buộc cho bảng `shipper`
 --
 ALTER TABLE `shipper`
   ADD CONSTRAINT `fk_shipper_account` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `shipper_reviews`
+-- Các ràng buộc cho bảng `shipper_reviews`
 --
 ALTER TABLE `shipper_reviews`
   ADD CONSTRAINT `shipper_id` FOREIGN KEY (`shipper_id`) REFERENCES `shipper` (`shipper_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `userorder`
+-- Các ràng buộc cho bảng `userorder`
 --
 ALTER TABLE `userorder`
   ADD CONSTRAINT `discount` FOREIGN KEY (`discount_id`) REFERENCES `discount` (`discount_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `fk_userorder_user_id` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`);
 
 --
--- Constraints for table `userorder_details`
+-- Các ràng buộc cho bảng `userorder_details`
 --
 ALTER TABLE `userorder_details`
   ADD CONSTRAINT `fk_userorder_details-product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
@@ -562,7 +563,7 @@ ALTER TABLE `userorder_details`
 
 DELIMITER $$
 --
--- Events
+-- Sự kiện
 --
 CREATE DEFINER=`root`@`localhost` EVENT `delete_expired_tokens` ON SCHEDULE EVERY 10 MINUTE STARTS '2024-11-23 03:32:48' ON COMPLETION NOT PRESERVE ENABLE DO DELETE FROM reset_account
   WHERE reset_expiry < NOW() - INTERVAL 10 MINUTE$$
