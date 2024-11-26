@@ -20386,7 +20386,7 @@ fieldset[disabled] .one-screen-page .btn-primary {
 }
 
 .thumbnail-menu-modern figure img {
-	width: 100%;
+	/* width: 100%; */
 	transition: 350ms ease-in;
 }
 

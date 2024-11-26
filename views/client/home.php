@@ -318,7 +318,7 @@
                         <figure>
                           <img
                             class="img-responsive"
-                            src="assets/images/menu-modern-1-310x260.png"
+                            src="assets/images/<?= $Hamburger['product_image'] ?>"
                             alt=""
                             width="310"
                             height="260" />
@@ -370,7 +370,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="assets/images/toast-1-310x260.png"
+                        src="assets/images/<?= $Toast['product_image'] ?>"
                         alt=""
                         width="310"
                         height="260" />
@@ -420,7 +420,7 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="assets/images/pizzas-1-310x260.png"
+                        src="assets/images/<?= $Pizza['product_image'] ?>"
                         alt=""
                         width="310"
                         height="260" />
@@ -469,10 +469,10 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="assets/images/salads-1-310x260.png"
+                        src="assets/images/<?=$Salad['product_image'] ?>"
                         alt=""
-                        width="310"
-                        height="260" />
+                        width="248"
+                        height="208" />
                     </figure>
                     <div class="caption">
                       <h5>
@@ -518,10 +518,10 @@
                     <figure>
                       <img
                         class="img-responsive"
-                        src="assets/images/drinks-1-310x260.png"
+                        src="assets/images/<?= $Drink['product_image'] ?>"
                         alt=""
-                        width="310"
-                        height="260" />
+                        width="248"
+                        height="208" />
                     </figure>
                     <div class="caption">
                       <h5>
