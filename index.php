@@ -65,7 +65,7 @@ match ($act) {
     'deletediscount' => (new DiscountController())->deletediscount($_GET['id']),
 
     //client 
-    // 'home' => (new dashboardController())->home(),
+    'home' => (new dashboardController())->home(),
     'menu' => (new MenuController())->listProduct(),
     'ProductDetailsInMenu' => (new DetailProductController())->ProductDetailsInMenu($_GET['id']),
     'blog' => (new BlogController())->blog(),
