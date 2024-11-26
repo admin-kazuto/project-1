@@ -68,6 +68,6 @@ match ($act) {
     // 'home' => (new dashboardController())->home(),
     'menu' => (new MenuController())->listProduct(),
     'ProductDetailsInMenu' => (new DetailProductController())->ProductDetailsInMenu($_GET['id']),
-
+    'blog' => (new BlogController())->blog(),
     default => print "Không có hành động nào được xử lý.",
 };
