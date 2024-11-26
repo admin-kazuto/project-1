@@ -90,7 +90,8 @@ class accModel
     {
         $sql = "SELECT reset_token, email_send_count FROM reset_account WHERE user_id = $user_id";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute();
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     function getCount($user_id)
     {
@@ -103,7 +104,7 @@ class accModel
     function createOrUpdateResetToken($user_id, $otp, $expiry, $existingToken)
     {
         if ($existingToken) {
-            $sql = "UPDATE reset_account SET reset_token = '$otp', reset_expiry = '$expiry', email_send_count = email_send_count + 1 where user_id='$user_id'";
+            $sql = "UPDATE reset_account SET reset_token = '$otp', reset_expiry = '$expiry', email_send_count = email_send_count + 1 where user_id=$user_id";
         } else {
             $sql = "INSERT INTO reset_account values ('$user_id', '$otp', '$expiry', 1)";
         }
@@ -112,7 +113,7 @@ class accModel
     }
     function getuserID($email)
     {
-        $sql = "SELECT user_id FROM account WHERE email = '$email'";
+        $sql = "SELECT `user_id` FROM account WHERE email = '$email'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchColumn();

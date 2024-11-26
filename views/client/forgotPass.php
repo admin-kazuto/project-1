@@ -85,8 +85,8 @@
                                         <!-- RD Mailform-->
                                         <form class="rd-mailform form-register text-center offset-top-20" method="post" onsubmit="return validateEmailForm()">
                                             <div class=" form-group">
-                                                <label class="form-label form-label-outside" for="contact-email">Your Email</label>
-                                                <input class="form-control" type="email" id="email_getotp" name="email_getotp" />
+                                                <label class="form-label form-label-outside" for="contactemail">Your Email</label>
+                                                <input class="form-control" type="email" id="email_getotpp" name="email_getotp" />
                                                 <div class="error-message" id="error-email_getotp" style="color: red;margin-top: 10px;"></div>
                                             </div>
                                             <?php
@@ -147,29 +147,21 @@
     <script src="assets/js/script.js"></script>
     <script>
         function validateEmailForm() {
-            // Lấy giá trị email từ input
             const email = document.getElementById('email_getotp').value.trim();
-
-            // Lấy div thông báo lỗi
             const errorEmail = document.getElementById('error-email_getotp');
 
-            // Xóa thông báo lỗi cũ
             errorEmail.textContent = '';
 
-            // Kiểm tra email không được để trống
             if (email === '') {
                 errorEmail.textContent = 'Vui lòng nhập địa chỉ email.';
                 return false;
             }
 
-            // Kiểm tra định dạng email hợp lệ
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 errorEmail.textContent = 'Email không hợp lệ.';
                 return false;
             }
-
-            // Nếu hợp lệ, trả về true để form được gửi
             return true;
         }
 
@@ -178,32 +170,28 @@
             const password = document.getElementById('password').value.trim();
             const confirmPassword = document.getElementById('confirm_password').value.trim();
 
-            // Clear previous error messages
             document.querySelectorAll('.error-message').forEach((el) => (el.textContent = ''));
 
             let isValid = true;
 
-            // Validate OTP field
             if (otp === '') {
-                document.getElementById('error-otp').textContent = 'Please enter the OTP code.';
+                document.getElementById('error-otp').textContent = 'Vui lòng nhập mã OTP.';
                 isValid = false;
             }
 
-            // Validate password field
             if (password === '') {
-                document.getElementById('error-password').textContent = 'Please enter a new password.';
+                document.getElementById('error-password').textContent = 'Vui lòng nhập mật khẩu mới.';
                 isValid = false;
             } else if (password.length < 6) {
-                document.getElementById('error-password').textContent = 'Password must be at least 6 characters long.';
+                document.getElementById('error-password').textContent = 'Mật khẩu phải có ít nhất 6 ký tự.';
                 isValid = false;
             }
 
-            // Validate confirm password field
             if (confirmPassword === '') {
-                document.getElementById('error-confirm_password').textContent = 'Please confirm your password.';
+                document.getElementById('error-confirm_password').textContent = 'Vui lòng nhập lại mật khẩu.';
                 isValid = false;
             } else if (confirmPassword !== password) {
-                document.getElementById('error-confirm_password').textContent = 'Passwords do not match.';
+                document.getElementById('error-confirm_password').textContent = 'Vui lòng nhập lại mật khẩu đúng.';
                 isValid = false;
             }
 
