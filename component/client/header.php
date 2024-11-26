@@ -23,7 +23,7 @@
                         </button>
                         <!-- RD Navbar Brand--><a
                             class="rd-navbar-brand brand"
-                            href="?act=home">
+                            href="?act=/">
                             <div class="brand-logo">
                                 <svg
                                     x="0px"
@@ -53,52 +53,52 @@
                         <!-- RD Navbar Nav-->
                         <ul class="rd-navbar-nav">
                             <li>
-                                <a class="navbar-icon restaurant-icon-19" href="#">Menu</a>
+                                <a class="navbar-icon restaurant-icon-19" href="?act=menu">Menu</a>
                                 <!-- RD Navbar Dropdown-->
-                                <ul class="rd-navbar-dropdown menu-img-wrap">
+                                <!--<ul class="rd-navbar-dropdown menu-img-wrap">
                                     <li class="menu-img">
-                                        <a href="menu.php"><img
+                                        <a href="?act=menu"><img
                                                 src="assets/images/menu-food-01.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Pizzas</span></a>
                                     </li>
                                     <li class="menu-img">
-                                        <a href="menu.php"><img
+                                        <a href="?act=menu"><img
                                                 src="assets/images/menu-food-02.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Burgers</span></a>
                                     </li>
                                     <li class="menu-img">
-                                        <a href="menu.php"><img
+                                        <a href="?act=menu"><img
                                                 src="assets/images/menu-food-03.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Drinks</span></a>
                                     </li>
                                     <li class="menu-img">
-                                        <a href="menu.php"><img
+                                        <a href="?act=menu"><img
                                                 src="assets/images/menu-food-04.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Toasts</span></a>
                                     </li>
                                     <li class="menu-img">
-                                        <a href="menu.php"><img
+                                        <a href="?act=menu"><img
                                                 src="assets/images/menu-food-05.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>Salads</span></a>
                                     </li>
-                                    <li class="menu-img">
+                                    <!-- <li class="menu-img">
                                         <a href="menu.php"><img
                                                 src="assets/images/menu-food-06.png"
                                                 alt=""
                                                 width="88"
                                                 height="60" /><span>desserts</span></a>
-                                    </li>
-                                </ul>
+                                    </li> -->
+                                <!--</ul> -->
                             </li>
                             <li>
                                 <a class="navbar-icon thin-icon-tag" href="blog.php">News</a>
@@ -155,7 +155,7 @@
                                             class="icon icon-md icon-primary thin-icon-cart"></span>
                                     </div>
                                     <div class="unit-body">
-                                        <span class="label-inline big">2</span>
+                                        <span class="label-inline big">0</span>
                                     </div>
                                 </a>
                             </li>

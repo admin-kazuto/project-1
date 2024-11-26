@@ -237,7 +237,7 @@
         <div class="container-wide">
           <div class="row justify-content-xs-center">
             <div class="col-sm-6 col-md-4 view-animate zoomInSmall delay-04">
-              <a class="thumbnail-variant-3" href="menu.php"><img
+              <a class="thumbnail-variant-3" href="?act=menu"><img
                   class="img-responsive"
                   src="assets/images/index-01-566x401.jpg"
                   alt=""
@@ -250,7 +250,7 @@
               </a>
             </div>
             <div class="col-sm-6 col-md-4 view-animate zoomInSmall delay-06">
-              <a class="thumbnail-variant-3" href="menu.php"><img
+              <a class="thumbnail-variant-3" href="?act=menu"><img
                   class="img-responsive"
                   src="assets/images/index-02-566x401.jpg"
                   alt=""
@@ -264,7 +264,7 @@
             </div>
             <div
               class="col-sm-6 col-md-4 offset-sm-top-30 offset-md-top-0 view-animate zoomInSmall delay-02">
-              <a class="thumbnail-variant-3" href="menu.php"><img
+              <a class="thumbnail-variant-3" href="?act=menu"><img
                   class="img-responsive"
                   src="assets/images/index-03-566x401.jpg"
                   alt=""
@@ -309,162 +309,41 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/menu-modern-1-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Mexican Burger</a>
-                      </h5>
-                      <p class="text-italic">
-                        This Mexican-style burger is pumped up with flavor
-                        from chili powder, cilantro, and jalapeno pepper.
-                        Served on buns topped with lettuce.
-                      </p>
-                      <p class="price">12.50</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
+                <?php
+                if (!empty($AllHamburgers)) {
+                  foreach ($AllHamburgers as $Hamburger) {
+                ?>
+                    <div class="item">
+                      <div class="thumbnail-menu-modern">
+                        <figure>
+                          <img
+                            class="img-responsive"
+                            src="assets/images/menu-modern-1-310x260.png"
+                            alt=""
+                            width="310"
+                            height="260" />
+                        </figure>
+                        <div class="caption">
+                          <h5>
+                            <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Hamburger['product_id'] ?>"><?= $Hamburger['product_name'] ?></a>
+                          </h5>
+                          <p class="text-italic">
+                            <?= $Hamburger['description'] ?>
+                          </p>
+                          <p class="price"><?= $Hamburger['price'] ?></p>
+                          <a
+                            class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
+                            href="?act=ProductDetailsInMenu&id=<?= $Hamburger['product_id'] ?>">Order Online</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/menu-modern-3-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Mini Burger</a>
-                      </h5>
-                      <p class="text-italic">
-                        Mini burgers, known by many as sliders, are the
-                        hottest little food trend sweeping the nation, with
-                        the half size of a classic burger.
-                      </p>
-                      <p class="price">10.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/menu-modern-2-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Classic Burger</a>
-                      </h5>
-                      <p class="text-italic">
-                        Chicken beef cooked over charcoal and onions on the
-                        grill, hot pepper, lettuce, tomatoes, double American
-                        cheddar cheese sauce.
-                      </p>
-                      <p class="price">13.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/menu-modern-6-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">California Burger</a>
-                      </h5>
-                      <p class="text-italic">
-                        Alfalfa sprouts crown these juicy burgers. A
-                        combination of regular ground turkey and ground turkey
-                        breast offers superior texture.
-                      </p>
-                      <p class="price">17.97</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/menu-modern-5-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Double Burger</a>
-                      </h5>
-                      <p class="text-italic">
-                        Two signature flame-grilled beef patties topped with a
-                        simple layer of melted American cheese and crinkle cut
-                        pickles.
-                      </p>
-                      <p class="price">25.00</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/menu-modern-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Chicken Burger</a>
-                      </h5>
-                      <p class="text-italic">
-                        Our Chicken Burger features a savory grilled chicken
-                        burger patty topped with juicy tomatoes, fresh
-                        lettuce, and mayonnaise.
-                      </p>
-                      <p class="price">9.50</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
+                  <?php } ?>
+                <?php
+                } else {
+                  echo 'No hamburgers found.';
+                }
+                ?>
+
               </div>
             </div>
             <!--Toasts-->
@@ -484,6 +363,8 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
+                <?php if(!empty($AllToasts)){
+                  foreach ($AllToasts as $Toast) { ?>
                 <div class="item">
                   <div class="thumbnail-menu-modern">
                     <figure>
@@ -496,150 +377,22 @@
                     </figure>
                     <div class="caption">
                       <h5>
-                        <a class="link link-default" href="menu-single.html">Tomato Toast</a>
+                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Toast['product_id'] ?>"><?= $Toast['product_name'] ?></a>
                       </h5>
                       <p class="text-italic">
-                        Enjoy this amazing combination of cheese and tomato
-                        with a little bit of salad and cucumbers on the
-                        freshly baked bread.
+                        <?= $Toast['description'] ?>
                       </p>
-                      <p class="price">12.50</p>
+                      <p class="price"><?= $Toast['price'] ?></p>
                       <a
                         class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
+                        href="?act=ProductDetailsInMenu&id=<?= $Toast['product_id'] ?>">Order Online</a>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/toast-2-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Cheese Toast</a>
-                      </h5>
-                      <p class="text-italic">
-                        This toast is one of the most popular in our menu, and
-                        it’s no wonder why – it’s as tasty as it’s original
-                        and easy to make.
-                      </p>
-                      <p class="price">10.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/toast-3-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Beef Toast</a>
-                      </h5>
-                      <p class="text-italic">
-                        Tender, flavorful and perfectly seasoned roast beef,
-                        sliced thin, topped with smoked Gouda cheese and
-                        served on a baguette.
-                      </p>
-                      <p class="price">13.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/toast-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Italian Toast</a>
-                      </h5>
-                      <p class="text-italic">
-                        Experience the flavor of true Italian cuisine with
-                        this toast, which includes Provolone Cheese, fresh
-                        tomatoes, and freshly baked bread.
-                      </p>
-                      <p class="price">17.97</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/toast-5-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Mediterranean Toast</a>
-                      </h5>
-                      <p class="text-italic">
-                        Warm, toasty and hearty, this toast will satisfy your
-                        appetite with Zippy Hummus, Roasted Red Peppers, and
-                        Fried Bacon.
-                      </p>
-                      <p class="price">25.00</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/toast-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Chicken Toast</a>
-                      </h5>
-                      <p class="text-italic">
-                        We reimagined the original Chicken Sandwich, and now
-                        you can enjoy the taste of our Chicken Toast with
-                        cherry tomatoes and salad.
-                      </p>
-                      <p class="price">9.50</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
+                <?php } ?>
+                <?php } else {
+                  echo 'No Toasts found.';
+                } ?>
               </div>
             </div>
             <!--Pizzas-->
@@ -659,7 +412,9 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <div class="item">
+                <?php if(!empty($AllPizzas)){
+                  foreach ($AllPizzas as $Pizza) { ?>
+                  <div class="item">
                   <div class="thumbnail-menu-modern">
                     <figure>
                       <img
@@ -671,150 +426,22 @@
                     </figure>
                     <div class="caption">
                       <h5>
-                        <a class="link link-default" href="menu-single.html">Hawaiian</a>
+                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>">Hawaiian</a>
                       </h5>
                       <p class="text-italic">
-                        Fresh pineapple, applewood smoked ham and slivered
-                        scallions make this pizza #1 among our youngest
-                        visitors.
+                        <?= $Pizza['description'] ?>
                       </p>
-                      <p class="price">12.50</p>
+                      <p class="price"><?= $Pizza['price'] ?></p>
                       <a
                         class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
+                        href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>">Order Online</a>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/pizzas-2-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Sicilian</a>
-                      </h5>
-                      <p class="text-italic">
-                        Rustic meets refined in this flavorful pizza with
-                        spicy marinara, Italian sausage, spicy Capicola ham,
-                        salami, and Mozzarella.
-                      </p>
-                      <p class="price">10.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/pizzas-3-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Classic Cheese</a>
-                      </h5>
-                      <p class="text-italic">
-                        Large round pizza from QuickFood topped with 100%
-                        Mozzarella and Muenster cheeses, hot out of the oven
-                        and ready when you are.
-                      </p>
-                      <p class="price">13.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/pizzas-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Margherita</a>
-                      </h5>
-                      <p class="text-italic">
-                        The classic that everyone loves. Try our Margherita
-                        with Italian tomatoes, fresh Mozzarella, fresh basil
-                        and Parmesan.
-                      </p>
-                      <p class="price">17.97</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/pizzas-5-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Neapolitan</a>
-                      </h5>
-                      <p class="text-italic">
-                        One of our most popular dishes, this pizza includes
-                        fresh tomatoes, cheese, oil, and garlic and is served
-                        with numerous toppings.
-                      </p>
-                      <p class="price">25.00</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/pizzas-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Pepperoni</a>
-                      </h5>
-                      <p class="text-italic">
-                        An American favorite of all times! Experience the
-                        taste of original Pepperoni cooked and delivered hot
-                        by the team of QuickFood.
-                      </p>
-                      <p class="price">9.50</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
+                <?php } ?>
+                <?php } else {
+                  echo 'No Pizzas found.';
+                } ?>
               </div>
             </div>
             <!--Salads-->
@@ -834,7 +461,9 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <div class="item">
+                <?php if(!empty($AllSalads)){
+                  foreach ($AllSalads as $Salad) { ?>
+                  <div class="item">
                   <div class="thumbnail-menu-modern">
                     <figure>
                       <img
@@ -846,150 +475,22 @@
                     </figure>
                     <div class="caption">
                       <h5>
-                        <a class="link link-default" href="menu-single.html">Buffalo Bleu</a>
+                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Salad['product_id'] ?>">Buffalo Bleu</a>
                       </h5>
                       <p class="text-italic">
-                        Chopped romaine &amp; iceberg blend, all-natural
-                        chicken, original buffalo new york spicy sauce, grape
-                        tomatoes, and banana peppers.
+                        <?= $Salad['description'] ?>
                       </p>
-                      <p class="price">12.50</p>
+                      <p class="price"><?= $Salad['price'] ?></p>
                       <a
                         class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
+                        href="?act=ProductDetailsInMenu&id=<?= $Salad['product_id'] ?>">Order Online</a>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/salads-2-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Greek Salad</a>
-                      </h5>
-                      <p class="text-italic">
-                        Cucumbers, grape tomatoes, red onions, banana peppers,
-                        black olives, and feta cheese with balsamic
-                        vinaigrette dressing.
-                      </p>
-                      <p class="price">10.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/salads-3-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Turkey Salad</a>
-                      </h5>
-                      <p class="text-italic">
-                        Chopped romaine &amp; iceberg blend, radiatorre pasta,
-                        roasted turkey, crispy bacon, tomatoes, and buttermilk
-                        ranch dressing
-                      </p>
-                      <p class="price">13.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/salads-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Mediterranean</a>
-                      </h5>
-                      <p class="text-italic">
-                        Spring mix, all-natural chicken, quinoa, black olives,
-                        marinated tomatoes, sunflower seeds, feta cheese, and
-                        balsamic vinaigrette.
-                      </p>
-                      <p class="price">17.97</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/salads-5-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Farmhouse salad</a>
-                      </h5>
-                      <p class="text-italic">
-                        Baby kale, spring mix, roasted turkey, roasted
-                        butternut squash, roasted brussels sprouts, glazed
-                        pecans, and goat cheese.
-                      </p>
-                      <p class="price">25.00</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/salads-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Chicken Caprese</a>
-                      </h5>
-                      <p class="text-italic">
-                        Romaine hearts, blackened chicken, avocado, chopped
-                        tomatoes, fresh mozzarella and balsamic vinaigrette
-                        combined perfectly.
-                      </p>
-                      <p class="price">9.50</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
+                <?php } ?>
+                <?php } else {
+                  echo 'No Salads found.';
+                } ?>
               </div>
             </div>
             <!--Drinks-->
@@ -1009,7 +510,9 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <div class="item">
+                <?php if(!empty($AllDrinks)){
+                  foreach ($AllDrinks as $Drink) { ?>
+                   <div class="item">
                   <div class="thumbnail-menu-modern">
                     <figure>
                       <img
@@ -1021,149 +524,23 @@
                     </figure>
                     <div class="caption">
                       <h5>
-                        <a class="link link-default" href="menu-single.html">Diet Coke</a>
+                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Drink['product_id'] ?>"><?= $Drink['product_name'] ?></a>
                       </h5>
                       <p class="text-italic">
-                        Try a crisp and refreshing no-calorie Diet Coke,
-                        refreshing classics that compliments any dish of our
-                        menu.
+                        <?= $Drink['description'] ?>
                       </p>
-                      <p class="price">12.50</p>
+                      <p class="price"><?= $Drink['price'] ?></p>
                       <a
                         class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
+                        href="?act=ProductDetailsInMenu&id=<?= $Drink['product_id'] ?>">Order Online</a>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/drinks-2-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Blue Moon</a>
-                      </h5>
-                      <p class="text-italic">
-                        Blue Moon cocktail is a fun, frozen martini featuring
-                        blue curaçao, vanilla syrup, fresh orange juice, and
-                        whipped cream.
-                      </p>
-                      <p class="price">10.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/drinks-3-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Sparkling Water</a>
-                      </h5>
-                      <p class="text-italic">
-                        A perfect choice for those who want a refreshing drink
-                        in hot weather. A wide range of flavors is available!
-                      </p>
-                      <p class="price">13.90</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/drinks-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Red Dawn</a>
-                      </h5>
-                      <p class="text-italic">
-                        The Red Dawn- a strong and flavorful cocktail
-                        comprised of Southern Comfort, lemon-lime soda &amp;
-                        cranberry juice.
-                      </p>
-                      <p class="price">17.97</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/drinks-5-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Pina Colada</a>
-                      </h5>
-                      <p class="text-italic">
-                        Our specialty frozen Pina Colada made with Don Q Rum,
-                        pineapple juice, and Coco Lopez, topped with toasted
-                        coconut.
-                      </p>
-                      <p class="price">25.00</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/drinks-4-310x260.png"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="menu-single.html">Classic Lemonade</a>
-                      </h5>
-                      <p class="text-italic">
-                        Refreshing lemonade with a touch of mint and ginger.
-                        Refreshing lemon drinks that make for the perfect sip,
-                        when you are chilling.
-                      </p>
-                      <p class="price">9.50</p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="shop-single.html">Order Online</a>
-                    </div>
-                  </div>
-                </div>
+                <?php } ?>
+                <?php } else {
+                  echo 'No Drinks found.';
+                } ?>
+               
               </div>
             </div>
           </div>
