@@ -6,8 +6,8 @@ class dashboardController
     {
         require_once 'views/admin/dashboard.php';
     }
-    // function home()
-    // {
-    //     require_once 'views/client/home.php';
-    // }
+    function home()
+    {
+        require_once 'views/client/home.php';
+    }
 }

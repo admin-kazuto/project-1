@@ -81,9 +81,9 @@
                                     <div class="offset-top-30">
                                         <div class="responsive-tabs responsive-tabs-shop responsive-tabs-horizontal">
                                             <ul class="resp-tabs-list">
-                                                <li><span class="price">$25.90</span><span class="icon icon-circle">Big</span></li>
-                                                <li><span class="price">$13.90</span><span class="icon icon-circle">Mini</span></li>
-                                                <li><span class="price">$13.90</span><span class="icon icon-circle">Mini</span></li>
+                                                <li><span style="font-size: 25px;" class="price">$25.90</span><span style="font-size: 12px; width: 35px; height: 35px;" class="icon icon-circle">Big</span></li>
+                                                <li><span style="font-size: 25px;" class="price">$13.90</span><span style="font-size: 12px; width: 35px; height: 35px;" class="icon icon-circle">Mini</span></li>
+                                                <li><span style="font-size: 25px;" class="price">$13.90</span><span style="font-size: 12px; width: 35px; height: 35px;" class="icon icon-circle">Mini</span></li>
                                             </ul>
                                             <div class="resp-tabs-container">
                                                 <div>
