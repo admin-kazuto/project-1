@@ -167,7 +167,7 @@ if ($_SESSION['role'] != 'admin') {
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./tables/simple.html" class="nav-link">
+              <a href="?act=listorder" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Oder detail</p>
               </a>
