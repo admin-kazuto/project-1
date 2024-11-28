@@ -37,16 +37,16 @@ class accController
             $username = $_POST['username_register'];
             $phone = $_POST['phone_register'];
             if ($this->accModel->checkEmail($email) > 1) {
-                header('location:?act=login');
                 $_SESSION['message_register'] = 'Email đã đã tồn tại';
+                header('location:?act=login');
             } else
             if ($this->accModel->checkUsername($username) > 1) {
-                header('location:?act=login');
                 $_SESSION['message_register'] = 'Tên tài khoản đã tồn tại';
+                header('location:?act=login');
             } else
             if ($this->accModel->checkPhone($phone) > 1) {
-                header('location:?act=login');
                 $_SESSION['message_register'] = 'Số điện thoại đã tồn tại';
+                header('location:?act=login');
             } else {
                 $password = sha1($_POST['password_register']);
                 $adress = $_POST['adress_register'];
@@ -80,16 +80,16 @@ class accController
             $username = $_POST['username'];
             $phone = $_POST['phone'];
             if ($this->accModel->checkEmail($email) > 1) {
-                header('location:?act=insertaccount');
                 $_SESSION['message_insertaccount'] = 'Email đã đã tồn tại';
+                header('location:?act=insertaccount');
             } else
             if ($this->accModel->checkUsername($username) > 1) {
-                header('location:?act=insertaccount');
                 $_SESSION['message_insertaccount'] = 'Tên tài khoản đã tồn tại';
+                header('location:?act=insertaccount');
             } else
             if ($this->accModel->checkPhone($phone) > 1) {
-                header('location:?act=insertaccount');
                 $_SESSION['message_insertaccount'] = 'Số điện thoại đã tồn tại';
+                header('location:?act=insertaccount');
             } else {
                 $name = $_POST['name'];
                 $password = sha1($_POST['password']);
@@ -110,34 +110,41 @@ class accController
         require_once 'send_email.php';
         require_once 'views/client/forgotPass.php';
         if (isset($_POST['btn_getotp'])) {
-            $email = $_POST['email_getotp'];
-            $user_id = $this->accModel->getuserID($email);
-            if ($this->accModel->checkEmail($email) > 0) {
-                $existingToken = $this->accModel->tokenExists($user_id);
-                $_SESSION['email'] = $email;
-                $otp = rand(100000, 999999);
-                date_default_timezone_set('Asia/Ho_Chi_Minh');
-                $expiry = date("Y-m-d H:i:s", strtotime("+10 minutes"));
-                $count = $this->accModel->getCount($user_id);
-                if ($count < 3) {
-                    $message = "Mã OTP của bạn để đặt lại mật khẩu là: $otp";
-                    $this->accModel->createOrUpdateResetToken($user_id, $otp, $expiry, $existingToken);
-                    if (sendResetEmail($email, $message)) {
-                        $_SESSION['message_email'] = "Mã OTP đã được gửi đến email của bạn. Vui lòng kiểm tra email.";
-                        header('location:?act=forgotpass');
-                    } else {
-                        $_SESSION['message_email'] = "Có lỗi khi gửi email. Vui lòng thử lại sau.";
-                        header("location:?act=forgotpass");
-                    }
-                } elseif ($count >= 3) {
-                    $_SESSION['message_email'] = "Vui lòng chờ 20 phút để gửi lại OTP lại";
-                    header("location:?act=forgotpass");
-                }
-            } else {
+            $email = trim($_POST['email_getotp']);
+            $_SESSION['email'] = $email;
+
+            if ($this->accModel->checkEmail($email) <= 0) {
                 $_SESSION['message_email'] = "Email không tồn tại trong hệ thống.";
                 header("location:?act=forgotpass");
+                exit;
             }
+
+            $user_id = $this->accModel->getuserID($email);
+            $existingToken = $this->accModel->tokenExists($user_id);
+            $requestCount = $this->accModel->getCount($user_id);
+
+            if ($requestCount >= 3) {
+                $_SESSION['message_email'] = "Bạn đã yêu cầu OTP quá nhiều lần. Vui lòng chờ 20 phút để yêu cầu lại.";
+                header("location:?act=forgotpass");
+                exit;
+            }
+
+            $otp = rand(100000, 999999);
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $expiry = date("Y-m-d H:i:s", strtotime("+10 minutes"));
+
+            $message = "Mã OTP của bạn để đặt lại mật khẩu là: $otp";
+            if (sendResetEmail($email, $message)) {
+                $this->accModel->createOrUpdateResetToken($user_id, $otp, $expiry, $existingToken);
+                $_SESSION['message_email'] = "Mã OTP đã được gửi đến email của bạn. Vui lòng kiểm tra hộp thư.";
+            } else {
+                $_SESSION['message_email'] = "Có lỗi xảy ra khi gửi email. Vui lòng thử lại sau.";
+            }
+
+            header("location:?act=forgotpass");
+            exit;
         }
+
 
 
         if (isset($_POST['btn_submit'])) {

@@ -28,7 +28,7 @@
   <!-- Page-->
   <div class="page text-center">
     <?php
-    require_once 'component/client/header.php'
+    require_once 'component/client/header.php';
     ?>
     <!-- Page Content-->
     <main class="page-content">
@@ -79,26 +79,26 @@
                 <?php foreach ($AllHamburgers as $hamburger) { ?>
                   <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 1">
                     <div class="thumbnail-menu-modern">
-                      <figure><img class="img-responsive" src="images/menu-modern-1-310x260.png" alt="" width="310" height="260">
+                      <figure><img class="img-responsive" src="assets/images/<?= $hamburger['product_image'] ?>" alt="" width="310" height="260">
                       </figure>
                       <div class="caption">
-                        <h5><a class="link link-default" href="menu-single.html"><?= $hamburger['product_name'] ?></a></h5>
+                        <h5><a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $hamburger['product_id'] ?>"><?= $hamburger['product_name'] ?></a></h5>
                         <p class="text-italic"><?= $hamburger['description'] ?></p>
-                        <p class="price"><?= $hamburger['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="shop-single.html">Order Online</a>
+                        <p class="price"><?= $hamburger['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="?act=ProductDetailsInMenu&id=<?= $hamburger['product_id'] ?>">Order Online</a>
                       </div>
                     </div>
                   </div>
-                <?php } ?>
+                <?php }  ?>
                 <!--toasts-->
                 <?php foreach ($AllToasts as $toasts) { ?>
                   <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 2">
                     <div class="thumbnail-menu-modern">
-                      <figure><img class="img-responsive" src="images/toast-1-310x260.png" alt="" width="310" height="260">
+                      <figure><img class="img-responsive" src="assets/images/<?= $toasts['product_image'] ?>" alt="" width="310" height="260">
                       </figure>
                       <div class="caption">
-                        <h5><a class="link link-default" href="menu-single.html"><?= $toasts['product_name'] ?></a></h5>
+                        <h5><a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $toast['product_id'] ?>"><?= $toasts['product_name'] ?></a></h5>
                         <p class="text-italic"><?= $toasts['description'] ?></p>
-                        <p class="price"><?= $toasts['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="shop-single.html">Order Online</a>
+                        <p class="price"><?= $toasts['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="?act=ProductDetailsInMenu&id=<?= $toasts['product_id'] ?>">Order Online</a>
                       </div>
                     </div>
                   </div>
@@ -107,12 +107,12 @@
                 <?php foreach ($AllPizzas as $pizza) { ?>
                   <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 3">
                     <div class="thumbnail-menu-modern">
-                      <figure><img class="img-responsive" src="images/pizzas-1-310x260.png" alt="" width="310" height="260">
+                      <figure><img class="img-responsive" src="assets/images/<?= $pizza['product_image'] ?>" alt="" width="310" height="260">
                       </figure>
                       <div class="caption">
-                        <h5><a class="link link-default" href="menu-single.html"><?= $pizza['product_name'] ?></a></h5>
+                        <h5><a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $pizza['product_id'] ?>"><?= $pizza['product_name'] ?></a></h5>
                         <p class="text-italic"><?= $pizza['description'] ?></p>
-                        <p class="price"><?= $pizza['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="shop-single.html">Order Online</a>
+                        <p class="price"><?= $pizza['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="?act=ProductDetailsInMenu&id=<?= $pizza['product_id'] ?>">Order Online</a>
                       </div>
                     </div>
                   </div>
@@ -121,12 +121,12 @@
                 <?php foreach ($AllSalads as $salads) { ?>
                   <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 4">
                     <div class="thumbnail-menu-modern">
-                      <figure><img class="img-responsive" src="images/salads-1-310x260.png" alt="" width="310" height="260">
+                      <figure><img class="img-responsive" src="assets/images/<?= $salads['product_image'] ?>" alt="" width="310" height="260">
                       </figure>
                       <div class="caption">
-                        <h5><a class="link link-default" href="menu-single.html"><?= $salads['product_name'] ?></a></h5>
+                        <h5><a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $salads['product_id'] ?>"><?= $salads['product_name'] ?></a></h5>
                         <p class="text-italic"><?= $salads['description'] ?></p>
-                        <p class="price"><?= $salads['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="shop-single.html">Order Online</a>
+                        <p class="price"><?= $salads['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="?act=ProductDetailsInMenu&id=<?= $salads['product_id'] ?>">Order Online</a>
                       </div>
                     </div>
                   </div>
@@ -135,12 +135,12 @@
                 <?php foreach ($AllDrinks as $drinks) { ?>
                   <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 5">
                     <div class="thumbnail-menu-modern">
-                      <figure><img class="img-responsive" src="images/drinks-1-310x260.png" alt="" width="310" height="260">
+                      <figure><img class="img-responsive" src="assets/images/<?= $drinks['product_image'] ?>" alt="" width="310" height="260">
                       </figure>
                       <div class="caption">
-                        <h5><a class="link link-default" href="menu-single.html"><?= $drinks['product_name'] ?></a></h5>
+                        <h5><a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $drinks['product_id'] ?>"><?= $drinks['product_name'] ?></a></h5>
                         <p class="text-italic"><?= $drinks['description'] ?></p>
-                        <p class="price"><?= $drinks['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="shop-single.html">Order Online</a>
+                        <p class="price"><?= $drinks['price'] ?></p><a class="btn btn-shape-circle btn-burnt-sienna offset-top-15" href="?act=ProductDetailsInMenu&id=<?= $drinks['product_id'] ?>">Order Online</a>
                       </div>
                     </div>
                   </div>
@@ -149,7 +149,7 @@
                 <!--deserts-->
                 <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 6">
                   <div class="thumbnail-menu-modern">
-                    <figure><img class="img-responsive" src="images/deserts-1-310x260.png" alt="" width="310" height="260">
+                    <figure><img class="img-responsive" src="assets/images/deserts-1-310x260.png" alt="" width="310" height="260">
                     </figure>
                     <div class="caption">
                       <h5><a class="link link-default" href="menu-single.html">French macaroons</a></h5>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 6">
                   <div class="thumbnail-menu-modern">
-                    <figure><img class="img-responsive" src="images/deserts-2-310x260.png" alt="" width="310" height="260">
+                    <figure><img class="img-responsive" src="assets/images/deserts-2-310x260.png" alt="" width="310" height="260">
                     </figure>
                     <div class="caption">
                       <h5><a class="link link-default" href="menu-single.html">Blueberry muffins</a></h5>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 6">
                   <div class="thumbnail-menu-modern">
-                    <figure><img class="img-responsive" src="images/deserts-3-310x260.png" alt="" width="310" height="260">
+                    <figure><img class="img-responsive" src="assets/images/deserts-3-310x260.png" alt="" width="310" height="260">
                     </figure>
                     <div class="caption">
                       <h5><a class="link link-default" href="menu-single.html">Donuts</a></h5>
@@ -182,7 +182,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 6">
                   <div class="thumbnail-menu-modern">
-                    <figure><img class="img-responsive" src="images/deserts-4-310x260.png" alt="" width="310" height="260">
+                    <figure><img class="img-responsive" src="assets/images/deserts-4-310x260.png" alt="" width="310" height="260">
                     </figure>
                     <div class="caption">
                       <h5><a class="link link-default" href="menu-single.html">Ice Cream</a></h5>
@@ -193,7 +193,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 6">
                   <div class="thumbnail-menu-modern">
-                    <figure><img class="img-responsive" src="images/deserts-5-310x260.png" alt="" width="310" height="260">
+                    <figure><img class="img-responsive" src="assets/images/deserts-5-310x260.png" alt="" width="310" height="260">
                     </figure>
                     <div class="caption">
                       <h5><a class="link link-default" href="menu-single.html">Pancakes</a></h5>
@@ -211,7 +211,7 @@
         </div>
       </section>
       <section>
-        <section class="parallax-container parallax-light" data-parallax-img="images/parallax-02.jpg">
+        <section class="parallax-container parallax-light" data-parallax-img="assets/images/parallax-02.jpg">
           <div class="parallax-content">
             <div class="container section-80 section-sm-130">
               <div class="row justify-content-xs-center align-items-lg-end">
@@ -234,27 +234,10 @@
     <!-- Page Footer-->
     <?php require_once 'component/client/footer.php' ?>
   </div>
-  <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
-  <!-- Java script-->
   <script src="assets/js/core.min.js"></script>
   <script src="assets/js/script.js"></script>
-  <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
-  </script><!-- End Google Tag Manager -->
+
 </body>
 
 </html>

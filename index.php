@@ -7,16 +7,20 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 // Các file cần thiết
 require_once("config/conn.php");
 require_once("model/admin/model.php");
+require_once("model/admin/userorderModel.php");
 require_once("model/admin/product.php");
 require_once("model/admin/category.php");
 require_once("model/admin/accModel.php");
 require_once("model/admin/discountModel.php");
+require_once("model/admin/variationModel.php");
 require_once("model/client/menuModel.php");
 require_once("model/client/detailProduct.php");
 require_once("model/client/homeModel.php");
 
+require_once("controller/admin/variationController.php");
 require_once("controller/admin/discountController.php");
 require_once("controller/admin/controller.php");
+require_once("controller/admin/userorderController.php");
 require_once("controller/admin/categoryController.php");
 require_once("controller/admin/productController.php");
 require_once("controller/admin/accController.php");
@@ -40,6 +44,13 @@ match ($act) {
     'deleteproduct' => (new productController())->deleteProduct(),
     'editproduct' => (new productController())->editProduct(),
     'updateproduct' => (new productController())->updateProduct(),
+    // Quản lý biến thể
+    'listvariation' => (new variationController())->listVariation(),
+    'insertvariation' => (new variationController())->insertVariation(),
+    'updatevariation' => (new variationController())->updateVariation($_GET['id']),
+    'deletevariation' => (new variationController())->deleteVariation($_GET['id']),
+    // Quản lý đơn hàng
+    'listorder' => (new userorderController())->listUserorder(),
     // Quản lý category
     'listcategory' => (new categoryController())->list(),
     'deletecategory' => (new categoryController())->deleteCategory(),

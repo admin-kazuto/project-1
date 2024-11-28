@@ -51,116 +51,118 @@
             <section class="section-50 section-sm-100">
                 <div class="container">
                     <div class="row justify-content-xs-center">
-                                <div class="col-sm-6 text-lg-start">
-                                    <!-- Slick Carousel-->
-                                    <div class="slick-slider carousel-parent" data-arrows="false" data-loop="false" data-dots="false" data-swipe="false" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
-                                        <div class="item"><img class="img-responsive reveal-inline-block" src="assets/images/product-01-542x448.png" alt="" width="542" height="448">
-                                        </div>
+                        <div class="col-sm-6 text-lg-start">
+                            <!-- Slick Carousel-->
+                            <div class="slick-slider carousel-parent" data-arrows="false" data-loop="false" data-dots="false" data-swipe="false" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
+                                <div class="item"><img class="img-responsive reveal-inline-block" src="assets/images/<?= $product['product_image'] ?>" alt="" width="542" height="448">
+                                </div>
+                            </div>
+                            <div class="slick-slider slick-slider-single-item align-center" id="child-carousel" data-for=".carousel-parent" data-arrows="false" data-loop="false" data-dots="false" data-swipe="true" data-items="3" data-xs-items="3" data-sm-items="3" data-md-items="4" data-lg-items="5" data-slide-to-scroll="1">
+                                <div class="item">
+                                    <div><img src="assets/images/<?= $product['product_image'] ?>" alt="" width="84" height="69">
                                     </div>
-                                    <div class="slick-slider slick-slider-single-item align-center" id="child-carousel" data-for=".carousel-parent" data-arrows="false" data-loop="false" data-dots="false" data-swipe="true" data-items="3" data-xs-items="3" data-sm-items="3" data-md-items="4" data-lg-items="5" data-slide-to-scroll="1">
-                                        <div class="item">
-                                            <div><img src="images/product-thumb-01-84x69.png" alt="" width="84" height="69">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-5 text-sm-start offset-top-60 offset-sm-top-0">
+                            <div class="reveal-xs-flex justify-content-xs-center align-content-xs-center justify-content-sm-start">
+                                <h4 class="font-default"><?= $product['product_name'] ?></h4>
+                                <div class="inset-xs-left-50 offset-top-0">
+                                    <div class="team-member-position team-member-position-burnt-sienna"><span class="big text-italic text-middle">Hot</span></div>
+                                </div>
+                            </div>
+                            <div class="offset-top-15">
+                                <p>Turkey / Alfalfa / Lettuce / Chicken Beef / Tomatoes</p>
+                            </div>
+                            <div class="offset-top-15">
+                                <!-- <div class="group-sm"><a class="link-zoom" href="#"><img src="assets/images/<?= $product['product_image'] ?>" alt="" width="57" height="21"></a><a class="link-zoom" href="#"><img src="images/shop-single-02-52x21.png" alt="" width="52" height="21"></a><a class="link-zoom" href="#"><img src="assets/images/<?= $product['product_image'] ?>" alt="" width="54" height="21"></a></div> -->
+                            </div>
+                            <hr class="offset-top-30 veil reveal-sm-block">
+                            <div class="offset-top-30">
+                                <div class="responsive-tabs responsive-tabs-shop responsive-tabs-horizontal">
+                                    <ul class="resp-tabs-list">
+                                        <li><span class="price">$25.90</span><span class="icon icon-circle">Big</span></li>
+                                        <li><span class="price">$13.90</span><span class="icon icon-circle">Mini</span></li>
+                                        <li><span class="price">$13.90</span><span class="icon icon-circle">Mini</span></li>
+                                    </ul>
+                                    <div class="resp-tabs-container">
+                                        <div>
+                                            <div class="progress-linear" data-to="43">
+                                                <div class="progress-header clearfix">
+                                                    <div class="text-start">
+                                                        <p class="text-uppercase">energy value</p>
+
+                                                    </div>
+                                                </div>
+                                                <div class="progress-bar-linear-wrap offset-top-5">
+                                                    <div class="progress-bar-linear bg-primary" style="width: 43%;"></div><span class="progress-text">510kcal</span><span class="text-bold progress-value">43</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-linear" data-to="59">
+                                                <div class="progress-header clearfix">
+                                                    <div class="text-start">
+                                                        <p class="text-uppercase">proteins</p>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-bar-linear-wrap offset-top-5">
+                                                    <div class="progress-bar-linear bg-burnt-sienna" style="width: 59%;"></div><span class="progress-text">44g</span><span class="text-bold progress-value">59</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-linear" data-to="20">
+                                                <div class="progress-header clearfix">
+                                                    <div class="text-start">
+                                                        <p class="text-uppercase">carbohydrates</p>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-bar-linear-wrap offset-top-5">
+                                                    <div class="progress-bar-linear bg-silver-tree" style="width: 20%;"></div><span class="progress-text">50g</span><span class="text-bold progress-value">20</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="progress-linear" data-to="30">
+                                                <div class="progress-header clearfix">
+                                                    <div class="text-start">
+                                                        <p class="text-uppercase">energy value</p>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-bar-linear-wrap offset-top-5">
+                                                    <div class="progress-bar-linear bg-primary" style="width: 30%;"></div><span class="progress-text">360kcal</span><span class="text-bold progress-value">30</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-linear" data-to="39">
+                                                <div class="progress-header clearfix">
+                                                    <div class="text-start">
+                                                        <p class="text-uppercase">proteins</p>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-bar-linear-wrap offset-top-5">
+                                                    <div class="progress-bar-linear bg-burnt-sienna" style="width: 39%;"></div><span class="progress-text">24g</span><span class="text-bold progress-value">39</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress-linear" data-to="15">
+                                                <div class="progress-header clearfix">
+                                                    <div class="text-start">
+                                                        <p class="text-uppercase">carbohydrates</p>
+                                                    </div>
+                                                </div>
+                                                <div class="progress-bar-linear-wrap offset-top-5">
+                                                    <div class="progress-bar-linear bg-silver-tree" style="width: 15%;"></div><span class="progress-text">40g</span><span class="text-bold progress-value">15</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-lg-5 text-sm-start offset-top-60 offset-sm-top-0">
-                                    <div class="reveal-xs-flex justify-content-xs-center align-content-xs-center justify-content-sm-start">
-                                        <h4 class="font-default"><?= $product['product_name'] ?></h4>
-                                        <div class="inset-xs-left-50 offset-top-0">
-                                            <div class="team-member-position team-member-position-burnt-sienna"><span class="big text-italic text-middle">Hot</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="offset-top-15">
-                                        <p>Turkey / Alfalfa / Lettuce / Chicken Beef / Tomatoes</p>
-                                    </div>
-                                    <div class="offset-top-15">
-                                        <div class="group-sm"><a class="link-zoom" href="#"><img src="images/shop-single-01-57x21.png" alt="" width="57" height="21"></a><a class="link-zoom" href="#"><img src="images/shop-single-02-52x21.png" alt="" width="52" height="21"></a><a class="link-zoom" href="#"><img src="images/shop-single-03-54x21.png" alt="" width="54" height="21"></a></div>
-                                    </div>
-                                    <hr class="offset-top-30 veil reveal-sm-block">
-                                    <div class="offset-top-30">
-                                        <div class="responsive-tabs responsive-tabs-shop responsive-tabs-horizontal">
-                                            <ul class="resp-tabs-list">
-                                                <li><span style="font-size: 25px;" class="price">$25.90</span><span style="font-size: 12px; width: 35px; height: 35px;" class="icon icon-circle">Big</span></li>
-                                                <li><span style="font-size: 25px;" class="price">$13.90</span><span style="font-size: 12px; width: 35px; height: 35px;" class="icon icon-circle">Mini</span></li>
-                                                <li><span style="font-size: 25px;" class="price">$13.90</span><span style="font-size: 12px; width: 35px; height: 35px;" class="icon icon-circle">Mini</span></li>
-                                            </ul>
-                                            <div class="resp-tabs-container">
-                                                <div>
-                                                    <div class="progress-linear" data-to="43">
-                                                        <div class="progress-header clearfix">
-                                                            <div class="text-start">
-                                                                <p class="text-uppercase">energy value</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-bar-linear-wrap offset-top-5">
-                                                            <div class="progress-bar-linear bg-primary" style="width: 43%;"></div><span class="progress-text">510kcal</span><span class="text-bold progress-value">43</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-linear" data-to="59">
-                                                        <div class="progress-header clearfix">
-                                                            <div class="text-start">
-                                                                <p class="text-uppercase">proteins</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-bar-linear-wrap offset-top-5">
-                                                            <div class="progress-bar-linear bg-burnt-sienna" style="width: 59%;"></div><span class="progress-text">44g</span><span class="text-bold progress-value">59</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-linear" data-to="20">
-                                                        <div class="progress-header clearfix">
-                                                            <div class="text-start">
-                                                                <p class="text-uppercase">carbohydrates</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-bar-linear-wrap offset-top-5">
-                                                            <div class="progress-bar-linear bg-silver-tree" style="width: 20%;"></div><span class="progress-text">50g</span><span class="text-bold progress-value">20</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="progress-linear" data-to="30">
-                                                        <div class="progress-header clearfix">
-                                                            <div class="text-start">
-                                                                <p class="text-uppercase">energy value</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-bar-linear-wrap offset-top-5">
-                                                            <div class="progress-bar-linear bg-primary" style="width: 30%;"></div><span class="progress-text">360kcal</span><span class="text-bold progress-value">30</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-linear" data-to="39">
-                                                        <div class="progress-header clearfix">
-                                                            <div class="text-start">
-                                                                <p class="text-uppercase">proteins</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-bar-linear-wrap offset-top-5">
-                                                            <div class="progress-bar-linear bg-burnt-sienna" style="width: 39%;"></div><span class="progress-text">24g</span><span class="text-bold progress-value">39</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-linear" data-to="15">
-                                                        <div class="progress-header clearfix">
-                                                            <div class="text-start">
-                                                                <p class="text-uppercase">carbohydrates</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-bar-linear-wrap offset-top-5">
-                                                            <div class="progress-bar-linear bg-silver-tree" style="width: 15%;"></div><span class="progress-text">40g</span><span class="text-bold progress-value">15</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="offset-top-45">
-                                        <div class="group-sm">
-                                            <div class="stepper-type-1">
-                                                <input class="form-control" type="number" data-zeros="true" value="1" min="1" max="20" readonly="">
-                                            </div><a class="text-top btn btn-burnt-sienna btn-shape-circle" href="shop-cart.html"><span>Order Online</span></a>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="offset-top-45">
+                                <div class="group-sm">
+                                    <div class="stepper-type-1">
+                                        <input class="form-control" type="number" data-zeros="true" value="1" min="1" max="20" readonly="">
+                                    </div><a class="text-top btn btn-burnt-sienna btn-shape-circle" href="shop-cart.html"><span>Order Online</span></a>
                                 </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
