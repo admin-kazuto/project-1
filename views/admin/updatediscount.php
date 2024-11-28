@@ -197,5 +197,6 @@
             return isValid;
         }
     </script>
+    <script src="assets/js/adminlite.js"></script>
 
 </html>

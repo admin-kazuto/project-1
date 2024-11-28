@@ -220,6 +220,7 @@
     <!--end::Footer-->
   </div>
   <?php require_once "component/admin/scripts.php" ?>
+  <script src="assets/js/adminlite.js"></script>
 </body>
 
 </html>

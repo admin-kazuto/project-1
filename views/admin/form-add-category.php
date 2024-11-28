@@ -102,6 +102,7 @@
             return true;
         }
     </script>
+    <script src="assets/js/adminlite.js"></script>
 </body>
 
 </html>
