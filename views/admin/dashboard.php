@@ -12,7 +12,7 @@
 
     <?php require_once "component/admin/header.php" ?>
 
-    <?php require_once "component/admin/sidebar.php" ?>;
+    <?php require_once "component/admin/sidebar.php" ?>
     <!--begin::App Main-->
     <main class="app-main">
       <!--begin::App Content Header-->
@@ -223,4 +223,3 @@
 </body>
 
 </html>
-

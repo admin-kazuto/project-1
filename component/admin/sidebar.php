@@ -92,6 +92,12 @@ if ($_SESSION['role'] != 'admin') {
                 <p>Add new product</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="?act=listvariation" class="nav-link">
+                <i class="nav-icon bi bi-circle"></i>
+                <p>Variation list</p>
+              </a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">

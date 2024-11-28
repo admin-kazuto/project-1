@@ -28,7 +28,7 @@
   <!-- Page-->
   <div class="page text-center">
     <?php
-    require_once 'component/client/header.php'
+    require_once 'component/client/header.php';
     ?>
     <!-- Page Content-->
     <main class="page-content">
@@ -88,7 +88,7 @@
                       </div>
                     </div>
                   </div>
-                <?php } ?>
+                <?php }  ?>
                 <!--toasts-->
                 <?php foreach ($AllToasts as $toasts) { ?>
                   <div class="col-xs-12 col-sm-6 col-md-4 isotope-item" data-filter="Category 2">
@@ -234,27 +234,10 @@
     <!-- Page Footer-->
     <?php require_once 'component/client/footer.php' ?>
   </div>
-  <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
-  <!-- Java script-->
   <script src="assets/js/core.min.js"></script>
   <script src="assets/js/script.js"></script>
-  <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
-  </script><!-- End Google Tag Manager -->
+
 </body>
 
 </html>
