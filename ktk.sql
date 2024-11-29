@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th10 26, 2024 lúc 01:48 AM
+-- Thời gian đã tạo: Th10 29, 2024 lúc 01:43 PM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 8.1.10
 
@@ -45,7 +45,6 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`user_id`, `Name`, `username`, `password`, `adress`, `phone`, `email`, `created_at`, `status`, `role`) VALUES
-(5, 'nguyễn tuấn', 'kuro tatsuya', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'trịnh văn bô', '0559295064', 'mativi1243@gmaill.com', '2024-11-23 03:43:54', 'Mở', 'admin'),
 (6, 'Hoàng Vinh Khoa', 'khoa', '601f1889667efaebb33b8c12572835da3f027f78', 'Mê Linh, Hà Nội', '0976890935', 'kenhoangkhoaghost@gmail.com', '2024-11-25 13:17:49', 'Mở', 'admin'),
 (7, 'Nam Kiệm', 'kiem', '601f1889667efaebb33b8c12572835da3f027f78', 'Mê Linh, Hà Nội', '0976890931', 'namkiem0000@gmail.com', '2024-11-25 13:56:05', 'Mở', 'admin'),
 (8, 'Nguyễn Minh Tuấn', 'tuan', '601f1889667efaebb33b8c12572835da3f027f78', 'ABC', '0559295064', 'mativi1243@gmaill.com', '2024-11-25 13:57:07', 'Mở', 'admin');
@@ -304,16 +303,23 @@ CREATE TABLE `userorder` (
   `order_date` timestamp NOT NULL,
   `order_status` enum('pending','processing','completed','canceled') NOT NULL,
   `order_totalAmount` int NOT NULL,
-  `discount_id` int NOT NULL,
-  `discount_amount` int NOT NULL,
+  `discount_id` int DEFAULT NULL,
+  `discount_amount` int DEFAULT NULL,
   `payment_method` enum('COD','online') NOT NULL,
-  `shipping_fee` int NOT NULL,
-  `shipping_status` enum('not_shipped','shipped','delivered','returned') NOT NULL,
+  `shipping_fee` int DEFAULT NULL,
+  `shipping_status` enum('not_shipped','shipped','delivered','returned') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `user_id` int NOT NULL,
   `order_name` varchar(256) NOT NULL COMMENT 'người nhận hàng',
   `order_phoneNumber` int NOT NULL COMMENT 'số điện thoại người nhận',
   `order_address` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'địa chỉ người nhận'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `userorder`
+--
+
+INSERT INTO `userorder` (`order_id`, `order_date`, `order_status`, `order_totalAmount`, `discount_id`, `discount_amount`, `payment_method`, `shipping_fee`, `shipping_status`, `user_id`, `order_name`, `order_phoneNumber`, `order_address`) VALUES
+(2, '2024-11-29 08:19:59', 'pending', 1111, NULL, NULL, 'online', NULL, NULL, 6, 'Khoa', 976890935, 'Mê Linh, Hà Nội');
 
 -- --------------------------------------------------------
 
@@ -332,6 +338,13 @@ CREATE TABLE `userorder_details` (
   `order_price` int NOT NULL COMMENT 'tổng giá trị đơn hàng chưa tính giảm giá',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `userorder_details`
+--
+
+INSERT INTO `userorder_details` (`order_details_id`, `order_id`, `product_id`, `variation_id`, `quantity`, `unit_price`, `note`, `order_price`, `created_at`) VALUES
+(1, 2, 2, 5, 2, 100000, 'Sản phẩm khuyến mãi', 200000, '2024-11-29 05:00:00');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -487,7 +500,7 @@ ALTER TABLE `shipper_reviews`
 -- AUTO_INCREMENT cho bảng `userorder`
 --
 ALTER TABLE `userorder`
-  MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `userorder_details`
