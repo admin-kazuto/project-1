@@ -19,9 +19,11 @@
   <link rel="stylesheet" href="assets/css/bootstrap.css" />
   <link rel="stylesheet" href="assets/css/fonts.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <?php var_dump($_SESSION) ?>
 </head>
 
 <body>
+  
   <div class="preloader">
     <div class="preloader-body">
       <div class="cssload-container">
@@ -311,7 +313,9 @@
                 data-center-padding="10">
                 <?php
                 if (!empty($AllHamburgers)) {
+
                   foreach ($AllHamburgers as $Hamburger) {
+                    
                 ?>
                     <div class="item">
                       <div class="thumbnail-menu-modern">
@@ -325,6 +329,7 @@
                         </figure>
                         <div class="caption">
                           <h5>
+                    
                             <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Hamburger['product_id'] ?>"><?= $Hamburger['product_name'] ?></a>
                           </h5>
                           <p class="text-italic">
@@ -363,33 +368,35 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <?php if(!empty($AllToasts)){
+
+                <?php if (!empty($AllToasts)) {
                   foreach ($AllToasts as $Toast) { ?>
-                <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/<?= $Toast['product_image'] ?>"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Toast['product_id'] ?>"><?= $Toast['product_name'] ?></a>
-                      </h5>
-                      <p class="text-italic">
-                        <?= $Toast['description'] ?>
-                      </p>
-                      <p class="price"><?= $Toast['price'] ?></p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="?act=ProductDetailsInMenu&id=<?= $Toast['product_id'] ?>">Order Online</a>
+
+                    <div class="item">
+                      <div class="thumbnail-menu-modern">
+                        <figure>
+                          <img
+                            class="img-responsive"
+                            src="assets/images/<?= $Toast['product_image'] ?>"
+                            alt=""
+                            width="310"
+                            height="260" />
+                        </figure>
+                        <div class="caption">
+                          <h5>
+                            <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Toast['product_id'] ?>"><?= $Toast['product_name'] ?></a>
+                          </h5>
+                          <p class="text-italic">
+                            <?= $Toast['description'] ?>
+                          </p>
+                          <p class="price"><?= $Toast['price'] ?></p>
+                          <a
+                            class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
+                            href="?act=ProductDetailsInMenu&id=<?= $Toast['product_id'] ?>">Order Online</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <?php } ?>
+                  <?php } ?>
                 <?php } else {
                   echo 'No Toasts found.';
                 } ?>
@@ -413,33 +420,33 @@
                 data-center-mode="true"
                 data-center-padding="10">
                 <?php
-                if(!empty($AllPizzas)){
+                if (!empty($AllPizzas)) {
                   foreach ($AllPizzas as $Pizza) { ?>
-                  <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/<?= $Pizza['product_image'] ?>"
-                        alt=""
-                        width="310"
-                        height="260" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>"><?= $Pizza['product_name'] ?></a>
-                      </h5>
-                      <p class="text-italic">
-                        <?= $Pizza['description'] ?>
-                      </p>
-                      <p class="price"><?= $Pizza['price'] ?></p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>">Order Online</a>
+                    <div class="item">
+                      <div class="thumbnail-menu-modern">
+                        <figure>
+                          <img
+                            class="img-responsive"
+                            src="assets/images/<?= $Pizza['product_image'] ?>"
+                            alt=""
+                            width="310"
+                            height="260" />
+                        </figure>
+                        <div class="caption">
+                          <h5>
+                            <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>"><?= $Pizza['product_name'] ?></a>
+                          </h5>
+                          <p class="text-italic">
+                            <?= $Pizza['description'] ?>
+                          </p>
+                          <p class="price"><?= $Pizza['price'] ?></p>
+                          <a
+                            class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
+                            href="?act=ProductDetailsInMenu&id=<?= $Pizza['product_id'] ?>">Order Online</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <?php } ?>
+                  <?php } ?>
                 <?php } else {
                   echo 'No Pizzas found.';
                 } ?>
@@ -462,33 +469,33 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <?php if(!empty($AllSalads)){
+                <?php if (!empty($AllSalads)) {
                   foreach ($AllSalads as $Salad) { ?>
-                  <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/<?=$Salad['product_image'] ?>"
-                        alt=""
-                        width="248"
-                        height="208" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Salad['product_id'] ?>">Buffalo Bleu</a>
-                      </h5>
-                      <p class="text-italic">
-                        <?= $Salad['description'] ?>
-                      </p>
-                      <p class="price"><?= $Salad['price'] ?></p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="?act=ProductDetailsInMenu&id=<?= $Salad['product_id'] ?>">Order Online</a>
+                    <div class="item">
+                      <div class="thumbnail-menu-modern">
+                        <figure>
+                          <img
+                            class="img-responsive"
+                            src="assets/images/<?= $Salad['product_image'] ?>"
+                            alt=""
+                            width="248"
+                            height="208" />
+                        </figure>
+                        <div class="caption">
+                          <h5>
+                            <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Salad['product_id'] ?>">Buffalo Bleu</a>
+                          </h5>
+                          <p class="text-italic">
+                            <?= $Salad['description'] ?>
+                          </p>
+                          <p class="price"><?= $Salad['price'] ?></p>
+                          <a
+                            class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
+                            href="?act=ProductDetailsInMenu&id=<?= $Salad['product_id'] ?>">Order Online</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <?php } ?>
+                  <?php } ?>
                 <?php } else {
                   echo 'No Salads found.';
                 } ?>
@@ -511,37 +518,37 @@
                 data-xl-items="5"
                 data-center-mode="true"
                 data-center-padding="10">
-                <?php if(!empty($AllDrinks)){
+                <?php if (!empty($AllDrinks)) {
                   foreach ($AllDrinks as $Drink) { ?>
-                   <div class="item">
-                  <div class="thumbnail-menu-modern">
-                    <figure>
-                      <img
-                        class="img-responsive"
-                        src="assets/images/<?= $Drink['product_image'] ?>"
-                        alt=""
-                        width="248"
-                        height="208" />
-                    </figure>
-                    <div class="caption">
-                      <h5>
-                        <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Drink['product_id'] ?>"><?= $Drink['product_name'] ?></a>
-                      </h5>
-                      <p class="text-italic">
-                        <?= $Drink['description'] ?>
-                      </p>
-                      <p class="price"><?= $Drink['price'] ?></p>
-                      <a
-                        class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
-                        href="?act=ProductDetailsInMenu&id=<?= $Drink['product_id'] ?>">Order Online</a>
+                    <div class="item">
+                      <div class="thumbnail-menu-modern">
+                        <figure>
+                          <img
+                            class="img-responsive"
+                            src="assets/images/<?= $Drink['product_image'] ?>"
+                            alt=""
+                            width="248"
+                            height="208" />
+                        </figure>
+                        <div class="caption">
+                          <h5>
+                            <a class="link link-default" href="?act=ProductDetailsInMenu&id=<?= $Drink['product_id'] ?>"><?= $Drink['product_name'] ?></a>
+                          </h5>
+                          <p class="text-italic">
+                            <?= $Drink['description'] ?>
+                          </p>
+                          <p class="price"><?= $Drink['price'] ?></p>
+                          <a
+                            class="btn btn-shape-circle btn-burnt-sienna offset-top-15"
+                            href="?act=ProductDetailsInMenu&id=<?= $Drink['product_id'] ?>">Order Online</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <?php } ?>
+                  <?php } ?>
                 <?php } else {
                   echo 'No Drinks found.';
                 } ?>
-               
+
               </div>
             </div>
           </div>

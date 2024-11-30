@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th10 26, 2024 lúc 01:48 AM
--- Phiên bản máy phục vụ: 8.0.30
--- Phiên bản PHP: 8.1.10
+-- Host: localhost:3306
+-- Generation Time: Nov 29, 2024 at 11:29 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `ktk`
+-- Database: `ktk`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `account`
+-- Table structure for table `account`
 --
 
 CREATE TABLE `account` (
@@ -41,7 +41,7 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `account`
+-- Dumping data for table `account`
 --
 
 INSERT INTO `account` (`user_id`, `Name`, `username`, `password`, `adress`, `phone`, `email`, `created_at`, `status`, `role`) VALUES
@@ -53,7 +53,7 @@ INSERT INTO `account` (`user_id`, `Name`, `username`, `password`, `adress`, `pho
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -69,7 +69,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -78,7 +78,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `discount`
+-- Table structure for table `discount`
 --
 
 CREATE TABLE `discount` (
@@ -106,7 +106,7 @@ CREATE TABLE `discount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `discount`
+-- Dumping data for table `discount`
 --
 
 INSERT INTO `discount` (`discount_id`, `discount_code`, `discount_value`, `minimum_order`, `valid_from`, `valid_to`, `status`, `created_at`) VALUES
@@ -115,7 +115,7 @@ INSERT INTO `discount` (`discount_id`, `discount_code`, `discount_value`, `minim
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -129,7 +129,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `description`, `product_image`, `product_status`, `product_totalQuantity`, `category_id`) VALUES
@@ -162,7 +162,7 @@ INSERT INTO `product` (`product_id`, `product_name`, `description`, `product_ima
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_variation`
+-- Table structure for table `product_variation`
 --
 
 CREATE TABLE `product_variation` (
@@ -176,70 +176,70 @@ CREATE TABLE `product_variation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product_variation`
+-- Dumping data for table `product_variation`
 --
 
 INSERT INTO `product_variation` (`variation_id`, `product_id`, `variation_name`, `price`, `status`, `variation_quantity`, `discount_id`) VALUES
-(2, 2, 'Size Nhỏ (S)', 50000, 'available', 100, NULL),
-(3, 2, 'Size Vừa (M)', 80000, 'available', 100, NULL),
-(4, 2, 'Size Lớn (L)', 120000, 'available', 100, NULL),
-(5, 3, 'Size Nhỏ (S)', 60000, 'available', 100, NULL),
-(6, 3, 'Size Vừa (M)', 90000, 'available', 100, NULL),
-(7, 3, 'Size Lớn (L)', 140000, 'available', 100, NULL),
-(8, 4, 'Size Nhỏ (S)', 55000, 'available', 100, NULL),
-(9, 4, 'Size Vừa (M)', 85000, 'available', 100, NULL),
-(10, 4, 'Size Lớn (L)', 130000, 'available', 100, NULL),
-(11, 5, 'Size Nhỏ (S)', 50000, 'available', 100, NULL),
-(12, 5, 'Size Vừa (M)', 75000, 'available', 100, NULL),
-(13, 5, 'Size Lớn (L)', 115000, 'available', 100, NULL),
-(14, 6, 'Size Nhỏ (S)', 65000, 'available', 100, NULL),
-(15, 6, 'Size Vừa (M)', 95000, 'available', 100, NULL),
-(16, 6, 'Size Lớn (L)', 150000, 'available', 100, NULL),
+(2, 2, 'S', 50000, 'available', 100, NULL),
+(3, 2, 'M', 80000, 'available', 100, NULL),
+(4, 2, 'L', 120000, 'available', 100, NULL),
+(5, 3, 'S', 60000, 'available', 100, NULL),
+(6, 3, 'M', 90000, 'available', 100, NULL),
+(7, 3, 'L', 140000, 'available', 100, NULL),
+(8, 4, 'S', 55000, 'available', 100, NULL),
+(9, 4, 'M', 85000, 'available', 100, NULL),
+(10, 4, 'L', 130000, 'available', 100, NULL),
+(11, 5, 'S', 50000, 'available', 100, NULL),
+(12, 5, 'M', 75000, 'available', 100, NULL),
+(13, 5, 'L', 115000, 'available', 100, NULL),
+(14, 6, 'S', 65000, 'available', 100, NULL),
+(15, 6, 'M', 95000, 'available', 100, NULL),
+(16, 6, 'L', 150000, 'available', 100, NULL),
 (17, 7, '18 cm x 9 cm', 30000, 'available', 100, NULL),
 (18, 8, '18 cm x 9 cm', 20000, 'available', 100, NULL),
 (19, 9, '18 cm x 9 cm', 35000, 'available', 100, NULL),
 (20, 10, '18 cm x 9 cm', 35000, 'available', 100, NULL),
 (21, 11, '18 cm x 9 cm', 40000, 'available', 100, NULL),
-(22, 12, 'Size Nhỏ (S)', 35000, 'available', 100, NULL),
-(23, 12, 'Size Vừa (M)', 50000, 'available', 100, NULL),
-(24, 12, 'Size Lớn (L)', 65000, 'available', 100, NULL),
-(25, 13, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
-(26, 13, 'Size Vừa (M)', 55000, 'available', 100, NULL),
-(27, 13, 'Size Lớn (L)', 70000, 'available', 100, NULL),
-(28, 14, 'Size Nhỏ (S)', 45000, 'available', 100, NULL),
-(29, 14, 'Size Vừa (M)', 60000, 'available', 100, NULL),
-(30, 14, 'Size Lớn (L)', 80000, 'available', 100, NULL),
-(31, 15, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
-(32, 15, 'Size Vừa (M)', 55000, 'available', 100, NULL),
-(33, 15, 'Size Lớn (L)', 70000, 'available', 100, NULL),
-(34, 16, 'Size Nhỏ (S)', 35000, 'available', 100, NULL),
-(35, 16, 'Size Vừa (M)', 45000, 'available', 100, NULL),
-(36, 16, 'Size Lớn (L)', 60000, 'available', 100, NULL),
-(37, 17, 'Size Nhỏ (S)', 30000, 'available', 100, NULL),
-(38, 17, 'Size Vừa (M)', 45000, 'available', 100, NULL),
-(39, 17, 'Size Lớn (L)', 60000, 'available', 100, NULL),
-(40, 18, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
-(41, 18, 'Size Vừa (M)', 60000, 'available', 100, NULL),
-(42, 18, 'Size Lớn (L)', 80000, 'available', 100, NULL),
-(43, 19, 'Size Nhỏ (S)', 35000, 'available', 100, NULL),
-(44, 19, 'Size Vừa (M)', 50000, 'available', 100, NULL),
-(45, 19, 'Size Lớn (L)', 70000, 'available', 100, NULL),
-(46, 20, 'Size Nhỏ (S)', 40000, 'available', 100, NULL),
-(47, 20, 'Size Vừa (M)', 60000, 'available', 100, NULL),
-(48, 20, 'Size Lớn (L)', 80000, 'available', 100, NULL),
-(49, 21, 'Size Nhỏ (S)', 45000, 'available', 100, NULL),
-(50, 21, 'Size Vừa (M)', 65000, 'available', 100, NULL),
-(51, 21, 'Size Lớn (L)', 85000, 'available', 100, NULL),
-(52, 23, 'Size Thường (S)', 20000, 'available', 10000, NULL),
-(53, 24, 'Size Thường (S)', 20000, 'available', 10000, NULL),
-(54, 25, 'Size Thường (S)', 20000, 'available', 10000, NULL),
-(55, 26, 'Size Thường (S)', 15000, 'available', 10000, NULL),
-(56, 27, 'Size Thường (S)', 10000, 'available', 10000, NULL);
+(22, 12, 'S', 35000, 'available', 100, NULL),
+(23, 12, 'M', 50000, 'available', 100, NULL),
+(24, 12, 'L', 65000, 'available', 100, NULL),
+(25, 13, 'S', 40000, 'available', 100, NULL),
+(26, 13, 'M', 55000, 'available', 100, NULL),
+(27, 13, 'L', 70000, 'available', 100, NULL),
+(28, 14, 'S', 45000, 'available', 100, NULL),
+(29, 14, 'M', 60000, 'available', 100, NULL),
+(30, 14, 'L', 80000, 'available', 100, NULL),
+(31, 15, 'S', 40000, 'available', 100, NULL),
+(32, 15, 'M', 55000, 'available', 100, NULL),
+(33, 15, 'L', 70000, 'available', 100, NULL),
+(34, 16, 'S', 35000, 'available', 100, NULL),
+(35, 16, 'M', 45000, 'available', 100, NULL),
+(36, 16, 'L', 60000, 'available', 100, NULL),
+(37, 17, 'S', 30000, 'available', 100, NULL),
+(38, 17, 'M', 45000, 'available', 100, NULL),
+(39, 17, 'L', 60000, 'available', 100, NULL),
+(40, 18, 'S', 40000, 'available', 100, NULL),
+(41, 18, 'M', 60000, 'available', 100, NULL),
+(42, 18, 'L', 80000, 'available', 100, NULL),
+(43, 19, 'S', 35000, 'available', 100, NULL),
+(44, 19, 'M', 50000, 'available', 100, NULL),
+(45, 19, 'L', 70000, 'available', 100, NULL),
+(46, 20, 'S', 40000, 'available', 100, NULL),
+(47, 20, 'M', 60000, 'available', 100, NULL),
+(48, 20, 'L', 80000, 'available', 100, NULL),
+(49, 21, 'S', 45000, 'available', 100, NULL),
+(50, 21, 'M', 65000, 'available', 100, NULL),
+(51, 21, 'L', 85000, 'available', 100, NULL),
+(52, 23, 'L', 20000, 'available', 10000, NULL),
+(53, 24, 'L', 20000, 'available', 10000, NULL),
+(54, 25, 'L', 20000, 'available', 10000, NULL),
+(55, 26, 'L', 15000, 'available', 10000, NULL),
+(56, 27, 'L', 10000, 'available', 10000, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `reset_account`
+-- Table structure for table `reset_account`
 --
 
 CREATE TABLE `reset_account` (
@@ -252,7 +252,7 @@ CREATE TABLE `reset_account` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `review`
+-- Table structure for table `review`
 --
 
 CREATE TABLE `review` (
@@ -267,7 +267,7 @@ CREATE TABLE `review` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `shipper`
+-- Table structure for table `shipper`
 --
 
 CREATE TABLE `shipper` (
@@ -280,7 +280,7 @@ CREATE TABLE `shipper` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `shipper_reviews`
+-- Table structure for table `shipper_reviews`
 --
 
 CREATE TABLE `shipper_reviews` (
@@ -296,7 +296,7 @@ CREATE TABLE `shipper_reviews` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `userorder`
+-- Table structure for table `userorder`
 --
 
 CREATE TABLE `userorder` (
@@ -318,7 +318,7 @@ CREATE TABLE `userorder` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `userorder_details`
+-- Table structure for table `userorder_details`
 --
 
 CREATE TABLE `userorder_details` (
@@ -334,17 +334,17 @@ CREATE TABLE `userorder_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `account`
+-- Indexes for table `account`
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Chỉ mục cho bảng `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`),
@@ -353,26 +353,26 @@ ALTER TABLE `cart`
   ADD KEY `fk_cart_product_variation` (`variation_id`);
 
 --
--- Chỉ mục cho bảng `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Chỉ mục cho bảng `discount`
+-- Indexes for table `discount`
 --
 ALTER TABLE `discount`
   ADD PRIMARY KEY (`discount_id`);
 
 --
--- Chỉ mục cho bảng `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `fk_category` (`category_id`);
 
 --
--- Chỉ mục cho bảng `product_variation`
+-- Indexes for table `product_variation`
 --
 ALTER TABLE `product_variation`
   ADD PRIMARY KEY (`variation_id`),
@@ -380,13 +380,13 @@ ALTER TABLE `product_variation`
   ADD KEY `fk_productVariation_discount` (`discount_id`);
 
 --
--- Chỉ mục cho bảng `reset_account`
+-- Indexes for table `reset_account`
 --
 ALTER TABLE `reset_account`
   ADD KEY `user_id_reset_pass` (`user_id`);
 
 --
--- Chỉ mục cho bảng `review`
+-- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`review_id`),
@@ -394,14 +394,14 @@ ALTER TABLE `review`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `shipper`
+-- Indexes for table `shipper`
 --
 ALTER TABLE `shipper`
   ADD PRIMARY KEY (`shipper_id`),
   ADD KEY `idx_user_id` (`user_id`);
 
 --
--- Chỉ mục cho bảng `shipper_reviews`
+-- Indexes for table `shipper_reviews`
 --
 ALTER TABLE `shipper_reviews`
   ADD PRIMARY KEY (`review_id`),
@@ -409,7 +409,7 @@ ALTER TABLE `shipper_reviews`
   ADD KEY `user` (`user_id`);
 
 --
--- Chỉ mục cho bảng `userorder`
+-- Indexes for table `userorder`
 --
 ALTER TABLE `userorder`
   ADD PRIMARY KEY (`order_id`),
@@ -417,7 +417,7 @@ ALTER TABLE `userorder`
   ADD KEY `discount` (`discount_id`);
 
 --
--- Chỉ mục cho bảng `userorder_details`
+-- Indexes for table `userorder_details`
 --
 ALTER TABLE `userorder_details`
   ADD PRIMARY KEY (`order_details_id`),
@@ -426,81 +426,81 @@ ALTER TABLE `userorder_details`
   ADD KEY `fk_userorder_details_variation` (`variation_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `account`
+-- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
   MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cart_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `discount`
+-- AUTO_INCREMENT for table `discount`
 --
 ALTER TABLE `discount`
   MODIFY `discount_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT cho bảng `product_variation`
+-- AUTO_INCREMENT for table `product_variation`
 --
 ALTER TABLE `product_variation`
   MODIFY `variation_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT cho bảng `review`
+-- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
   MODIFY `review_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `shipper`
+-- AUTO_INCREMENT for table `shipper`
 --
 ALTER TABLE `shipper`
   MODIFY `shipper_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `shipper_reviews`
+-- AUTO_INCREMENT for table `shipper_reviews`
 --
 ALTER TABLE `shipper_reviews`
   MODIFY `review_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `userorder`
+-- AUTO_INCREMENT for table `userorder`
 --
 ALTER TABLE `userorder`
   MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `userorder_details`
+-- AUTO_INCREMENT for table `userorder_details`
 --
 ALTER TABLE `userorder_details`
   MODIFY `order_details_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `cart`
+-- Constraints for table `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `fk_cart_account` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
@@ -508,53 +508,53 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `fk_cart_product_variation` FOREIGN KEY (`variation_id`) REFERENCES `product_variation` (`variation_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
 
 --
--- Các ràng buộc cho bảng `product_variation`
+-- Constraints for table `product_variation`
 --
 ALTER TABLE `product_variation`
   ADD CONSTRAINT `fk_product_variation` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `fk_productVariation_discount` FOREIGN KEY (`discount_id`) REFERENCES `discount` (`discount_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `reset_account`
+-- Constraints for table `reset_account`
 --
 ALTER TABLE `reset_account`
   ADD CONSTRAINT `user_id_reset_pass` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `review`
+-- Constraints for table `review`
 --
 ALTER TABLE `review`
   ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `shipper`
+-- Constraints for table `shipper`
 --
 ALTER TABLE `shipper`
   ADD CONSTRAINT `fk_shipper_account` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `shipper_reviews`
+-- Constraints for table `shipper_reviews`
 --
 ALTER TABLE `shipper_reviews`
   ADD CONSTRAINT `shipper_id` FOREIGN KEY (`shipper_id`) REFERENCES `shipper` (`shipper_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `userorder`
+-- Constraints for table `userorder`
 --
 ALTER TABLE `userorder`
   ADD CONSTRAINT `discount` FOREIGN KEY (`discount_id`) REFERENCES `discount` (`discount_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `fk_userorder_user_id` FOREIGN KEY (`user_id`) REFERENCES `account` (`user_id`);
 
 --
--- Các ràng buộc cho bảng `userorder_details`
+-- Constraints for table `userorder_details`
 --
 ALTER TABLE `userorder_details`
   ADD CONSTRAINT `fk_userorder_details-product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
@@ -563,7 +563,7 @@ ALTER TABLE `userorder_details`
 
 DELIMITER $$
 --
--- Sự kiện
+-- Events
 --
 CREATE DEFINER=`root`@`localhost` EVENT `delete_expired_tokens` ON SCHEDULE EVERY 10 MINUTE STARTS '2024-11-23 03:32:48' ON COMPLETION NOT PRESERVE ENABLE DO DELETE FROM reset_account
   WHERE reset_expiry < NOW() - INTERVAL 10 MINUTE$$

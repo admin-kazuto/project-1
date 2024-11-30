@@ -16,6 +16,7 @@ require_once("model/admin/variationModel.php");
 require_once("model/client/menuModel.php");
 require_once("model/client/detailProduct.php");
 require_once("model/client/homeModel.php");
+require_once("model/client/cartModel.php");
 
 require_once("controller/admin/variationController.php");
 require_once("controller/admin/discountController.php");
@@ -28,6 +29,8 @@ require_once("controller/admin/dashboardController.php");
 require_once("controller/client/menuController.php");
 require_once("controller/client/detailProductController.php");
 require_once("controller/client/homeController.php");
+require_once("controller/client/cartController.php");
+
 
 // Lấy hành động từ URL
 $act = $_GET['act'] ?? '/';
@@ -76,9 +79,11 @@ match ($act) {
     'deletediscount' => (new DiscountController())->deletediscount($_GET['id']),
 
     //client 
-    'home' => (new dashboardController())->home(),
+    
     'menu' => (new MenuController())->listProduct(),
     'ProductDetailsInMenu' => (new DetailProductController())->ProductDetailsInMenu($_GET['id']),
     'blog' => (new BlogController())->blog(),
+    'cart' => (new CartController())->cart(),
     default => print "Không có hành động nào được xử lý.",
 };
+
