@@ -80,6 +80,7 @@
                                     class="form-control"
                                     placeholder="Your Email"
                                     name="fdgfdgfdgfd"
+                                    readonly
                                     type="email" />
                             </div>
                             <button

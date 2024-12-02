@@ -14,7 +14,15 @@ class userorderModel
             LEFT JOIN account a ON u.user_id = a.user_id";
         return $this->conn->query($sql)->fetchAll();
     }
-    function getOrderDetails()
+    function getUserorderById($order_id)
+    {
+        $sql = "SELECT u.*, a.username
+            FROM userorder u
+            LEFT JOIN account a ON u.user_id = a.user_id
+            WHERE u.order_id = '$order_id'";
+        return $this->conn->query($sql)->fetchAll();
+    }
+    function getOrderDetail($order_id)
     {
         $sql = "SELECT 
                 ud.*, 
@@ -25,7 +33,9 @@ class userorderModel
             LEFT JOIN 
                 product p ON ud.product_id = p.product_id
             LEFT JOIN 
-                product_variation pv ON ud.variation_id = pv.variation_id";
+                product_variation pv ON ud.variation_id = pv.variation_id
+            WHERE 
+            ud.order_id = '$order_id'";
         return $this->conn->query($sql)->fetchAll();
     }
     function updateStatus($id, $status)
