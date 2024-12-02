@@ -117,6 +117,7 @@
                                                 if ($_SESSION['role'] === 'admin') {
                                                     echo '<li><a href="?act=administration" style="font-size: 13px;">Quản trị</a></li>';
                                                 }
+                                                echo '<li><a href="?act=userprofile" style="font-size: 13px;">Thông tin</a></li>';
                                                 echo '<li><a href="?act=logout" style="font-size: 13px;">Đăng xuất</a></li>';
                                             } else {
                                                 echo '<li><a href="?act=login" style="font-size: 13px;">Đăng nhập</a></li>';

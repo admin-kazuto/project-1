@@ -16,6 +16,7 @@ require_once("model/admin/variationModel.php");
 require_once("model/client/menuModel.php");
 require_once("model/client/detailProduct.php");
 require_once("model/client/homeModel.php");
+require_once("model/client/userprofileModel.php");
 
 require_once("controller/admin/variationController.php");
 require_once("controller/admin/discountController.php");
@@ -28,6 +29,7 @@ require_once("controller/admin/dashboardController.php");
 require_once("controller/client/menuController.php");
 require_once("controller/client/detailProductController.php");
 require_once("controller/client/homeController.php");
+require_once("controller/client/userprofileController.php");
 
 // Lấy hành động từ URL
 $act = $_GET['act'] ?? '/';
@@ -51,6 +53,7 @@ match ($act) {
     'deletevariation' => (new variationController())->deleteVariation($_GET['id']),
     // Quản lý đơn hàng
     'listorder' => (new userorderController())->listUserorder(),
+    'orderdetail' => (new userorderController())->orderdetail($_GET['id']),
     // Quản lý category
     'listcategory' => (new categoryController())->list(),
     'deletecategory' => (new categoryController())->deleteCategory(),
@@ -80,5 +83,8 @@ match ($act) {
     'menu' => (new MenuController())->listProduct(),
     'ProductDetailsInMenu' => (new DetailProductController())->ProductDetailsInMenu($_GET['id']),
     'blog' => (new BlogController())->blog(),
+    'userprofile' => (new userprofileController())->userProfile(),
+    'cancelorder' => (new userprofileController())->cancelorder($_GET['id']),
+    'detail' => (new userprofileController())->detail($_GET['id']),
     default => print "Không có hành động nào được xử lý.",
 };
