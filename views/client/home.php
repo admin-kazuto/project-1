@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="assets/css/bootstrap.css" />
   <link rel="stylesheet" href="assets/css/fonts.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <?php var_dump($_SESSION) ?>
 </head>
 
 <body>

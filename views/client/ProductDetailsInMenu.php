@@ -50,7 +50,7 @@
 
             <section class="section-50 section-sm-100">
                 <div class="container">
-                    <form action="?act=cart" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="row justify-content-xs-center">
                             <div class="col-sm-6 text-lg-start">
                                 <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
@@ -88,13 +88,13 @@
                                             foreach ($priceVariation as $price) {
                                                 echo "<li>
                                                 <span  class='price'> <input type='hidden' name='price' value='" . $price['price'] . "' >" . number_format($price['price']) . "</span>
-                                                <span class='icon icon-circle'><input type='hiden' name='variation_id' value=' ".$price['variation_id']."'> " . $price['variation_name'] . "</span>
+                                                <span class='icon icon-circle'><input type='hidden' name='variation_id' value=' " . $price['variation_id'] . "'> " . $price['variation_name'] . "</span>
                                                 </li>";
                                             }
                                             ?>
                                         </ul>
-                                       
-                                        <div class="resp-tabs-container">
+
+                                        <!-- <div class="resp-tabs-container">
                                             <div>
                                                 <div class="progress-linear" data-to="30">
                                                     <div class="progress-header clearfix">
@@ -225,7 +225,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="offset-top-45">
@@ -310,7 +310,7 @@
                                     <div class="form-group">
                                         <input class="form-control" placeholder="Your Email" type="email" name="email" data-constraints="@Required @Email">
                                     </div>
-                                    <button class="btn btn-burnt-sienna btn-shape-circle" type="submit">Subscribe</button>
+                                    <button name="btn_addtocard" class="btn btn-burnt-sienna btn-shape-circle" type="submit">Subscribe</button>
                                 </form>
                             </div>
                         </div>
