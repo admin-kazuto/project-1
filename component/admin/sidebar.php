@@ -88,8 +88,7 @@ if ($_SESSION['role'] != 'admin') {
             </li>
             <li class="nav-item">
               <a href="?act=addproduct" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Add new product</p>
+                <i class="nav-icon bi bi-circle"></i><p>Add new product</p>
               </a>
             </li>
             <li class="nav-item">
@@ -182,3 +181,4 @@ if ($_SESSION['role'] != 'admin') {
   <!--end::Sidebar Wrapper-->
 </aside>
 <!--end::Sidebar-->
+

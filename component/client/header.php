@@ -150,7 +150,7 @@
                             <li>
                                 <a
                                     class="unit unit-horizontal unit-middle unit-spacing-xxs link-gray-light"
-                                    href="shop-cart.html">
+                                    href="?act=cart">
                                     <div class="unit-left">
                                         <span
                                             class="icon icon-md icon-primary thin-icon-cart"></span>

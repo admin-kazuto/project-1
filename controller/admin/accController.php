@@ -20,7 +20,7 @@ class accController
                 if ($accountStatus === 'Mở') {
                     $_SESSION['username'] = $username;
                     $_SESSION['role'] = $this->accModel->checkRole($username);
-                    header('location:?act=home');
+                    header('location:?act=/');
                 } elseif ($accountStatus === 'Khóa') {
                     header('location:?act=login');
                     $_SESSION['message'] = 'Tài khoản của bạn đã bị khóa';

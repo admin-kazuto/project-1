@@ -6,7 +6,6 @@
         }
         public function HomeMenu() {
             $AllHamburgers = $this-> homeController->getAllHamburgers();
-      
             $AllPizzas = $this-> homeController->getAllPizzas();
             $AllToasts = $this-> homeController->getAllToasts();
             $AllSalads = $this-> homeController->getAllSalads();
