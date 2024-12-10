@@ -50,7 +50,7 @@
 
             <section class="section-50 section-sm-100">
                 <div class="container">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" >
                         <div class="row justify-content-xs-center">
                             <div class="col-sm-6 text-lg-start">
                                 <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
@@ -236,6 +236,7 @@
                                     </div>
                                 </div>
                             </div>
+                           
                         </div>
                     </form>
                 </div>

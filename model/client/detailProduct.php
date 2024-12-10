@@ -19,45 +19,46 @@ class detailProductModel
     
     public function addToCart($user_id, $product_id, $variation_id, $quantity, $unit_price)
     {
-        // Kiểm tra xem sản phẩm với các điều kiện cụ thể đã có trong giỏ hàng chưa
-        $check = $this->detailProductModel->query("
-            SELECT * FROM cart 
-            WHERE variation_id = $variation_id 
-            AND user_id = $user_id 
+        // // Kiểm tra dữ liệu đầu vào (nếu bạn không sử dụng PDO chuẩn bị)
+        // $user_id = intval($user_id);
+        // $product_id = intval($product_id);
+        // $variation_id = intval($variation_id);
+        // $quantity = intval($quantity);
+        // $unit_price = floatval($unit_price); // Nếu giá có thể là số thực
+    
+        // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+        $sqlCheck = "
+            SELECT quantity 
+            FROM cart 
+            WHERE user_id = $user_id 
             AND product_id = $product_id 
+            AND variation_id = $variation_id 
             AND unit_price = $unit_price
-        ")->fetchAll();
+        ";
+        $result = $this->detailProductModel->query($sqlCheck)->fetch();
     
-        if ($check) {
-            // Lấy số lượng hiện tại của sản phẩm trong giỏ hàng
-            $current_quantity = $this->detailProductModel->query("
-                SELECT quantity FROM cart 
-                WHERE variation_id = $variation_id 
-                AND user_id = $user_id 
-                AND product_id = $product_id 
-                AND unit_price = $unit_price
-            ")->fetch();
-            
-            $current_quantity_result = $current_quantity['quantity'];
-            $new_quantity = intval($current_quantity_result) + intval($quantity);
-    
-            // Cập nhật số lượng sản phẩm trong giỏ hàng
-            return $this->detailProductModel->query("
+        if ($result) {
+            // Nếu sản phẩm đã tồn tại, cập nhật số lượng
+            $newQuantity = $result['quantity'] + $quantity;
+            $sqlUpdate = "
                 UPDATE cart 
-                SET quantity = $new_quantity 
+                SET quantity = $newQuantity 
                 WHERE user_id = $user_id 
                 AND product_id = $product_id 
                 AND variation_id = $variation_id 
                 AND unit_price = $unit_price
-            ")->execute();
+            ";
+            return $this->detailProductModel->query($sqlUpdate)->execute();
         } else {
             // Thêm sản phẩm mới vào giỏ hàng
-            return $this->detailProductModel->query("
+            $sqlInsert = "
                 INSERT INTO cart (user_id, product_id, variation_id, quantity, unit_price) 
                 VALUES ($user_id, $product_id, $variation_id, $quantity, $unit_price)
-            ")->execute();
+            ";
+            return $this->detailProductModel->query($sqlInsert)->execute();
         }
     }
+    
     
     
     public function getUserId($userName)
