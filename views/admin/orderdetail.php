@@ -206,7 +206,8 @@
     </div>
     </main>
 
-    <?php require_once 'component/client/footer.php' ?>
+    <?php require_once 'component/admin/footer.php' ?>
+    <?php require_once 'component/admin/scripts.php' ?>
 </body>
 
 </html>

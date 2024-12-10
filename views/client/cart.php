@@ -53,7 +53,7 @@
           </div>
         </div>
       </section>
-     
+
       <section class="section-50 section-sm-100">
         <div class="container">
           <div class="row">
@@ -63,10 +63,10 @@
                 <table class="table table-shopping-cart">
                   <tbody>
 
-                   
+
                     <?php
 
-                    foreach ($cart as $value) {
+                    foreach ($cart as $key => $value) {
 
                     ?>
 
@@ -74,6 +74,12 @@
                         <td style="width: 1px">
                           <div class="form-group stepper-type-2">
                             <input class="form-control text-bold" type="number" data-zeros="true" value="<?= $value['quantity'] ?>" min="1" max="20" readonly="">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-group stepper-type-2">
+                            <input class="form-control text-bold" type="text" data-zeros="true" value="<?= $value['variation_id'] ?>" readonly>
+                            <input class="form-control text-bold" type="text" data-zeros="true" value="<?= $value['variation_name'] ?>" readonly>
                           </div>
                         </td>
                         <td style="width: 1px">
@@ -115,22 +121,7 @@
   <!-- Java script-->
   <script src="assets/js/core.min.js"></script>
   <script src="assets/js/script.js"></script>
-  <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
-  </script><!-- End Google Tag Manager -->
+
 </body>
 
 </html>

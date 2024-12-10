@@ -195,18 +195,18 @@
                             if ($rows['order_status'] === 'processing' || $rows['order_status'] === 'pending') {
                             ?>
                                 <div>
-                                    <a href="?act=cancelorder&id=<?= $rows['order_id'] ?>"><button class="btn btn-danger">Hủy đơn</button></a>
+                                    <a href="?act=cancelorder&id=<?= $rows['order_id'] ?>"><button class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này không?')">Hủy đơn</button></a>
                                 </div>
                             <?php } ?>
                             <div>
                                 <a href="?act=detail&id=<?= $rows['order_id'] ?>"><button class="btn btn-primary">
                                         Xem Chi Tiết
                                     </button></a>
-                            <?php } ?>
                             </div>
                         </div>
                     </div>
                 </div>
+            <?php } ?>
         </div>
 
         <?php require_once 'component/client/footer.php' ?>

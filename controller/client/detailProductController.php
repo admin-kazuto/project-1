@@ -15,8 +15,7 @@ class DetailProductController
 
         require_once('views/client/ProductDetailsInMenu.php');
         $user_id = $this->detailProductController->getUserId($_SESSION['username']);
-        var_dump($user_id);
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['btn_buy'])) {
             if ($user_id) {
                 $product_id = $_POST['product_id'];
                 $variation_id = $_POST['variation_id'];
