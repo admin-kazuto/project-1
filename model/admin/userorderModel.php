@@ -43,4 +43,5 @@ class userorderModel
         $sql = "UPDATE `userorder` SET `order_status` = '$status' WHERE `order_id` = $id";
         $this->conn->query($sql);
     }
+
 }

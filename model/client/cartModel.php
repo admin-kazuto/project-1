@@ -82,4 +82,15 @@ class CartModel
         null  
         )")->execute();
     }
+
+    public function getOrderID($user_id){
+        return $this->cartModel->query("SELECT order_id FROM userorder WHERE user_id = $user_id")->fetch();
+    }
+
+
+    public function insertOrderDetail($order_id, $product_id, $variation_id, $quantity, $unit_price,$total){
+        return $this->cartModel->query("INSERT INTO userorder_details (order_id, product_id, variation_id, quantity, unit_price,order_price)
+        VALUES ($order_id, $product_id, $variation_id, $quantity, $unit_price,$total)")->execute();
+    }
+    
 }

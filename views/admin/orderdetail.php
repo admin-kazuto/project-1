@@ -187,9 +187,11 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($orderdetail as $key => $rows2) {
+                        
+                        foreach ($orderdetail as $rows2) {
                         ?>
                             <tr>
+                            
                                 <td><?= $rows2['product_name'] ?></td>
                                 <td><?= $rows2['variation_name'] ?></td>
                                 <td><?= $rows2['quantity'] ?></td>

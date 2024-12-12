@@ -104,7 +104,7 @@
                           </form>
                         </td>
 
-                      
+                        
                       </tr>
                     <?php } ?>
 
@@ -120,8 +120,14 @@
                                                             $totalOrder += $value['total'];
                                                           }
                                                           echo "$totalOrder"; ?>">
+                <?php foreach ($cart as $value) { ?>
+                  <input type="hidden" name="quantity" value="<?= $value['quantity']  ?>">
+                  <input type="hidden" name="variation_id" value="<?= $value['variation_id'] ?>">
+                  <input type="hidden" name="product_id" value="<?= $value['product_id'] ?>">
+                  <input type="hidden" name="unit_pride" value="<?= $value['unit_price'] ?>">
+                <?php } ?>
 
-                
+                <input type="hidden" name="order_id" value="<?= $getOrderID['order_id'] ?>">
                 <div class="h4 font-default text-bold">
                   <div class="inset-right-5 text-gray-light"> <?php
                                                               $totalOrder = 0;
