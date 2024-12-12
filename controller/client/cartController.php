@@ -7,15 +7,29 @@ class CartController
         $this->cartController = new CartModel();
     }
 
-    public function cart() {
+    public function cart()
+    {
         $user_id = $this->cartController->getUserId($_SESSION['username']);
-        $cart  = $this->cartController-> getCart($user_id);
+        $cart  = $this->cartController->getCart($user_id);
         $total = $this->cartController->getCartTotal($user_id);
         require_once('views/client/cart.php');
+        if (isset($_POST['remove'])) {
+            $cart_id = $_POST['cart_id'];
+            $stmt = $this->cartController->deleteCart($cart_id);
+            if ($stmt) {
+                header('Location:?act=cart');
+                exit();
+            } else {
+                echo "lỗi to đầu";
+            }
+        }
     }
 
-    public function getCartTotal($user_id) {
+    public function getCartTotal($user_id)
+    {
         $total = $this->cartController->getCartTotal($user_id);
         return $total;
     }
+
+    
 }

@@ -15,10 +15,10 @@ class CartModel
     public function getCart($user_id)
     {
         return $this->cartModel->query("SELECT cart.*, product.*, product_variation.price, product_variation.variation_name
-FROM cart 
-JOIN product ON product.product_id = cart.product_id 
-JOIN product_variation ON product_variation.variation_id = cart.variation_id 
-WHERE cart.user_id = '$user_id'")->fetchAll(PDO::FETCH_ASSOC);
+        FROM cart 
+        JOIN product ON product.product_id = cart.product_id 
+        JOIN product_variation ON product_variation.variation_id = cart.variation_id 
+        WHERE cart.user_id = '$user_id'")->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
@@ -26,15 +26,34 @@ WHERE cart.user_id = '$user_id'")->fetchAll(PDO::FETCH_ASSOC);
     //     return $this -> cartModel->query("SELECT SUM(product_variation.price * cart.quantity) as total FROM cart JOIN product_variation ON product_variation.variation_id = cart.product_id WHERE cart.user_id = '$user_id';")->fetchColumn();
     // }
     public function getCartTotal($user_id)
+{
+    $query = "
+        SELECT 
+            cart.product_id, 
+            product_variation.price, 
+            cart.quantity, 
+            (product_variation.price * cart.quantity) AS total 
+        FROM cart 
+        JOIN product_variation ON cart.variation_id = product_variation.variation_id 
+        JOIN product ON product_variation.product_id = product.product_id 
+        WHERE cart.user_id = $user_id;
+    ";
+    // Gọi prepare từ PDO object
+    $stmt = $this->cartModel->prepare($query);
+    // Thực thi câu truy vấn
+    $stmt->execute();
+    // Trả về tất cả kết quả
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+    public function UpdateQuantity($quantity)
     {
-        $stmt = $this->cartModel->prepare("
-            SELECT SUM(pv.price * c.quantity) AS total
-            FROM cart c
-            JOIN product_variation pv ON pv.variation_id = c.product_id
-            WHERE c.user_id = ?
-        ");
-        $stmt->execute([$user_id]);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result['total'];
+        return $this->cartModel->query("UPDATE cart SET quantity = '$quantity'")->execute();
+    }
+
+    public function deleteCart($cart_id)
+    {
+        return $this->cartModel->query("DELETE FROM cart WHERE cart_id = $cart_id")->execute();
     }
 }

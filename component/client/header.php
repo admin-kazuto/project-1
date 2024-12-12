@@ -150,7 +150,15 @@
                             <li>
                                 <a
                                     class="unit unit-horizontal unit-middle unit-spacing-xxs link-gray-light"
-                                    href="?act=cart">
+                                    href="<?php
+                                            if (isset($_SESSION['role'])) {
+                                                echo '?act=cart';
+                                            } else {
+                                                $_SESSION['message'] = "Bạn phải đăng nhập để xem giỏ hàng."; // Lưu thông báo vào session
+                                                echo '?act=login';
+                                            }
+                                            ?>
+">
                                     <div class="unit-left">
                                         <span
                                             class="icon icon-md icon-primary thin-icon-cart"></span>
