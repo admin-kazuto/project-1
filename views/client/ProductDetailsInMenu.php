@@ -84,25 +84,33 @@
                                 <div class="offset-top-30">
                                     <div class="responsive-tabs responsive-tabs-shop responsive-tabs-horizontal">
                                         <ul class="resp-tabs-list">
-                                            <?php
-                                            foreach ($priceVariation as $price) {
-                                                echo "<li>
-                                                <span  class='price'> <input type='hidden' name='price' value='" . $price['price'] . "' >" . number_format($price['price']) . "</span>
-                                                <span class='icon icon-circle'><input type='hidden' name='variation_id' value=' " . $price['variation_id'] . "'> " . $price['variation_name'] . "</span>
-                                                </li>";
-                                            }
-                                            ?>
+                                            <?php foreach ($priceVariation as $index => $price) { ?>
+                                                <li class="select-item"
+                                                    data-price="<?= $price['price'] ?>"
+                                                    data-variation_id="<?= $price['variation_id'] ?>"
+                                                    data-variation_name="<?= $price['variation_name'] ?>"
+                                                    <?php if ($index === 0) echo 'id="default-item"'; ?>>
+                                                    <span class="price"><?= number_format($price['price']) ?></span>
+                                                    <span class="icon icon-circle"><?= $price['variation_name'] ?></span>
+                                                </li>
+                                            <?php } ?>
                                         </ul>
+
+                                        <input type="hidden" name="price" id="selected-price">
+                                        <input type="hidden" name="variation_id" id="selected-variation_id">
                                     </div>
                                 </div>
                                 <div class="offset-top-45">
                                     <div class="group-sm">
                                         <div class="stepper-type-1">
                                             <input name="quantity" class="form-control" type="number" data-zeros="true" value="1" min="1" max="20" readonly="">
-                                        </div><button type="submit" class="text-top btn btn-burnt-sienna btn-shape-circle" name="btn_buy"><span>Buy</span></button>
+                                        </div><button type="submit" class="text-top btn btn-burnt-sienna btn-shape-circle" name="btn_buy" id="buy-button" >
+                                            <span>Buy</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -140,7 +148,37 @@
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
+        // Lắng nghe sự kiện click trên mỗi item trong danh sách
+        // Lắng nghe sự kiện click trên mỗi item trong danh sách
+        document.querySelectorAll('.select-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Lấy dữ liệu từ data-attributes
+                var price = this.getAttribute('data-price');
+                var variation_id = this.getAttribute('data-variation_id');
+                var variation_name = this.getAttribute('data-variation_name');
 
+                // Đưa giá trị vào các input ẩn
+                document.getElementById('selected-price').value = price;
+                document.getElementById('selected-variation_id').value = variation_id;
+
+                // Tùy chọn: Nếu cần gửi giá trị variation_name, có thể thêm 1 input ẩn nữa
+                // document.getElementById('selected-variation_name').value = variation_name;
+            });
+        });
+
+        // Chọn mặc định giá trị của mục đầu tiên
+        window.addEventListener('DOMContentLoaded', () => {
+            const defaultItem = document.getElementById('default-item');
+            if (defaultItem) {
+                const price = defaultItem.getAttribute('data-price');
+                const variation_id = defaultItem.getAttribute('data-variation_id');
+
+                // Đưa giá trị vào các input ẩn
+                document.getElementById('selected-price').value = price;
+                document.getElementById('selected-variation_id').value = variation_id;
+            }
+        });
+        
     </script>
 </body>
 

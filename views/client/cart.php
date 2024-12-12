@@ -53,7 +53,6 @@
           </div>
         </div>
       </section>
-
       <section class="section-50 section-sm-100">
         <div class="container">
           <div class="row">
@@ -67,19 +66,18 @@
                     <?php
 
                     foreach ($cart as $key => $value) {
-
                     ?>
-
                       <tr>
-                        <td style="width: 1px">
-                          <div class="form-group stepper-type-2">
-                            <input class="form-control text-bold" type="number" data-zeros="true" value="<?= $value['quantity'] ?>" min="1" max="20" readonly="">
-                          </div>
+                        <td style="width: 150px">
+                        
+                            <div class="form-group stepper-type-2">
+                              <div style="font-size: 15px; font-weight: bold" class="">Quantity: <?= $value['quantity'] ?></div>
+                            </div>
+                        
                         </td>
                         <td>
                           <div class="form-group stepper-type-2">
-                            <input class="form-control text-bold" type="text" data-zeros="true" value="<?= $value['variation_id'] ?>" readonly>
-                            <input class="form-control text-bold" type="text" data-zeros="true" value="<?= $value['variation_name'] ?>" readonly>
+                            <input style="text-align: center" class="form-control text-bold" type="text" data-zeros="true" value="<?= $value['variation_name'] ?>" readonly>
                           </div>
                         </td>
                         <td style="width: 1px">
@@ -94,10 +92,15 @@
                           </div>
                         </td>
                         <td>
-                          <div class="inset-left-20"><span class="h5 text-sbold">$<?= $value['unit_price'] ?></span></div>
+                          <div class="inset-left-20"><span name="unit_price" class="h5 text-sbold">$<?= $value['unit_price'] ?></span></div>
                         </td>
                         <td>
-                          <div class="inset-left-20"><a class="icon icon-sm mdi mdi-window-close link-gray-lightest" href="#"></a></div>
+                          <form method="post" menctype="multipart/form-data">
+                            <div class="inset-left-20">
+                              <input type="hidden" name="cart_id" value="<?= $value['cart_id'] ?>">
+                              <button name="remove" style="border: none; background-color: transparent" class="icon icon-sm mdi mdi-window-close link-gray-lightest">
+                              </button></div>
+                          </form>
                         </td>
                       </tr>
                     <?php } ?>
@@ -106,7 +109,13 @@
                 </table>
               </div>
               <div class="offset-top-35 text-end">
-                <div class="h4 font-default text-bold"><small class="inset-right-5 text-gray-light">Total: <?= var_dump($total) ?> </small> </div><a class="btn btn-icon btn-icon-left btn-burnt-sienna btn-shape-circle offset-top-35" href="#"><span class="icon icon-xs mdi mdi-cart-outline"></span><span>Proceed to checkout</span></a>
+                <div class="h4 font-default text-bold"><small class="inset-right-5 text-gray-light"> <?php
+                                                                                                      $totalOrder = 0;
+                                                                                                      foreach ($total as $value) {
+                                                                                                        $totalOrder += $value['total'];
+                                                                                                      }
+                                                                                                      echo "Total: $totalOrder";
+                                                                                                      ?> </small> </div><a class="btn btn-icon btn-icon-left btn-burnt-sienna btn-shape-circle offset-top-35" href="#"><span class="icon icon-xs mdi mdi-cart-outline"></span><span>Proceed to checkout</span></a>
               </div>
             </div>
           </div>

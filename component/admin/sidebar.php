@@ -7,9 +7,9 @@ if ($_SESSION['role'] != 'admin') {
 ?>
 
 <aside
-  style="background-color: #fccb56"
+  style="background-color: #202b39"
   class="app-sidebar shadow"
-  data-bs-theme="light">
+  data-bs-theme="dark">
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->

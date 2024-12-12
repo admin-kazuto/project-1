@@ -1,6 +1,5 @@
 <!--begin::Header-->
 <nav
-  style="background-color: #fccb56"
   class="app-header navbar navbar-expand">
   <!--begin::Container-->
   <div class="container-fluid">

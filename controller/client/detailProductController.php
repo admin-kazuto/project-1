@@ -11,8 +11,6 @@ class DetailProductController
     {
         $product = $this->detailProductController->getProductById($id);
         $priceVariation = $this->detailProductController->getAllPriceAndVariationName($id);
-
-
         require_once('views/client/ProductDetailsInMenu.php');
         $user_id = $this->detailProductController->getUserId($_SESSION['username']);
         if (isset($_POST['btn_buy'])) {
@@ -21,10 +19,11 @@ class DetailProductController
                 $variation_id = $_POST['variation_id'];
                 $quantity = $_POST['quantity'];
                 $unit_price = $_POST['price'];
-                if ($this->detailProductController->addToCart($user_id, $product_id, $variation_id, $quantity, $unit_price)) {
-                    header('location:?act=cart');
+                $stmt = $this->detailProductController->addToCart($user_id , $product_id, $variation_id, $quantity, $unit_price);
+                if ($stmt) {
+                    header('Location:?act=cart');
                 } else {
-                    echo "Lỗi to đầu";
+                    echo"lỗi to đầu";
                 }
             }
         }
