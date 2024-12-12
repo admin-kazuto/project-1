@@ -32,6 +32,7 @@ require_once("controller/client/detailProductController.php");
 require_once("controller/client/homeController.php");
 require_once("controller/client/cartController.php");
 require_once("controller/client/userprofileController.php");
+require_once("model/admin/dashboardModel.php");
 
 // Lấy hành động từ URL
 $act = $_GET['act'] ?? '/';

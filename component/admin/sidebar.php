@@ -157,7 +157,7 @@ if ($_SESSION['role'] != 'admin') {
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="?act=listorder" class="nav-link">
             <i class="nav-icon bi bi-file-earmark-text-fill"></i>
             <p>
               Order

@@ -57,7 +57,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <h4 class="text-start font-default">0 Items in your cart</h4>
+              <h4 class="text-start font-default"><?= $totalQuantityProduct['total'] ?> Items in your cart</h4>
               <div class="table-responsive offset-top-10">
                 <table class="table table-shopping-cart">
                   <tbody>
@@ -69,11 +69,11 @@
                     ?>
                       <tr>
                         <td style="width: 150px">
-                        
-                            <div class="form-group stepper-type-2">
-                              <div style="font-size: 15px; font-weight: bold" class="">Quantity: <?= $value['quantity'] ?></div>
-                            </div>
-                        
+
+                          <div class="form-group stepper-type-2">
+                            <div style="font-size: 15px; font-weight: bold" class="">Quantity: <?= $value['quantity'] ?></div>
+                          </div>
+
                         </td>
                         <td>
                           <div class="form-group stepper-type-2">
@@ -99,25 +99,42 @@
                             <div class="inset-left-20">
                               <input type="hidden" name="cart_id" value="<?= $value['cart_id'] ?>">
                               <button name="remove" style="border: none; background-color: transparent" class="icon icon-sm mdi mdi-window-close link-gray-lightest">
-                              </button></div>
+                              </button>
+                            </div>
                           </form>
                         </td>
+
+                      
                       </tr>
                     <?php } ?>
 
                   </tbody>
                 </table>
               </div>
-              <div class="offset-top-35 text-end">
-                <div class="h4 font-default text-bold"><small class="inset-right-5 text-gray-light"> <?php
-                                                                                                      $totalOrder = 0;
-                                                                                                      foreach ($total as $value) {
-                                                                                                        $totalOrder += $value['total'];
-                                                                                                      }
-                                                                                                      echo "Total: $totalOrder";
-                                                                                                      ?> </small> </div><a class="btn btn-icon btn-icon-left btn-burnt-sienna btn-shape-circle offset-top-35" href="#"><span class="icon icon-xs mdi mdi-cart-outline"></span><span>Proceed to checkout</span></a>
-              </div>
+
+              <form action=" " method="post" enctype="emultipart/form-data" class="offset-top-35 text-end">
+
+                <input type="hidden" name="user_id" value="<?php echo " $user_id" ?>">
+                <input type="hidden" name="total" value="<?php $totalOrder = 0;
+                                                          foreach ($total as $value) {
+                                                            $totalOrder += $value['total'];
+                                                          }
+                                                          echo "$totalOrder"; ?>">
+
+                
+                <div class="h4 font-default text-bold">
+                  <div class="inset-right-5 text-gray-light"> <?php
+                                                              $totalOrder = 0;
+                                                              foreach ($total as $value) {
+                                                                $totalOrder += $value['total'];
+                                                              }
+                                                              echo "Total: $totalOrder";
+                                                              ?> </div>
+                </div><button type="submit" name="btn_checkout" class="btn btn-icon btn-icon-left btn-burnt-sienna btn-shape-circle offset-top-35" href="#"><span class="icon icon-xs mdi mdi-cart-outline"></span><span>Proceed to checkout</span></button>
+              </form>
             </div>
+
+
           </div>
         </div>
       </section>
