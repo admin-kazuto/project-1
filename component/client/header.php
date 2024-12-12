@@ -164,7 +164,7 @@
                                             class="icon icon-md icon-primary thin-icon-cart"></span>
                                     </div>
                                     <div class="unit-body">
-                                        <span class="label-inline big">0</span>
+                                       
                                     </div>
                                 </a>
                             </li>

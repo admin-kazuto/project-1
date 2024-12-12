@@ -26,8 +26,8 @@ class CartModel
     //     return $this -> cartModel->query("SELECT SUM(product_variation.price * cart.quantity) as total FROM cart JOIN product_variation ON product_variation.variation_id = cart.product_id WHERE cart.user_id = '$user_id';")->fetchColumn();
     // }
     public function getCartTotal($user_id)
-{
-    $query = "
+    {
+        $query = "
         SELECT 
             cart.product_id, 
             product_variation.price, 
@@ -38,13 +38,13 @@ class CartModel
         JOIN product ON product_variation.product_id = product.product_id 
         WHERE cart.user_id = $user_id;
     ";
-    // Gọi prepare từ PDO object
-    $stmt = $this->cartModel->prepare($query);
-    // Thực thi câu truy vấn
-    $stmt->execute();
-    // Trả về tất cả kết quả
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+        // Gọi prepare từ PDO object
+        $stmt = $this->cartModel->prepare($query);
+        // Thực thi câu truy vấn
+        $stmt->execute();
+        // Trả về tất cả kết quả
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
     public function UpdateQuantity($quantity)
@@ -55,5 +55,31 @@ class CartModel
     public function deleteCart($cart_id)
     {
         return $this->cartModel->query("DELETE FROM cart WHERE cart_id = $cart_id")->execute();
+    }
+
+    public function deleteAllCart($user_id){
+        return $this->cartModel->query("DELETE FROM cart WHERE user_id = $user_id")->execute();
+    }
+
+    public function getQuantityProduct($user_id)
+    {
+        return $this->cartModel->query("SELECT count(cart_id) as total FROM cart where user_id = $user_id")->fetch();
+    }
+
+    public function insertUserOrder($user_id, $total)
+    {
+        return $this->cartModel->query("INSERT INTO userorder ( order_status, order_totalAmount, discount_id, discount_amount, payment_method, user_id, order_name, order_phoneNumber, order_address)
+        VALUES (
+            
+            'pending', 
+            $total,  
+            NULL,  
+           0,  
+            'COD',  
+            $user_id,  
+            null, 
+            null, 
+        null  
+        )")->execute();
     }
 }

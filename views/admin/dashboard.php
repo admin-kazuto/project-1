@@ -49,7 +49,7 @@
               <!--begin::Small Box Widget 1-->
               <div class="small-box text-bg-primary">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3><?= $totalOrder["total"] ?></h3>
                   <p>Orders</p>
                 </div>
                 <svg
@@ -74,7 +74,7 @@
               <!--begin::Small Box Widget 2-->
               <div class="small-box text-bg-success">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3><?= $totalProduct["total"] ?></h3>
                   <p>Total Products</p>
                 </div>
                 <svg
@@ -152,7 +152,7 @@
               <!--begin::Small Box Widget 3-->
               <div class="small-box text-bg-warning">
                 <div class="inner">
-                  <h3>44</h3>
+                  <h3><?= $totalUser["total"] ?></h3>
                   <p>Users</p>
                 </div>
                 <svg
@@ -177,7 +177,7 @@
               <!--begin::Small Box Widget 4-->
               <div class="small-box text-bg-danger">
                 <div class="inner">
-                  <h3>5</h3>
+                  <h3><?= $totalCategory["total"] ?></h3>
                   <p>category</p>
                 </div>
                 <svg
